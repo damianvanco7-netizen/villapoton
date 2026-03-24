@@ -81,7 +81,7 @@ const Experience = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="overflow-hidden h-[500px] md:h-[600px]">
                 <img
                   src={cardImages[key]}
                   alt={t(`experience.${key}.title`)}
