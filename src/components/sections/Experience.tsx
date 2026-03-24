@@ -24,7 +24,7 @@ const Experience = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="experience" className="py-24 md:py-32 bg-muted" ref={ref}>
+    <section id="experience" className="py-24 md:py-32" ref={ref}>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div
@@ -60,7 +60,7 @@ const Experience = () => {
                 </p>
                 <a
                   href="#reservation"
-                  className="inline-block font-body text-xs tracking-[0.2em] uppercase font-bold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors"
                 >
                   {t(`experience.${key}.cta`)}
                 </a>
@@ -81,7 +81,7 @@ const Experience = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="overflow-hidden h-[500px] md:h-[600px]">
                 <img
                   src={cardImages[key]}
                   alt={t(`experience.${key}.title`)}
