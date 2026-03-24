@@ -95,13 +95,13 @@ const Experience = () => {
   );
 };
 
-const ExperienceCard = ({ cardKey, index, isVisible }: { cardKey: string; index: number; isVisible: boolean }) => {
+const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string; index: number; isVisible: boolean; isLast: boolean }) => {
   const { t } = useTranslation();
   const { ref: parallaxRef, offset } = useParallax(0.15);
 
   return (
     <div
-      className={`grid md:grid-cols-[1fr_2fr] mb-24 md:mb-32 last:mb-0 transition-all duration-700 ${
+      className={`grid md:grid-cols-[1fr_2fr] ${isLast ? 'mb-0' : 'mb-24 md:mb-32'} transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
       style={{ transitionDelay: `${(index + 1) * 200}ms` }}
