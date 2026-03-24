@@ -41,12 +41,23 @@ const Quote = () => {
         />
         {/* Green gradient from bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
-        {/* Text overlay */}
-        <div className="absolute inset-0 flex flex-col items-start justify-end px-8 md:px-16 lg:px-24 pb-16 md:pb-24">
-          <h3 className="font-heading text-4xl md:text-6xl lg:text-8xl text-primary-foreground italic leading-tight mb-6">
-            {t('quote.imageTitle_line1')}<br />{t('quote.imageTitle_line2')}
-          </h3>
-          <p className="font-body text-primary-foreground/80 text-sm md:text-base leading-relaxed max-w-lg">
+        {/* Text overlay — spread across width like reference */}
+        <div className="absolute inset-0 flex flex-col justify-between px-8 md:px-16 lg:px-24 py-16 md:py-24">
+          {/* "Viac ako pobyt" spread across the middle */}
+          <div />
+          <div className="flex items-center justify-between w-full">
+            <span className="font-heading text-5xl md:text-7xl lg:text-9xl text-primary-foreground italic">
+              {t('quote.imageTitle_word1')}
+            </span>
+            <span className="font-heading text-5xl md:text-7xl lg:text-9xl text-primary-foreground italic">
+              {t('quote.imageTitle_word2')}
+            </span>
+            <span className="font-heading text-5xl md:text-7xl lg:text-9xl text-primary-foreground italic">
+              {t('quote.imageTitle_word3')}
+            </span>
+          </div>
+          {/* Subtitle at bottom center */}
+          <p className="font-heading text-primary-foreground/80 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto text-center italic">
             {t('quote.imageSubtitle')}
           </p>
         </div>
