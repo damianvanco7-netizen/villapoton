@@ -50,23 +50,25 @@
     }
   },
   "services": {
-    "title": "Personalized Services",
-    "subtitle": "We adapt to your needs",
-    "concierge": {
-      "title": "Concierge Services",
-      "description": "Personal approach to every guest with individual stay planning."
-    },
-    "dining": {
-      "title": "Private Dining",
-      "description": "Exclusive gastronomic experiences in the privacy of your apartment."
-    },
-    "transfer": {
-      "title": "Transfer Services",
-      "description": "Comfortable transfers from airports or train stations directly to us."
-    },
-    "experiences": {
-      "title": "Experience Packages",
-      "description": "Specially crafted programs for couples, families, and corporate teams."
+    "titleLine1": "Personalized",
+    "titleLine2": "Services",
+    "items": {
+      "breakfast": {
+        "title": "Breakfast",
+        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+      },
+      "terrace": {
+        "title": "Terrace",
+        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+      },
+      "parking": {
+        "title": "Private Parking",
+        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+      },
+      "accessibility": {
+        "title": "Rooms for People with Disabilities",
+        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+      }
     }
   },
   "quote": {

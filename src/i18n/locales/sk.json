@@ -50,23 +50,25 @@
     }
   },
   "services": {
-    "title": "Personalizované služby",
-    "subtitle": "Prispôsobíme sa vašim potrebám",
-    "concierge": {
-      "title": "Concierge služby",
-      "description": "Osobný prístup ku každému hosťovi s individuálnym plánovaním pobytu."
-    },
-    "dining": {
-      "title": "Súkromné stolovanie",
-      "description": "Exkluzívne gastronomické zážitky v súkromí vašich apartmánov."
-    },
-    "transfer": {
-      "title": "Transfer služby",
-      "description": "Komfortný transfer z letiska alebo vlakových staníc priamo k nám."
-    },
-    "experiences": {
-      "title": "Zážitkové balíčky",
-      "description": "Špeciálne pripravené programy pre páry, rodiny aj firemné tímy."
+    "titleLine1": "Personalizované",
+    "titleLine2": "Služby",
+    "items": {
+      "breakfast": {
+        "title": "Raňajky",
+        "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
+      },
+      "terrace": {
+        "title": "Terasa",
+        "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
+      },
+      "parking": {
+        "title": "Súkromné parkovisko",
+        "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
+      },
+      "accessibility": {
+        "title": "Izby pre ľudí s telesným postihnutím",
+        "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
+      }
     }
   },
   "quote": {
