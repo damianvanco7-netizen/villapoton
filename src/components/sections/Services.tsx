@@ -49,7 +49,7 @@ const Services = () => {
               {/* Row content */}
               <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_1.2fr_1fr] gap-6 md:gap-8 items-start py-10 md:py-14">
                 {/* Counter */}
-                <span className="font-body text-sm text-muted-foreground pt-1">
+                <span className="font-body text-sm text-primary-foreground/50 pt-1">
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
