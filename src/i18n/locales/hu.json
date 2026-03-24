@@ -80,6 +80,8 @@
   },
   "activities": {
     "title": "Ahol minden nap Önnek van tervezve",
+    "title_line1": "Ahol minden nap",
+    "title_line2": "Önnek van tervezve",
     "items": {
       "zitny_ostrov": {
         "title": "Csallóköz",
