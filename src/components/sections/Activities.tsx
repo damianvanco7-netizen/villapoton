@@ -33,7 +33,7 @@ const Activities = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center">
             {t('activities.title')}
           </h2>
         </div>
@@ -74,7 +74,7 @@ const Activities = () => {
                   className="border-t border-border last:border-b"
                 >
                   <button
-                    onClick={() => setActiveIndex(i)}
+                    onMouseEnter={() => setActiveIndex(i)}
                     className="w-full py-6 flex items-center justify-between text-left group"
                   >
                     <span className="font-heading text-xl md:text-2xl lg:text-3xl group-hover:text-accent transition-colors">
