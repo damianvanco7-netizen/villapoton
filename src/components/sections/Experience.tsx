@@ -75,16 +75,7 @@ const Experience = () => {
 
   return (
     <section id="experience" ref={ref} className="relative overflow-hidden">
-      {/* Decorative symbol — background layer */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none z-0">
-        <img
-          src={decorativeSymbol}
-          alt=""
-          aria-hidden="true"
-          className="w-[600px] md:w-[800px] lg:w-[1000px] h-auto opacity-[0.06]"
-          style={{ transform: 'rotate(-15deg)' }}
-        />
-      </div>
+      <DecorativeSymbol rotation={-15} position="bottom-0 left-1/2 -translate-x-1/2" />
 
       {/* Section Header */}
       <div
