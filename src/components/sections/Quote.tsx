@@ -71,13 +71,13 @@ const Quote = () => {
               return (
                 <div
                   key={i}
-                  className="min-w-0 px-2 md:px-3 transition-all duration-500"
+                  className="min-w-0 px-2 md:px-3 flex items-center transition-all duration-500"
                   style={{
                     flex: isActive ? '0 0 50%' : '0 0 25%',
                   }}
                 >
                   <div
-                    className="overflow-hidden transition-all duration-500"
+                    className="w-full overflow-hidden transition-all duration-500"
                     style={{
                       aspectRatio: isActive ? '4/3' : '3/4',
                     }}
