@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
+import logoSvg from '@/assets/logo_villa_poton.svg';
 
 const languages = [
   { code: 'sk', label: 'SK' },
