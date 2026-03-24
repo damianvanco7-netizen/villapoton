@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.png';
 
 const languages = [
   { code: 'sk', label: 'SK' },
@@ -27,12 +26,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center">
-          <img src={logo} alt="Villa Potoň" className="h-12 w-auto" />
-        </a>
+        {/* Spacer for layout balance */}
+        <div className="w-12" />
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
@@ -40,7 +37,7 @@ const Header = () => {
             <a
               key={link.key}
               href={link.href}
-              className="text-sm font-body font-medium text-foreground/70 hover:text-foreground transition-colors tracking-wide uppercase"
+              className="text-sm font-body font-medium text-white/80 hover:text-white transition-colors tracking-wide uppercase"
             >
               {t(`nav.${link.key}`)}
             </a>
@@ -56,19 +53,19 @@ const Header = () => {
                   onClick={() => handleLangChange(lang.code)}
                   className={`px-1 transition-colors ${
                     i18n.language === lang.code
-                      ? 'text-foreground font-semibold'
-                      : 'text-muted-foreground hover:text-foreground'
+                      ? 'text-white font-semibold'
+                      : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {lang.label}
                 </button>
-                {i < languages.length - 1 && <span className="text-muted-foreground/50">|</span>}
+                {i < languages.length - 1 && <span className="text-white/40">|</span>}
               </span>
             ))}
           </div>
           <a
             href="#reservation"
-            className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors"
+            className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase hover:bg-white/30 transition-colors"
           >
             {t('nav.book')}
           </a>
@@ -77,7 +74,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-foreground"
+          className="lg:hidden text-white"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
