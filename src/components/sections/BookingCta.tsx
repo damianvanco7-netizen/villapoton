@@ -17,7 +17,7 @@ const BookingCta = () => {
 
       <div className="absolute inset-0 flex items-center justify-center px-6">
         <div
-          className={`bg-muted/80 backdrop-blur-sm px-10 py-16 md:px-20 md:py-24 max-w-2xl w-full text-center transition-all duration-700 ${
+          className={`bg-background px-10 py-16 md:px-20 md:py-24 max-w-2xl w-full text-center transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >

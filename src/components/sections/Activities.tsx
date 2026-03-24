@@ -46,7 +46,7 @@ const Activities = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
+            <div className="w-[80%] aspect-[3/4] overflow-hidden relative max-h-[600px]">
               {activities.map((activity, i) => (
                 <img
                   key={activity.key}
@@ -82,9 +82,8 @@ const Activities = () => {
                   className="border-t border-border last:border-b"
                 >
                   <button
-                    onMouseEnter={() => setActiveIndex(i)}
-                    onMouseLeave={() => setActiveIndex(null)}
-                    className="w-full py-6 flex items-center justify-between text-left group"
+                    onClick={() => setActiveIndex(isOpen ? null : i)}
+                    className="w-full py-8 flex items-center justify-between text-left group"
                   >
                     <span className="font-heading text-xl md:text-2xl lg:text-3xl group-hover:text-accent transition-colors">
                       {t(`activities.items.${activity.key}.title`)}
