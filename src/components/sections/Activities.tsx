@@ -62,9 +62,10 @@ const Activities = () => {
 
           {/* Right: Accordions */}
           <div
-            className={`flex flex-col justify-center transition-all duration-700 ${
+            className={`flex flex-col justify-between transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
+            style={{ height: '100%' }}
           >
             {activities.map((activity, i) => {
               const isOpen = activeIndex === i;
