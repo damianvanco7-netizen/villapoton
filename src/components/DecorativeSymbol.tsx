@@ -16,7 +16,7 @@ const DecorativeSymbol = ({
       src={decorativeSymbol}
       alt=""
       aria-hidden="true"
-      className={`${size} h-auto opacity-[0.06]`}
+      className={`${size} h-auto opacity-[0.03]`}
       style={{ transform: `rotate(${rotation}deg)` }}
     />
   </div>
