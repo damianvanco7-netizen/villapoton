@@ -80,13 +80,32 @@
   },
   "activities": {
     "title": "Kde je každý deň navrhnutý pre vás",
-    "subtitle": "Objavte široký výber aktivít a zážitkov",
-    "accommodation": "Ubytovanie",
-    "golf": "Golf",
-    "wellness": "Wellness",
-    "horses": "Jazda na koni",
-    "themed": "Tématické podujatia",
-    "mice": "MICE & Konferencie"
+    "items": {
+      "zitny_ostrov": {
+        "title": "Žitný ostrov",
+        "description": "Objavte krásy Žitného ostrova pri Dunaji len na skok od vily a užite si pokojné prechádzky či výlety po okolitej prírode."
+      },
+      "golf": {
+        "title": "Golf",
+        "description": "Vychutnajte si pokojný deň na kvalitných golfových ihriskách v okolí Veľkej Paky či Báču, ideálnych pre začiatočníkov aj skúsených hráčov, vzdialených len približne 10–15 minút od vily."
+      },
+      "malkia": {
+        "title": "Malkia Park",
+        "description": "Zažite jedinečné stretnutie s veľkými mačkami v záchrannom parku v Orechovej Potôni, ktorý sa nachádza len 5 minút jazdy od Villa Potôň."
+      },
+      "slovakia_ring": {
+        "title": "Slovakia Ring",
+        "description": "Len približne 5 minút od vily vás čaká adrenalín na okruhu Slovakia Ring v Orechovej Potôni – jazdy, motokáry aj nezabudnuteľné zážitky."
+      },
+      "thermalpark": {
+        "title": "Thermalpark",
+        "description": "Oddýchnite si v termálnych bazénoch a doprajte si wellness v Thermalparku v Dunajskej Strede, ktorý je vzdialený približne 10–15 minút jazdy."
+      },
+      "xbionic": {
+        "title": "X-Bionic Sphere",
+        "description": "Objavte svet športu a oddychu v modernom komplexe X-Bionic Sphere v Šamoríne, ktorý je dostupný približne za 20–25 minút jazdy od vily. Nájdete tu jazdecký areál, profesionálne športoviská, fitness centrum, plaváreň, wellness aj možnosti na aktívny oddych pre deti aj dospelých."
+      }
+    }
   },
   "events": {
     "title": "Spojte si hostinu, svadbu alebo oslavu",
