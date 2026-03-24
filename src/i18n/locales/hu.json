@@ -50,23 +50,25 @@
     }
   },
   "services": {
-    "title": "Személyre szabott szolgáltatások",
-    "subtitle": "Az Ön igényeihez igazodunk",
-    "concierge": {
-      "title": "Concierge szolgáltatások",
-      "description": "Személyes megközelítés minden vendéghez egyéni tartózkodás tervezéssel."
-    },
-    "dining": {
-      "title": "Privát étkezés",
-      "description": "Exkluzív gasztronómiai élmények az apartman magányában."
-    },
-    "transfer": {
-      "title": "Transzfer szolgáltatások",
-      "description": "Kényelmes transzfer a repülőtérről vagy vasútállomásokról közvetlenül hozzánk."
-    },
-    "experiences": {
-      "title": "Élménycsomagok",
-      "description": "Speciálisan összeállított programok pároknak, családoknak és céges csapatoknak."
+    "titleLine1": "Személyre szabott",
+    "titleLine2": "Szolgáltatások",
+    "items": {
+      "breakfast": {
+        "title": "Reggeli",
+        "description": "Modern panzió étteremmel, Felső Potonyban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk minőségi szolgáltatásokat nyújtani, hogy elégedetten és boldogan távozzanak."
+      },
+      "terrace": {
+        "title": "Terasz",
+        "description": "Modern panzió étteremmel, Felső Potonyban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk minőségi szolgáltatásokat nyújtani, hogy elégedetten és boldogan távozzanak."
+      },
+      "parking": {
+        "title": "Privát parkoló",
+        "description": "Modern panzió étteremmel, Felső Potonyban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk minőségi szolgáltatásokat nyújtani, hogy elégedetten és boldogan távozzanak."
+      },
+      "accessibility": {
+        "title": "Szobák mozgássérülteknek",
+        "description": "Modern panzió étteremmel, Felső Potonyban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk minőségi szolgáltatásokat nyújtani, hogy elégedetten és boldogan távozzanak."
+      }
     }
   },
   "quote": {
