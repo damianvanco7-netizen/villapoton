@@ -59,7 +59,7 @@ const Services = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="font-body text-foreground text-sm leading-relaxed max-w-md">
+                <p className="font-body text-primary-foreground/80 text-sm leading-relaxed max-w-md">
                   {t(`services.items.${key}.description`)}
                 </p>
 

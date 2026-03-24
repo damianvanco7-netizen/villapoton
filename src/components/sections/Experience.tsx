@@ -123,12 +123,16 @@ const ExperienceCard = ({ cardKey, index, isVisible }: { cardKey: string; index:
           </a>
 
           {/* Amenities grid */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-3 pt-4">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-4">
             {cardAmenities[cardKey].map((amenity) => {
               const Icon = amenity.icon;
               return (
-                <div key={amenity.key} className="flex items-center gap-2.5">
-                  <Icon className="text-accent shrink-0" size={20} strokeWidth={1.5} />
+                <div key={amenity.key} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0"
+                    style={{ background: 'linear-gradient(135deg, hsl(37 38% 61% / 0.15), hsl(37 38% 61% / 0.05))' }}
+                  >
+                    <Icon className="text-accent shrink-0" size={20} strokeWidth={1.5} />
+                  </div>
                   <span className="font-body text-foreground text-sm">
                     {t(`experience.amenities.${amenity.key}`)}
                   </span>

@@ -175,7 +175,7 @@ const Reviews = () => {
               {visibleReviews.map((review, i) => (
                 <div
                   key={`${review.name}-${i}`}
-                  className={`p-8 md:p-10 ${
+                  className={`p-8 md:p-10 min-h-[280px] flex flex-col ${
                     i < 2 ? 'border-r border-border' : ''
                   }`}
                 >
