@@ -22,8 +22,10 @@ const Hero = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <p className="font-body text-xs md:text-sm tracking-[0.3em] uppercase text-white/80 mb-6">
-          Ideálne miesto na oddych a zážitky
+        <p className="font-body text-base md:text-lg lg:text-xl tracking-[0.25em] uppercase text-white/80 mb-6 leading-relaxed">
+          Ideálne miesto
+          <br />
+          na oddych a zážitky
         </p>
         <h1 className="font-heading text-7xl md:text-9xl lg:text-[11rem] leading-[0.85] tracking-tight text-white">
           VILLA POTÔŇ

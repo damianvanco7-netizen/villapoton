@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["SpitzkantHead", "serif"],
+        heading: ["'Instrument Serif'", "serif"],
         body: ["Manrope", "sans-serif"],
       },
       colors: {

@@ -21,7 +21,7 @@ const Welcome = () => {
         </div>
 
         {/* Description */}
-        <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
+        <p className="font-body text-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
           We are a modern pension with restaurant, located in Horná Potôň,
           35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide
           quality services so you will leave satisfied and happy.
@@ -32,7 +32,7 @@ const Welcome = () => {
         <div className="flex justify-center mt-8">
           <a
             href="#experience"
-            className="inline-block border-2 border-foreground text-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-foreground hover:text-background transition-colors"
+            className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors"
           >
             Zistiť viac
           </a>
