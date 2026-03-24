@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 
@@ -8,9 +8,13 @@ const languages = [
   { code: 'en', label: 'EN' },
 ];
 
+// Section IDs that have dark/image backgrounds where header text should be light
+const darkSections = ['hero', 'quote-image'];
+
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true); // Start dark (hero)
 
   const navLinks = [
     { key: 'about', href: '#experience' },
@@ -21,12 +25,36 @@ const Header = () => {
     { key: 'contact', href: '#footer' },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const headerY = 60; // approximate middle of header
+      const elements = document.elementsFromPoint(window.innerWidth / 2, headerY);
+      
+      const isOverDark = elements.some((el) => {
+        const section = el.closest('[data-header-theme]');
+        return section?.getAttribute('data-header-theme') === 'dark';
+      });
+      
+      setIsDark(isOverDark);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleLangChange = (code: string) => {
     i18n.changeLanguage(code);
   };
 
+  const textColor = isDark ? 'text-white' : 'text-foreground';
+  const textMuted = isDark ? 'text-white/60' : 'text-foreground/50';
+  const textHover = isDark ? 'hover:text-white' : 'hover:text-foreground';
+  const textActive = isDark ? 'text-white/80' : 'text-foreground/70';
+  const dividerColor = isDark ? 'text-white/40' : 'text-foreground/30';
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Spacer for layout balance */}
         <div className="w-12" />
@@ -37,7 +65,7 @@ const Header = () => {
             <a
               key={link.key}
               href={link.href}
-              className="text-sm font-body font-medium text-white/80 hover:text-white transition-colors tracking-wide uppercase"
+              className={`text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase`}
             >
               {t(`nav.${link.key}`)}
             </a>
@@ -53,19 +81,23 @@ const Header = () => {
                   onClick={() => handleLangChange(lang.code)}
                   className={`px-1 transition-colors ${
                     i18n.language === lang.code
-                      ? 'text-white font-semibold'
-                      : 'text-white/60 hover:text-white'
+                      ? `${textColor} font-semibold`
+                      : `${textMuted} ${textHover}`
                   }`}
                 >
                   {lang.label}
                 </button>
-                {i < languages.length - 1 && <span className="text-white/40">|</span>}
+                {i < languages.length - 1 && <span className={dividerColor}>|</span>}
               </span>
             ))}
           </div>
           <a
             href="#reservation"
-            className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase hover:bg-white/30 transition-colors"
+            className={`backdrop-blur-sm border px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase transition-colors ${
+              isDark
+                ? 'bg-white/20 text-white border-white/30 hover:bg-white/30'
+                : 'bg-foreground/10 text-foreground border-foreground/20 hover:bg-foreground/20'
+            }`}
           >
             {t('nav.book')}
           </a>
@@ -74,7 +106,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white"
+          className={`lg:hidden ${textColor}`}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}

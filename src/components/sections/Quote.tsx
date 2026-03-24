@@ -33,7 +33,7 @@ const Quote = () => {
       </div>
 
       {/* Full-width image */}
-      <div className="w-full h-[70vh] md:h-[85vh] overflow-hidden">
+      <div className="w-full h-[70vh] md:h-[85vh] overflow-hidden" data-header-theme="dark">
         <img
           src={heroImg}
           alt="Villa Potoň"
