@@ -21,7 +21,7 @@ const Welcome = () => {
         </div>
 
         {/* Description */}
-        <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
+        <p className="font-body text-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
           We are a modern pension with restaurant, located in Horná Potôň,
           35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide
           quality services so you will leave satisfied and happy.

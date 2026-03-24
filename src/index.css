@@ -87,8 +87,8 @@
 
 @layer utilities {
   .font-heading {
-    font-family: 'SpitzkantHead', serif;
-    font-weight: 300;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
   }
 
   .font-body {
