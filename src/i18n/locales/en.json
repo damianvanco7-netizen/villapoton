@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "about": "About",
+    "rooms": "Accommodation",
+    "restaurant": "Restaurant",
+    "wellness": "Wellness",
+    "events": "Events",
+    "contact": "Contact",
+    "book": "Book Now"
+  },
+  "hero": {
+    "subtitle": "Guesthouse — Restaurant",
+    "description": "Discover an oasis of peace and luxury in the heart of Žitný ostrov. Villa Potoň combines elegance with nature for an unforgettable experience.",
+    "cta": "Discover More"
+  },
+  "experience": {
+    "title": "Experience the Feeling of Luxury",
+    "subtitle": "Every detail is designed to make you feel exceptional",
+    "apartments": {
+      "title": "Apartments",
+      "description": "Elegant and spacious apartments with garden views, equipped for maximum comfort."
+    },
+    "restaurant": {
+      "title": "Restaurant & Bar",
+      "description": "Gourmet experiences with local ingredients and a carefully curated wine list."
+    },
+    "spa": {
+      "title": "Wellness & Spa",
+      "description": "Relax in our wellness center with sauna, hot tub, and massage treatments."
+    }
+  },
+  "services": {
+    "title": "Personalized Services",
+    "subtitle": "We adapt to your needs",
+    "concierge": {
+      "title": "Concierge Services",
+      "description": "Personal approach to every guest with individual stay planning."
+    },
+    "dining": {
+      "title": "Private Dining",
+      "description": "Exclusive gastronomic experiences in the privacy of your apartment."
+    },
+    "transfer": {
+      "title": "Transfer Services",
+      "description": "Comfortable transfers from airports or train stations directly to us."
+    },
+    "experiences": {
+      "title": "Experience Packages",
+      "description": "Specially crafted programs for couples, families, and corporate teams."
+    }
+  },
+  "quote": {
+    "text": "\"A place where time slows down and every moment becomes a memory.\"",
+    "author": "— Villa Potoň"
+  },
+  "activities": {
+    "title": "Where Every Day is Designed for You",
+    "subtitle": "Discover a wide range of activities and experiences",
+    "accommodation": "Accommodation",
+    "golf": "Golf",
+    "wellness": "Wellness",
+    "horses": "Horse Riding",
+    "themed": "Themed Events",
+    "mice": "MICE & Conferences"
+  },
+  "events": {
+    "title": "Host Your Banquet, Wedding or Celebration",
+    "description": "Villa Potoň is the ideal venue for your wedding, corporate event, or family celebration. We offer complete service from planning to execution.",
+    "cta": "Plan Your Event"
+  },
+  "reservation": {
+    "title": "Book Your Stay",
+    "description": "Treat yourself to an unforgettable stay at Villa Potoň. Contact us for a personalized offer.",
+    "cta": "Book Now",
+    "phone": "Call Us"
+  },
+  "footer": {
+    "address": "Villa Potoň, Potoň, Žitný ostrov, Slovakia",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  }
+}
