@@ -39,10 +39,10 @@ const Activities = () => {
         </div>
 
         {/* Two-column layout: image left, accordions right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left: Image — 20% smaller */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Image */}
           <div
-            className={`transition-all duration-700 flex items-start justify-center ${
+            className={`transition-all duration-700 flex items-center justify-center ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
