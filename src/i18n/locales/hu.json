@@ -80,13 +80,32 @@
   },
   "activities": {
     "title": "Ahol minden nap Önnek van tervezve",
-    "subtitle": "Fedezze fel tevékenységeink és élményeink széles választékát",
-    "accommodation": "Szállás",
-    "golf": "Golf",
-    "wellness": "Wellness",
-    "horses": "Lovaglás",
-    "themed": "Tematikus rendezvények",
-    "mice": "MICE & Konferenciák"
+    "items": {
+      "zitny_ostrov": {
+        "title": "Csallóköz",
+        "description": "Fedezze fel a Csallóköz szépségeit a Duna mellett, csak egy ugrásra a villától, és élvezze a nyugodt sétákat vagy kirándulásokat a környező természetben."
+      },
+      "golf": {
+        "title": "Golf",
+        "description": "Élvezzen egy nyugodt napot a Nagypaka vagy Báč környéki minőségi golfpályákon, amelyek kezdők és tapasztalt játékosok számára egyaránt ideálisak, mindössze 10–15 percre a villától."
+      },
+      "malkia": {
+        "title": "Malkia Park",
+        "description": "Éljen át egy egyedülálló találkozást a nagymacskákkal az Orechová Potôň-i mentőparkban, amely mindössze 5 perc autóútra van a Villa Potôňtől."
+      },
+      "slovakia_ring": {
+        "title": "Slovakia Ring",
+        "description": "Mindössze kb. 5 percre a villától adrenalin vár az Orechová Potôň-i Slovakia Ring pályán – versenyzés, gokartok és felejthetetlen élmények."
+      },
+      "thermalpark": {
+        "title": "Thermalpark",
+        "description": "Pihenjen a termálfürdőkben és kényeztesse magát wellness szolgáltatásokkal a Dunaszerdahelyi Thermalpark-ban, amely kb. 10–15 perc autóútra van."
+      },
+      "xbionic": {
+        "title": "X-Bionic Sphere",
+        "description": "Fedezze fel a sport és pihenés világát a modern X-Bionic Sphere komplexumban Somorján, amely kb. 20–25 perc autóútra van a villától. Lovas areát, profi sportlétesítményeket, fitneszt, uszodát, wellnesst és aktív pihenési lehetőségeket talál gyerekeknek és felnőtteknek egyaránt."
+      }
+    }
   },
   "events": {
     "title": "Rendezze nálunk lakomáját, esküvőjét vagy ünnepségét",
