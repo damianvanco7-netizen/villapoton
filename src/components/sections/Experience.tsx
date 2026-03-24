@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { useRef, useEffect, useState } from 'react';
 import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';

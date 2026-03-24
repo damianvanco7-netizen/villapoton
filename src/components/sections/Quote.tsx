@@ -34,7 +34,8 @@ const Quote = () => {
   }, [emblaApi]);
 
   return (
-    <section ref={ref}>
+    <section ref={ref} className="relative overflow-hidden">
+      <DecorativeSymbol rotation={-30} position="-bottom-20 -left-40" size="w-[500px] md:w-[700px] lg:w-[900px]" />
       {/* Text block */}
       <div className="py-24 md:py-32 px-8 md:px-16 lg:px-24">
         <div
