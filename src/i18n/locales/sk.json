@@ -109,6 +109,11 @@
       }
     }
   },
+  "reviews": {
+    "title_line1": "Spokojní hostia,",
+    "title_line2": "naša najlepšia vizitka",
+    "rating_label": "Vynikajúce"
+  },
   "events": {
     "title": "Spojte si hostinu, svadbu alebo oslavu",
     "description": "Villa Potoň je ideálnym miestom pre vašu svadbu, firemnú akciu alebo rodinnú oslavu. Ponúkame kompletný servis od plánovania po realizáciu.",

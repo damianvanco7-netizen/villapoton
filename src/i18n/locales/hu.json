@@ -109,6 +109,11 @@
       }
     }
   },
+  "reviews": {
+    "title_line1": "Elégedett vendégek,",
+    "title_line2": "a legjobb névjegyünk",
+    "rating_label": "Kiváló"
+  },
   "events": {
     "title": "Rendezze nálunk lakomáját, esküvőjét vagy ünnepségét",
     "description": "A Villa Potoň ideális helyszín esküvőjéhez, céges rendezvényéhez vagy családi ünnepségéhez. Teljes körű szolgáltatást kínálunk a tervezéstől a megvalósításig.",

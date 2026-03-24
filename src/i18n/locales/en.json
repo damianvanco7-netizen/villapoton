@@ -109,6 +109,11 @@
       }
     }
   },
+  "reviews": {
+    "title_line1": "Happy Guests,",
+    "title_line2": "Our Best Business Card",
+    "rating_label": "Excellent"
+  },
   "events": {
     "title": "Host Your Banquet, Wedding or Celebration",
     "description": "Villa Potoň is the ideal venue for your wedding, corporate event, or family celebration. We offer complete service from planning to execution.",
