@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import logoSvg from '@/assets/logo_villa_poton.svg';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ const Footer = () => {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 gap-8">
-          <img src={logo} alt="Villa Potoň" className="h-14 w-auto brightness-0 invert" />
+          <img src={logoSvg} alt="Villa Potoň" className="h-14 w-auto brightness-0 invert" />
           <a
             href="#reservation"
             className="inline-block border border-primary-foreground text-primary-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary-foreground hover:text-primary transition-colors"

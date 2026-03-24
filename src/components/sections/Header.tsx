@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
+import logoSvg from '@/assets/logo_villa_poton.svg';
 
 const languages = [
   { code: 'sk', label: 'SK' },
@@ -56,8 +57,14 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Spacer for layout balance */}
-        <div className="w-12" />
+        {/* Logo */}
+        <a href="#" className="shrink-0">
+          <img
+            src={logoSvg}
+            alt="Villa Potoň"
+            className={`h-10 w-auto transition-all duration-300 ${isDark ? 'brightness-0 invert' : ''}`}
+          />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
