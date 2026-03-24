@@ -125,9 +125,23 @@
     "cta": "Book a Room"
   },
   "footer": {
-    "address": "Villa Potoň, Potoň, Žitný ostrov, Slovakia",
+    "contact_title": "Contact",
+    "hours_title": "Opening Hours",
+    "restaurant_hours": "Restaurant",
+    "nav_title": "Navigation",
+    "location_title": "Location",
+    "social_title": "Social Media",
+    "cta": "Book Your Stay",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms & Conditions"
+    "cookies": "Cookies",
+    "terms": "Terms & Conditions",
+    "nav": {
+      "accommodation": "Accommodation",
+      "restaurant": "Restaurant",
+      "gallery": "Gallery",
+      "activities": "Activities",
+      "contact": "Contact"
+    }
   }
 }

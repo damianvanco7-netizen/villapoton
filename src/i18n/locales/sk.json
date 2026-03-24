@@ -125,9 +125,23 @@
     "cta": "Rezervovať izbu"
   },
   "footer": {
-    "address": "Villa Potoň, Potoň, Žitný ostrov, Slovensko",
+    "contact_title": "Kontakt",
+    "hours_title": "Otváracie hodiny",
+    "restaurant_hours": "Reštaurácia",
+    "nav_title": "Navigácia",
+    "location_title": "Poloha",
+    "social_title": "Sociálne siete",
+    "cta": "Rezervovať pobyt",
     "rights": "Všetky práva vyhradené.",
     "privacy": "Ochrana súkromia",
-    "terms": "Obchodné podmienky"
+    "cookies": "Cookies",
+    "terms": "Obchodné podmienky",
+    "nav": {
+      "accommodation": "Ubytovanie",
+      "restaurant": "Reštaurácia",
+      "gallery": "Galéria",
+      "activities": "Aktivity",
+      "contact": "Kontakt"
+    }
   }
 }
