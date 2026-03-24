@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronDown } from 'lucide-react';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 import zitnyOstrovImg from '@/assets/zitny_ostrov.jpg';
 import golfImg from '@/assets/golf.jpg';
