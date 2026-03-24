@@ -44,7 +44,7 @@ const Services = () => {
               style={{ transitionDelay: `${(i + 1) * 150}ms` }}
             >
               {/* Divider line */}
-              <div className="border-t border-foreground/20" />
+              <div className="border-t border-primary-foreground/20" />
 
               {/* Row content */}
               <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_1.2fr_1fr] gap-6 md:gap-8 items-start py-10 md:py-14">
