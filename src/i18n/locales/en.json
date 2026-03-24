@@ -22,14 +22,14 @@
       "cta": "BOOK A ROOM"
     },
     "restaurant": {
-      "title": "Restaurant & Bar",
-      "description": "Gourmet experiences with local ingredients and a carefully curated wine list.",
-      "cta": "VIEW MENU"
+      "title": "Restaurant Étterem",
+      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "cta": "BOOK A ROOM"
     },
-    "spa": {
-      "title": "Wellness & Spa",
-      "description": "Relax in our wellness center with sauna, hot tub, and massage treatments.",
-      "cta": "LEARN MORE"
+    "bar": {
+      "title": "Bar",
+      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "cta": "BOOK A ROOM"
     },
     "amenities": {
       "bathroom": "Private bathroom",
@@ -37,7 +37,16 @@
       "wifi": "Free Wi-Fi",
       "nonsmoking": "Non-smoking rooms",
       "tv": "TV",
-      "parking": "Free parking"
+      "parking": "Free parking",
+      "alacarte": "A la carte menu",
+      "fresh": "Fresh cuisine",
+      "quiet": "Quiet dining",
+      "breakfast": "Breakfast",
+      "special": "Special dietary meals on request",
+      "drinks": "Wide selection of drinks and wines",
+      "cocktails": "Classic cocktails",
+      "mixed": "Mixed drinks",
+      "coffee": "Specialty coffee"
     }
   },
   "services": {

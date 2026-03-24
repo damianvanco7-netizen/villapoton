@@ -22,14 +22,14 @@
       "cta": "SZOBA FOGLALÁSA"
     },
     "restaurant": {
-      "title": "Étterem & Bár",
-      "description": "Gasztronómiai élmények helyi alapanyagokkal és gondosan válogatott borlappal.",
-      "cta": "MENÜ MEGTEKINTÉSE"
+      "title": "Reštaurácia Étterem",
+      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "cta": "SZOBA FOGLALÁSA"
     },
-    "spa": {
-      "title": "Wellness & Spa",
-      "description": "Relaxáljon wellness központunkban szaunával, pezsgőfürdővel és masszázskezelésekkel.",
-      "cta": "TOVÁBBI INFORMÁCIÓ"
+    "bar": {
+      "title": "Bár",
+      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "cta": "SZOBA FOGLALÁSA"
     },
     "amenities": {
       "bathroom": "Privát fürdőszoba",
@@ -37,7 +37,16 @@
       "wifi": "Ingyenes Wi-Fi",
       "nonsmoking": "Nemdohányzó szobák",
       "tv": "TV",
-      "parking": "Ingyenes parkolás"
+      "parking": "Ingyenes parkolás",
+      "alacarte": "A la carte menü",
+      "fresh": "Friss konyha",
+      "quiet": "Nyugodt étkezés",
+      "breakfast": "Reggeli",
+      "special": "Speciális ételek kérésre",
+      "drinks": "Italok és borok széles választéka",
+      "cocktails": "Klasszikus koktélok",
+      "mixed": "Kevert italok",
+      "coffee": "Különleges kávé"
     }
   },
   "services": {
