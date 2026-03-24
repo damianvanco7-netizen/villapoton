@@ -114,16 +114,11 @@
     "title_line2": "naša najlepšia vizitka",
     "rating_label": "Vynikajúce"
   },
-  "events": {
-    "title": "Spojte si hostinu, svadbu alebo oslavu",
-    "description": "Villa Potoň je ideálnym miestom pre vašu svadbu, firemnú akciu alebo rodinnú oslavu. Ponúkame kompletný servis od plánovania po realizáciu.",
-    "cta": "Naplánovať podujatie"
-  },
-  "reservation": {
-    "title": "Rezervujte si pobyt",
-    "description": "Doprajte si nezabudnuteľný pobyt v Villa Potoň. Kontaktujte nás pre individuálnu ponuku.",
-    "cta": "Rezervovať teraz",
-    "phone": "Zavolajte nám"
+  "booking_cta": {
+    "title": "Rezervuj si",
+    "titleItalic": "pobyt",
+    "description": "Rezervácia vo Villa Potôň je viac než len výber dátumu – je to začiatok vášho oddychu podľa vlastných predstáv. Či už hľadáte jednoduchý pobyt alebo si chcete dopriať kompletný zážitok s výbornou kuchyňou, všetko prispôsobíme vášmu pohodliu.",
+    "cta": "Rezervovať izbu"
   },
   "footer": {
     "address": "Villa Potoň, Potoň, Žitný ostrov, Slovensko",

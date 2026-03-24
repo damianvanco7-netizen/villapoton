@@ -114,16 +114,11 @@
     "title_line2": "Our Best Business Card",
     "rating_label": "Excellent"
   },
-  "events": {
-    "title": "Host Your Banquet, Wedding or Celebration",
-    "description": "Villa Potoň is the ideal venue for your wedding, corporate event, or family celebration. We offer complete service from planning to execution.",
-    "cta": "Plan Your Event"
-  },
-  "reservation": {
-    "title": "Book Your Stay",
-    "description": "Treat yourself to an unforgettable stay at Villa Potoň. Contact us for a personalized offer.",
-    "cta": "Book Now",
-    "phone": "Call Us"
+  "booking_cta": {
+    "title": "Book your",
+    "titleItalic": "stay",
+    "description": "A reservation at Villa Potôň is more than just picking a date – it's the beginning of your relaxation on your own terms. Whether you're looking for a simple stay or want to treat yourself to a complete experience with excellent cuisine, we'll tailor everything to your comfort.",
+    "cta": "Book a Room"
   },
   "footer": {
     "address": "Villa Potoň, Potoň, Žitný ostrov, Slovakia",
