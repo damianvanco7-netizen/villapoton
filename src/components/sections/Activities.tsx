@@ -33,7 +33,7 @@ const Activities = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center">
             {t('activities.title')}
           </h2>
         </div>
