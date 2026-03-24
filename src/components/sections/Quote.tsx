@@ -19,6 +19,8 @@ const Quote = () => {
     loop: true,
     align: 'center',
     containScroll: false,
+    skipSnaps: false,
+    duration: 30,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
