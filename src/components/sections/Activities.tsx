@@ -22,7 +22,7 @@ const activities = [
 const Activities = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32" ref={ref}>
