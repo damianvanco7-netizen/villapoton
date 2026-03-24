@@ -75,7 +75,7 @@ const Services = () => {
             </div>
           ))}
           {/* Bottom divider */}
-          <div className="border-t border-foreground/20" />
+          <div className="border-t border-primary-foreground/20" />
         </div>
       </div>
     </section>
