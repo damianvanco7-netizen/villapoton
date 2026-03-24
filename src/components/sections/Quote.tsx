@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -20,24 +20,13 @@ const Quote = () => {
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  // Track selected index
-  const onSelect = useCallback(() => {
+  useEffect(() => {
     if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  // Subscribe to select event
-  useCallback(() => {
-    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on('select', onSelect);
     onSelect();
     return () => { emblaApi.off('select', onSelect); };
-  }, [emblaApi, onSelect]);
-
-  // Use effect for subscription
-  if (emblaApi) {
-    emblaApi.on('select', () => setSelectedIndex(emblaApi.selectedScrollSnap()));
-  }
+  }, [emblaApi]);
 
   return (
     <section ref={ref}>
