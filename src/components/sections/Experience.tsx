@@ -70,13 +70,13 @@ const Experience = () => {
       {cards.map((key, i) => (
         <div
           key={key}
-          className={`grid md:grid-cols-[1fr_1.6fr] min-h-screen transition-all duration-700 ${
+          className={`grid md:grid-cols-[1fr_2fr] mb-24 md:mb-32 last:mb-0 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{ transitionDelay: `${(i + 1) * 200}ms` }}
         >
           {/* Left: Text content */}
-          <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16">
+          <div className="flex flex-col justify-start px-8 md:px-16 lg:px-24 pt-16 md:pt-24 pb-16">
             <div className="space-y-6 max-w-sm">
               <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl">
                 {t(`experience.${key}.title`)}
@@ -108,8 +108,8 @@ const Experience = () => {
             </div>
           </div>
 
-          {/* Right: Image — full height */}
-          <div className="overflow-hidden min-h-[500px] md:min-h-screen">
+          {/* Right: Image — tall, offset from top */}
+          <div className="overflow-hidden h-[70vh] md:h-[85vh] mt-8 md:mt-16">
             <img
               src={cardImages[key]}
               alt={t(`experience.${key}.title`)}
