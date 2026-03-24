@@ -66,7 +66,7 @@
         "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
       },
       "accessibility": {
-        "title": "Izby pre ľudí s telesným postihnutím",
+        "title": "Izby pre ľudí s\u00A0telesným postihnutím",
         "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní."
       }
     }
@@ -76,7 +76,10 @@
     "headingItalic": "detailu",
     "headingEnd": " vášho pobytu.",
     "subtitle": "Či už si chcete len oddýchnuť v príjemnom prostredí alebo vychutnať skvelé jedlo, u nás si prídete na svoje.",
-    "cta": "Rezervovať izbu"
+    "cta": "Rezervovať izbu",
+    "imageTitle_line1": "Viac ako",
+    "imageTitle_line2": "pobyt",
+    "imageSubtitle": "Vo Villa Potôň je každý detail navrhnutý tak, aby ste sa cítili ako doma, s pokojom prírody hneď za vašimi dverami."
   },
   "activities": {
     "title": "Kde je každý deň navrhnutý pre vás",

@@ -152,6 +152,10 @@ const Header = () => {
           </nav>
         </div>
       )}
+      {/* Horizontal divider */}
+      <div className="px-8 md:px-16 lg:px-24">
+        <div className={`border-b transition-colors duration-300 ${isDark ? 'border-white/20' : 'border-foreground/15'}`} />
+      </div>
     </header>
   );
 };

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import heroImg from '@/assets/hero.jpg';
+import quoteBgImg from '@/assets/quote_bg.jpg';
 
 const Quote = () => {
   const { t } = useTranslation();
@@ -32,13 +32,24 @@ const Quote = () => {
         </div>
       </div>
 
-      {/* Full-width image */}
-      <div className="w-full h-[70vh] md:h-[85vh] overflow-hidden" data-header-theme="dark">
+      {/* Full-width image with text overlay */}
+      <div className="w-full h-[70vh] md:h-[85vh] overflow-hidden relative" data-header-theme="dark">
         <img
-          src={heroImg}
+          src={quoteBgImg}
           alt="Villa Potoň"
           className="w-full h-full object-cover"
         />
+        {/* Green gradient from bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
+        {/* Text overlay */}
+        <div className="absolute inset-0 flex flex-col items-start justify-end px-8 md:px-16 lg:px-24 pb-16 md:pb-24">
+          <h3 className="font-heading text-4xl md:text-6xl lg:text-8xl text-primary-foreground italic leading-tight mb-6">
+            {t('quote.imageTitle_line1')}<br />{t('quote.imageTitle_line2')}
+          </h3>
+          <p className="font-body text-primary-foreground/80 text-sm md:text-base leading-relaxed max-w-lg">
+            {t('quote.imageSubtitle')}
+          </p>
+        </div>
       </div>
     </section>
   );
