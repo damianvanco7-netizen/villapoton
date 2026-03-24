@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useRef, useEffect, useState } from 'react';
 import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
@@ -46,6 +47,26 @@ const cardAmenities: Record<string, AmenityConfig[]> = {
   bar: barAmenities,
 };
 
+const useParallax = (speed = 0.15) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      const progress = (windowH - rect.top) / (windowH + rect.height);
+      setOffset((progress - 0.5) * rect.height * speed);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [speed]);
+
+  return { ref, offset };
+};
+
 const Experience = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
@@ -68,57 +89,68 @@ const Experience = () => {
 
       {/* Cards — full-width, Bellevoire-style */}
       {cards.map((key, i) => (
-        <div
-          key={key}
-          className={`grid md:grid-cols-[1fr_2fr] mb-24 md:mb-32 last:mb-0 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{ transitionDelay: `${(i + 1) * 200}ms` }}
-        >
-          {/* Left: Text content */}
-          <div className="flex flex-col justify-start px-8 md:px-16 lg:px-24 pt-16 md:pt-24 pb-16">
-            <div className="space-y-6 max-w-sm">
-              <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl">
-                {t(`experience.${key}.title`)}
-              </h3>
-              <p className="font-body text-foreground text-sm leading-relaxed">
-                {t(`experience.${key}.description`)}
-              </p>
-              <a
-                href="#reservation"
-                className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-              >
-                {t(`experience.${key}.cta`)}
-              </a>
-
-              {/* Amenities grid */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 pt-4">
-                {cardAmenities[key].map((amenity) => {
-                  const Icon = amenity.icon;
-                  return (
-                    <div key={amenity.key} className="flex items-center gap-2">
-                      <Icon className="text-accent" size={14} strokeWidth={1.5} />
-                      <span className="font-body text-foreground text-sm">
-                        {t(`experience.amenities.${amenity.key}`)}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Image — tall, offset from top */}
-          <div className="overflow-hidden h-[70vh] md:h-[85vh] mt-8 md:mt-16">
-            <img
-              src={cardImages[key]}
-              alt={t(`experience.${key}.title`)}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        <ExperienceCard key={key} cardKey={key} index={i} isVisible={isVisible} />
       ))}
     </section>
+  );
+};
+
+const ExperienceCard = ({ cardKey, index, isVisible }: { cardKey: string; index: number; isVisible: boolean }) => {
+  const { t } = useTranslation();
+  const { ref: parallaxRef, offset } = useParallax(0.15);
+
+  return (
+    <div
+      className={`grid md:grid-cols-[1fr_2fr] mb-24 md:mb-32 last:mb-0 transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+      style={{ transitionDelay: `${(index + 1) * 200}ms` }}
+    >
+      {/* Left: Text content */}
+      <div className="flex flex-col justify-start px-8 md:px-16 lg:px-24 pt-16 md:pt-24 pb-16">
+        <div className="space-y-6 max-w-sm">
+          <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl">
+            {t(`experience.${cardKey}.title`)}
+          </h3>
+          <p className="font-body text-foreground text-sm leading-relaxed">
+            {t(`experience.${cardKey}.description`)}
+          </p>
+          <a
+            href="#reservation"
+            className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+          >
+            {t(`experience.${cardKey}.cta`)}
+          </a>
+
+          {/* Amenities grid */}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-3 pt-4">
+            {cardAmenities[cardKey].map((amenity) => {
+              const Icon = amenity.icon;
+              return (
+                <div key={amenity.key} className="flex items-center gap-2.5">
+                  <Icon className="text-accent shrink-0" size={20} strokeWidth={1.5} />
+                  <span className="font-body text-foreground text-sm">
+                    {t(`experience.amenities.${amenity.key}`)}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Right: Image — tall, with inner padding and parallax */}
+      <div className="px-6 md:px-12 lg:px-16 mt-8 md:mt-16">
+        <div ref={parallaxRef} className="overflow-hidden h-[70vh] md:h-[85vh]">
+          <img
+            src={cardImages[cardKey]}
+            alt={t(`experience.${cardKey}.title`)}
+            className="w-full h-[120%] object-cover will-change-transform"
+            style={{ transform: `translateY(${offset}px)` }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 
