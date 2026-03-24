@@ -14,19 +14,30 @@
     "cta": "Discover More"
   },
   "experience": {
-    "title": "Experience the Feeling of Luxury",
-    "subtitle": "Every detail is designed to make you feel exceptional",
-    "apartments": {
-      "title": "Apartments",
-      "description": "Elegant and spacious apartments with garden views, equipped for maximum comfort."
+    "title": "Experience the Feeling",
+    "titleLine2": "of a Retreat",
+    "accommodation": {
+      "title": "Accommodation",
+      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "cta": "BOOK A ROOM"
     },
     "restaurant": {
       "title": "Restaurant & Bar",
-      "description": "Gourmet experiences with local ingredients and a carefully curated wine list."
+      "description": "Gourmet experiences with local ingredients and a carefully curated wine list.",
+      "cta": "VIEW MENU"
     },
     "spa": {
       "title": "Wellness & Spa",
-      "description": "Relax in our wellness center with sauna, hot tub, and massage treatments."
+      "description": "Relax in our wellness center with sauna, hot tub, and massage treatments.",
+      "cta": "LEARN MORE"
+    },
+    "amenities": {
+      "bathroom": "Private bathroom",
+      "aircon": "Air conditioning",
+      "wifi": "Free Wi-Fi",
+      "nonsmoking": "Non-smoking rooms",
+      "tv": "TV",
+      "parking": "Free parking"
     }
   },
   "services": {
