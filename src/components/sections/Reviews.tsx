@@ -9,31 +9,37 @@ const reviews = [
   {
     name: 'Viktória',
     country: 'sk',
+    flag: '🇸🇰',
     text: '„Ubytovanie bolo pekné čisté, s elektrickými roletami ktoré bolo možné zatiahnuť na úplnú tmu čiže som sa skvele vyspala. Na izbe bola klimatizácia aj napriek tomu že bola izbička malá, milo ma to prekvapilo, nečakala som to. Personál bol veľmi..."',
   },
   {
     name: 'Orru',
     country: 'it',
+    flag: '🇮🇹',
     text: 'Toto miesto sme si vybrali kvôli krátkej vzdialenosti od Šamorína na preteky a bola to skvelá voľba. Izby boli čisté, postele veľmi pohodlné. jedli sme v reštaurácii, pomer kvalita/cena by som povedal výborný, pivo bolo veľmi dobré. Raňajky sú podávané v salóniku reštaurácie, teplé aj studené, veľmi ochotný personál, pobyt odporúčam.',
   },
   {
     name: 'Radoslaw',
     country: 'pl',
+    flag: '🇵🇱',
     text: '"Páčilo sa mi všetko, obsluha, čistota, lokalita a najlepšie boli jedlá v reštaurácii, ak pôjdem do týchto oblastí, pôjdem len tam."',
   },
   {
     name: 'Henrich',
     country: 'sk',
+    flag: '🇸🇰',
     text: '„Všetko bolo úžasné. Personál maximálne ústretový, chutná kuchyňa. Všetko nové, čisté, voňavé. Máme v pláne sa vrátiť."',
   },
   {
     name: 'Krisztina',
     country: 'hu',
+    flag: '🇭🇺',
     text: '„Ubytovanie je veľmi pekné s jedinečným moderným dizajnom. Personál a majitelia sú veľmi milí a atmosféra je rodinná."',
   },
   {
     name: 'Dominika',
     country: 'pl',
+    flag: '🇵🇱',
     text: '„Veľmi chutné raňajky a káva tiež. Výhodou je poloha v blízkosti trate Slovakiaring. Veľmi pekné služby a priateľskí majitelia. Vynikajúcu kačicu s kroketami odporúčam na obed alebo večeru. Ďakujem pekne :-)"',
   },
 ];
@@ -100,7 +106,7 @@ const Reviews = () => {
 
   const variants = {
     enter: (dir: number) => ({
-      x: dir > 0 ? 60 : -60,
+      x: dir > 0 ? 40 : -40,
       opacity: 0,
     }),
     center: {
@@ -108,13 +114,13 @@ const Reviews = () => {
       opacity: 1,
     },
     exit: (dir: number) => ({
-      x: dir > 0 ? -60 : 60,
+      x: dir > 0 ? -40 : 40,
       opacity: 0,
     }),
   };
 
   return (
-    <section id="reviews" className="py-24 md:py-32 bg-muted/30" ref={ref}>
+    <section id="reviews" className="py-24 md:py-32" ref={ref}>
       <div className="px-8 md:px-16 lg:px-24">
         {/* Title */}
         <div
@@ -134,11 +140,11 @@ const Reviews = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-            <Star className="w-5 h-5 text-primary" />
-          </div>
           <div className="w-10 h-10 rounded-full overflow-hidden">
             <img src={bookingLogo} alt="Booking.com" className="w-full h-full object-cover" />
+          </div>
+          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+            <Star className="w-5 h-5 text-primary" />
           </div>
           <span className="font-body text-lg font-medium text-foreground">
             8,7 - {t('reviews.rating_label')}
@@ -161,7 +167,7 @@ const Reviews = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               className="grid md:grid-cols-3 gap-0"
             >
               {visibleReviews.map((review, i) => (
@@ -182,7 +188,7 @@ const Reviews = () => {
                         {review.name}
                       </h3>
                       <p className="font-body text-sm text-muted-foreground">
-                        {countryLabels[review.country]}
+                        {review.flag} {countryLabels[review.country]}
                       </p>
                     </div>
                   </div>

@@ -70,7 +70,7 @@ const Activities = () => {
 
           {/* Right: Accordions */}
           <div
-            className={`flex flex-col transition-all duration-700 ${
+            className={`flex flex-col justify-center transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
