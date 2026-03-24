@@ -29,7 +29,7 @@ const Welcome = () => {
 
   return (
     <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      <DecorativeSymbol rotation={25} position="top-16 -right-32" size="w-[500px] md:w-[700px]" />
+      <DecorativeSymbol rotation={25} position="top-8 right-8" size="w-[400px] md:w-[600px]" />
       {/* Staggered headline */}
       <div
         className={`container mx-auto px-6 mb-16 transition-all duration-700 ${

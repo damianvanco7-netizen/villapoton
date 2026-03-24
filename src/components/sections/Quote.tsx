@@ -19,6 +19,8 @@ const Quote = () => {
     loop: true,
     align: 'center',
     containScroll: false,
+    skipSnaps: false,
+    duration: 30,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -35,7 +37,7 @@ const Quote = () => {
 
   return (
     <section ref={ref} className="relative overflow-hidden">
-      <DecorativeSymbol rotation={-30} position="-bottom-20 -left-40" size="w-[500px] md:w-[700px] lg:w-[900px]" />
+      <DecorativeSymbol rotation={-30} position="bottom-16 left-8" size="w-[500px] md:w-[700px] lg:w-[900px]" />
       {/* Text block */}
       <div className="py-24 md:py-32 px-8 md:px-16 lg:px-24">
         <div
@@ -69,13 +71,13 @@ const Quote = () => {
               return (
                 <div
                   key={i}
-                  className="min-w-0 px-2 md:px-3 transition-all duration-500"
+                  className="min-w-0 px-2 md:px-3 flex items-center transition-all duration-500"
                   style={{
                     flex: isActive ? '0 0 50%' : '0 0 25%',
                   }}
                 >
                   <div
-                    className="overflow-hidden transition-all duration-500"
+                    className="w-full overflow-hidden transition-all duration-500"
                     style={{
                       aspectRatio: isActive ? '4/3' : '3/4',
                     }}
