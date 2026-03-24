@@ -72,8 +72,11 @@
     }
   },
   "quote": {
-    "text": "\"Miesto, kde sa čas spomalí a každý okamih sa stane spomienkou.\"",
-    "author": "— Villa Potoň"
+    "heading": "Vaše pohodlie a spokojnosť sú základom každého",
+    "headingItalic": "detailu",
+    "headingEnd": " vášho pobytu.",
+    "subtitle": "Či už si chcete len oddýchnuť v príjemnom prostredí alebo vychutnať skvelé jedlo, u nás si prídete na svoje.",
+    "cta": "Rezervovať izbu"
   },
   "activities": {
     "title": "Kde je každý deň navrhnutý pre vás",
