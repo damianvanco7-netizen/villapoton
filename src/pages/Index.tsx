@@ -6,8 +6,7 @@ import Services from '@/components/sections/Services';
 import Quote from '@/components/sections/Quote';
 import Activities from '@/components/sections/Activities';
 import Reviews from '@/components/sections/Reviews';
-import Events from '@/components/sections/Events';
-import Reservation from '@/components/sections/Reservation';
+import BookingCta from '@/components/sections/BookingCta';
 import Footer from '@/components/sections/Footer';
 
 const Index = () => {
@@ -21,8 +20,7 @@ const Index = () => {
       <Quote />
       <Activities />
       <Reviews />
-      <Events />
-      <Reservation />
+      <BookingCta />
       <Footer />
     </div>
   );

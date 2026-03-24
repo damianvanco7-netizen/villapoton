@@ -114,16 +114,11 @@
     "title_line2": "a legjobb névjegyünk",
     "rating_label": "Kiváló"
   },
-  "events": {
-    "title": "Rendezze nálunk lakomáját, esküvőjét vagy ünnepségét",
-    "description": "A Villa Potoň ideális helyszín esküvőjéhez, céges rendezvényéhez vagy családi ünnepségéhez. Teljes körű szolgáltatást kínálunk a tervezéstől a megvalósításig.",
-    "cta": "Rendezvény tervezése"
-  },
-  "reservation": {
-    "title": "Foglalja le tartózkodását",
-    "description": "Ajándékozzon meg magának egy felejthetetlen tartózkodást a Villa Potoňban. Lépjen velünk kapcsolatba egyéni ajánlatért.",
-    "cta": "Foglalás most",
-    "phone": "Hívjon minket"
+  "booking_cta": {
+    "title": "Foglalja le",
+    "titleItalic": "tartózkodását",
+    "description": "A Villa Potôňban történő foglalás több, mint egy dátum kiválasztása – ez a pihenésed kezdete a saját feltételeid szerint. Akár egyszerű szállást keresel, akár teljes élményt szeretnél kiváló konyhával, mindent a kényelmedhez igazítunk.",
+    "cta": "Szoba foglalása"
   },
   "footer": {
     "address": "Villa Potoň, Potoň, Csallóköz, Szlovákia",
