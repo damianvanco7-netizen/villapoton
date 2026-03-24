@@ -1,6 +1,7 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useRef, useEffect, useState } from 'react';
 import welcomeImg from '@/assets/welcome.jpg';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const useParallax = (speed = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
