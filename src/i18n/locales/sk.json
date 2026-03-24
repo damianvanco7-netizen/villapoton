@@ -22,14 +22,14 @@
       "cta": "REZERVOVAŤ IZBU"
     },
     "restaurant": {
-      "title": "Reštaurácia & Bar",
-      "description": "Gurmánske zážitky s lokálnymi surovinami a starostlivo vybraným vínnym lístkom.",
-      "cta": "POZRIEŤ MENU"
+      "title": "Reštaurácia Étterem",
+      "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní.",
+      "cta": "REZERVOVAŤ IZBU"
     },
-    "spa": {
-      "title": "Wellness & Spa",
-      "description": "Relaxujte v našom wellness centre s saunou, vírivkou a masážnymi procedúrami.",
-      "cta": "ZISTIŤ VIAC"
+    "bar": {
+      "title": "Bar",
+      "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní.",
+      "cta": "REZERVOVAŤ IZBU"
     },
     "amenities": {
       "bathroom": "Súkromná kúpeľňa",
@@ -37,7 +37,16 @@
       "wifi": "Bezplatné Wi-Fi",
       "nonsmoking": "Nefajčiarske izby",
       "tv": "TV",
-      "parking": "Bezplatné parkovisko"
+      "parking": "Bezplatné parkovisko",
+      "alacarte": "A la carte ponuka",
+      "fresh": "Čerstvá kuchyňa",
+      "quiet": "Pokojné stolovanie",
+      "breakfast": "Raňajky",
+      "special": "Možnosť špeciálnych jedál na požiadanie",
+      "drinks": "Široký výber nápojov a vín",
+      "cocktails": "Klasické koktaily",
+      "mixed": "Miešané drinky",
+      "coffee": "Výberová káva"
     }
   },
   "services": {
