@@ -82,9 +82,8 @@ const Activities = () => {
                   className="border-t border-border last:border-b"
                 >
                   <button
-                    onMouseEnter={() => setActiveIndex(i)}
-                    onMouseLeave={() => setActiveIndex(null)}
-                    className="w-full py-6 flex items-center justify-between text-left group"
+                    onClick={() => setActiveIndex(isOpen ? null : i)}
+                    className="w-full py-8 flex items-center justify-between text-left group"
                   >
                     <span className="font-heading text-xl md:text-2xl lg:text-3xl group-hover:text-accent transition-colors">
                       {t(`activities.items.${activity.key}.title`)}
