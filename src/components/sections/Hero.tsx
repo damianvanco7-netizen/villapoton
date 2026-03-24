@@ -5,7 +5,7 @@ const Hero = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden" ref={ref}>
+    <section className="relative h-screen w-full overflow-hidden" data-header-theme="dark" ref={ref}>
       {/* Full-screen background image */}
       <img
         src={heroImg}
