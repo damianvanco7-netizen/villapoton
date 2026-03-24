@@ -54,7 +54,7 @@ const Services = () => {
                 </span>
 
                 {/* Title */}
-                <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl">
+                <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl">
                   {t(`services.items.${key}.title`)}
                 </h3>
 
