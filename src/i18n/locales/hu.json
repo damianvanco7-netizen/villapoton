@@ -125,9 +125,23 @@
     "cta": "Szoba foglalása"
   },
   "footer": {
-    "address": "Villa Potoň, Potoň, Csallóköz, Szlovákia",
+    "contact_title": "Kapcsolat",
+    "hours_title": "Nyitvatartás",
+    "restaurant_hours": "Étterem",
+    "nav_title": "Navigáció",
+    "location_title": "Helyszín",
+    "social_title": "Közösségi média",
+    "cta": "Foglalja le tartózkodását",
     "rights": "Minden jog fenntartva.",
     "privacy": "Adatvédelem",
-    "terms": "Általános feltételek"
+    "cookies": "Sütik",
+    "terms": "Általános feltételek",
+    "nav": {
+      "accommodation": "Szállás",
+      "restaurant": "Étterem",
+      "gallery": "Galéria",
+      "activities": "Tevékenységek",
+      "contact": "Kapcsolat"
+    }
   }
 }
