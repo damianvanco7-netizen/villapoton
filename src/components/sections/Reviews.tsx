@@ -4,6 +4,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const reviews = [
   {
