@@ -72,8 +72,11 @@
     }
   },
   "quote": {
-    "text": "\"Egy hely, ahol az idő lelassul és minden pillanat emlékké válik.\"",
-    "author": "— Villa Potoň"
+    "heading": "Az Ön kényelme és elégedettsége minden",
+    "headingItalic": "részlet",
+    "headingEnd": " alapja tartózkodása során.",
+    "subtitle": "Akár csak pihenni szeretne kellemes környezetben, akár kiváló ételeket élvezni, nálunk megtalálja, amit keres.",
+    "cta": "Szoba foglalása"
   },
   "activities": {
     "title": "Ahol minden nap Önnek van tervezve",

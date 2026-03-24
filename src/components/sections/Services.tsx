@@ -1,11 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import ranajkyImg from '@/assets/ranajky.jpg';
+import terasaImg from '@/assets/terasa.jpg';
+import parkoviskoImg from '@/assets/parkovisko.png';
+import izbyImg from '@/assets/izby_pre_ludi_s_telesnym_postihnutim.jpg';
 
 const services = [
-  { key: 'breakfast' },
-  { key: 'terrace' },
-  { key: 'parking' },
-  { key: 'accessibility' },
+  { key: 'breakfast', image: ranajkyImg },
+  { key: 'terrace', image: terasaImg },
+  { key: 'parking', image: parkoviskoImg },
+  { key: 'accessibility', image: izbyImg },
 ] as const;
 
 const Services = () => {
@@ -14,7 +18,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-24 md:py-32" ref={ref}>
-      <div className="container mx-auto px-6">
+      <div className="px-8 md:px-16 lg:px-24">
         {/* Section Header */}
         <div
           className={`text-center mb-16 md:mb-24 transition-all duration-700 ${
@@ -31,7 +35,7 @@ const Services = () => {
 
         {/* Service Rows */}
         <div>
-          {services.map(({ key }, i) => (
+          {services.map(({ key, image }, i) => (
             <div
               key={key}
               className={`transition-all duration-700 ${
@@ -59,11 +63,13 @@ const Services = () => {
                   {t(`services.items.${key}.description`)}
                 </p>
 
-                {/* Image placeholder */}
-                <div className="aspect-[4/3] bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground font-body text-xs tracking-widest uppercase">
-                    Image
-                  </span>
+                {/* Image */}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={image}
+                    alt={t(`services.items.${key}.title`)}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
