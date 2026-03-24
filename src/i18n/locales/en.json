@@ -80,13 +80,32 @@
   },
   "activities": {
     "title": "Where Every Day is Designed for You",
-    "subtitle": "Discover a wide range of activities and experiences",
-    "accommodation": "Accommodation",
-    "golf": "Golf",
-    "wellness": "Wellness",
-    "horses": "Horse Riding",
-    "themed": "Themed Events",
-    "mice": "MICE & Conferences"
+    "items": {
+      "zitny_ostrov": {
+        "title": "Žitný ostrov",
+        "description": "Discover the beauty of Žitný ostrov by the Danube, just a short distance from the villa, and enjoy peaceful walks or trips through the surrounding nature."
+      },
+      "golf": {
+        "title": "Golf",
+        "description": "Enjoy a peaceful day at quality golf courses near Veľká Paka or Báč, ideal for beginners and experienced players alike, just about 10–15 minutes from the villa."
+      },
+      "malkia": {
+        "title": "Malkia Park",
+        "description": "Experience a unique encounter with big cats at the rescue park in Orechová Potôň, located just 5 minutes by car from Villa Potôň."
+      },
+      "slovakia_ring": {
+        "title": "Slovakia Ring",
+        "description": "Just about 5 minutes from the villa, adrenaline awaits at the Slovakia Ring circuit in Orechová Potôň – racing, go-karts, and unforgettable experiences."
+      },
+      "thermalpark": {
+        "title": "Thermalpark",
+        "description": "Relax in thermal pools and treat yourself to wellness at the Thermalpark in Dunajská Streda, approximately 10–15 minutes away by car."
+      },
+      "xbionic": {
+        "title": "X-Bionic Sphere",
+        "description": "Discover the world of sports and relaxation at the modern X-Bionic Sphere complex in Šamorín, approximately 20–25 minutes by car from the villa. You'll find an equestrian area, professional sports facilities, fitness center, swimming pool, wellness, and options for active leisure for children and adults."
+      }
+    }
   },
   "events": {
     "title": "Host Your Banquet, Wedding or Celebration",
