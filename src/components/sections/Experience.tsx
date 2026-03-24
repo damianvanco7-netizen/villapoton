@@ -89,7 +89,7 @@ const Experience = () => {
 
       {/* Cards — full-width, Bellevoire-style */}
       {cards.map((key, i) => (
-        <ExperienceCard key={key} cardKey={key} index={i} isVisible={isVisible} />
+        <ExperienceCard key={key} cardKey={key} index={i} isVisible={isVisible} isLast={i === cards.length - 1} />
       ))}
     </section>
   );
