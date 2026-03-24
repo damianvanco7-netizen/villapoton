@@ -6,7 +6,7 @@ import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
-import decorativeSymbol from '@/assets/decorative-symbol.svg';
+
 import type { LucideIcon } from 'lucide-react';
 
 type AmenityConfig = { key: string; icon: LucideIcon };
