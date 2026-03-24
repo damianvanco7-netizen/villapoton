@@ -1,8 +1,30 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useRef, useEffect, useState } from 'react';
 import welcomeImg from '@/assets/welcome.jpg';
+
+const useParallax = (speed = 0.15) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      const progress = (windowH - rect.top) / (windowH + rect.height);
+      setOffset((progress - 0.5) * rect.height * speed);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [speed]);
+
+  return { ref, offset };
+};
 
 const Welcome = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { ref: parallaxRef, offset } = useParallax(0.15);
 
   return (
     <section className="py-24 md:py-32" ref={ref}>
@@ -39,18 +61,19 @@ const Welcome = () => {
         </div>
       </div>
 
-      {/* Large 16:9 image aligned left */}
+      {/* Large 16:9 image aligned left with parallax */}
       <div
         className={`transition-all duration-700 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="w-[90%] md:w-[85%]">
-          <div className="aspect-video overflow-hidden">
+          <div ref={parallaxRef} className="aspect-video overflow-hidden">
             <img
               src={welcomeImg}
               alt="Villa Potoň Welcome"
-              className="w-full h-full object-cover"
+              className="w-full h-[120%] object-cover will-change-transform"
+              style={{ transform: `translateY(${offset}px)` }}
             />
           </div>
         </div>
