@@ -28,15 +28,11 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const headerY = 60; // approximate middle of header
-      const elements = document.elementsFromPoint(window.innerWidth / 2, headerY);
-      
-      const isOverDark = elements.some((el) => {
-        const section = el.closest('[data-header-theme]');
-        return section?.getAttribute('data-header-theme') === 'dark';
-      });
-      
-      setIsDark(isOverDark);
+      const scrollY = window.scrollY;
+      const windowH = window.innerHeight;
+      // Hero is fixed and exactly 1 viewport tall; content starts at scrollY >= windowH
+      // Header should be dark only while hero is still visible behind content
+      setIsDark(scrollY < windowH - 80);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
