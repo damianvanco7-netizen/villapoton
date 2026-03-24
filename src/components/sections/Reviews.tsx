@@ -140,11 +140,11 @@ const Reviews = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="w-10 h-10 rounded-full overflow-hidden">
+          <div className="w-10 h-10 rounded-full bg-[#003580] flex items-center justify-center overflow-hidden">
             <img src={bookingLogo} alt="Booking.com" className="w-full h-full object-cover" />
           </div>
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-            <Star className="w-5 h-5 text-primary" />
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <Star className="w-5 h-5 text-accent fill-none stroke-accent stroke-2" />
           </div>
           <span className="font-body text-lg font-medium text-foreground">
             8,7 - {t('reviews.rating_label')}

@@ -46,7 +46,7 @@ const Activities = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
+            <div className="w-[80%] aspect-[3/4] overflow-hidden relative max-h-[600px]">
               {activities.map((activity, i) => (
                 <img
                   key={activity.key}
