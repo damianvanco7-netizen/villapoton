@@ -32,7 +32,7 @@ const Welcome = () => {
         <div className="flex justify-center mt-8">
           <a
             href="#experience"
-            className="inline-block border-2 border-foreground text-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-foreground hover:text-background transition-colors"
+            className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors"
           >
             Zistiť viac
           </a>
