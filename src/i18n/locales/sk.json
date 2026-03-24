@@ -81,7 +81,7 @@
   "activities": {
     "title": "Kde je každý deň navrhnutý pre vás",
     "title_line1": "Kde je každý deň",
-    "title_line2": "navrhnutý pre vás",
+    "title_line2": "navrhnutý pre Vás",
     "items": {
       "zitny_ostrov": {
         "title": "Žitný ostrov",
@@ -108,6 +108,11 @@
         "description": "Objavte svet športu a oddychu v modernom komplexe X-Bionic Sphere v Šamoríne, ktorý je dostupný približne za 20–25 minút jazdy od vily. Nájdete tu jazdecký areál, profesionálne športoviská, fitness centrum, plaváreň, wellness aj možnosti na aktívny oddych pre deti aj dospelých."
       }
     }
+  },
+  "reviews": {
+    "title_line1": "Spokojní hostia,",
+    "title_line2": "naša najlepšia vizitka",
+    "rating_label": "Vynikajúce"
   },
   "events": {
     "title": "Spojte si hostinu, svadbu alebo oslavu",

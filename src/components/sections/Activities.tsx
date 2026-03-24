@@ -34,7 +34,7 @@ const Activities = () => {
           }`}
         >
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center">
-            {t('activities.title_line1')}<br />{t('activities.title_line2')}
+            {t('activities.title_line1')}<br /><em>{t('activities.title_line2')}</em>
           </h2>
         </div>
 
@@ -46,7 +46,7 @@ const Activities = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="aspect-[4/5] overflow-hidden relative">
+            <div className="aspect-[3/4] overflow-hidden relative">
               {activities.map((activity, i) => (
                 <img
                   key={activity.key}
@@ -62,9 +62,10 @@ const Activities = () => {
 
           {/* Right: Accordions */}
           <div
-            className={`flex flex-col justify-center transition-all duration-700 ${
+            className={`flex flex-col justify-between transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
+            style={{ height: '100%' }}
           >
             {activities.map((activity, i) => {
               const isOpen = activeIndex === i;
