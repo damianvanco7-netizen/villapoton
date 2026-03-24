@@ -37,7 +37,7 @@ const Quote = () => {
 
   return (
     <section ref={ref} className="relative overflow-hidden">
-      <DecorativeSymbol rotation={-30} position="bottom-16 left-8" size="w-[500px] md:w-[700px] lg:w-[900px]" />
+      <DecorativeSymbol rotation={-30} position="bottom-16 left-8" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
       {/* Text block */}
       <div className="py-24 md:py-32 px-8 md:px-16 lg:px-24">
         <div

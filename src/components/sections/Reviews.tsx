@@ -122,7 +122,7 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
-      <DecorativeSymbol rotation={-20} position="-bottom-32 left-1/4" size="w-[500px] md:w-[700px]" />
+      <DecorativeSymbol rotation={-20} position="bottom-16 left-1/4" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
       <div className="px-8 md:px-16 lg:px-24">
         {/* Title */}
         <div
