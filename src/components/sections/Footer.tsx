@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-16 gap-8">
-          <img src={logoSvg} alt="Villa Potoň" className="h-14 w-auto brightness-0 invert" />
+          <img src={logoSvg} alt="Villa Potoň" className="h-20 w-auto brightness-0 invert" />
           <a
             href="#reservation"
             className="inline-block border border-primary-foreground text-primary-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary-foreground hover:text-primary transition-colors"
