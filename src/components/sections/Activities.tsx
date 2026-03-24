@@ -34,7 +34,7 @@ const Activities = () => {
           }`}
         >
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center">
-            {t('activities.title_line1')}<br />{t('activities.title_line2')}
+            {t('activities.title_line1')}<br /><em>{t('activities.title_line2')}</em>
           </h2>
         </div>
 
