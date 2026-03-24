@@ -22,7 +22,7 @@ const activities = [
 const Activities = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32" ref={ref}>
@@ -40,13 +40,13 @@ const Activities = () => {
 
         {/* Two-column layout: image left, accordions right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left: Image that changes based on active accordion */}
+          {/* Left: Image — 20% smaller */}
           <div
-            className={`transition-all duration-700 ${
+            className={`transition-all duration-700 flex items-start justify-center ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="aspect-[3/4] overflow-hidden relative">
+            <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
               {activities.map((activity, i) => (
                 <img
                   key={activity.key}
@@ -57,15 +57,22 @@ const Activities = () => {
                   }`}
                 />
               ))}
+              {/* Default placeholder when nothing is active */}
+              <img
+                src={activities[0].image}
+                alt=""
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  activeIndex === null ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
             </div>
           </div>
 
           {/* Right: Accordions */}
           <div
-            className={`flex flex-col justify-between transition-all duration-700 ${
+            className={`flex flex-col transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ height: '100%' }}
           >
             {activities.map((activity, i) => {
               const isOpen = activeIndex === i;
@@ -76,6 +83,7 @@ const Activities = () => {
                 >
                   <button
                     onMouseEnter={() => setActiveIndex(i)}
+                    onMouseLeave={() => setActiveIndex(null)}
                     className="w-full py-6 flex items-center justify-between text-left group"
                   >
                     <span className="font-heading text-xl md:text-2xl lg:text-3xl group-hover:text-accent transition-colors">

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
 
 const reviews = [
@@ -44,10 +45,13 @@ const countryLabels: Record<string, string> = {
   hu: 'Maďarsko',
 };
 
+const getInitial = (name: string) => name.charAt(0).toUpperCase();
+
 const Reviews = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const [isManual, setIsManual] = useState(false);
   const manualTimeout = useRef<ReturnType<typeof setTimeout>>();
@@ -55,10 +59,12 @@ const Reviews = () => {
   const totalReviews = reviews.length;
 
   const next = useCallback(() => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % totalReviews);
   }, [totalReviews]);
 
   const prev = useCallback(() => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + totalReviews) % totalReviews);
   }, [totalReviews]);
 
@@ -91,6 +97,21 @@ const Reviews = () => {
   };
 
   const visibleReviews = getVisibleReviews();
+
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 60 : -60,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -60 : 60,
+      opacity: 0,
+    }),
+  };
 
   return (
     <section id="reviews" className="py-24 md:py-32 bg-muted/30" ref={ref}>
@@ -126,32 +147,52 @@ const Reviews = () => {
 
         {/* Reviews carousel */}
         <div
-          className={`transition-all duration-700 delay-200 ${
+          className={`transition-all duration-700 delay-200 overflow-hidden ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="grid md:grid-cols-3 gap-0">
-            {visibleReviews.map((review, i) => (
-              <div
-                key={`${review.name}-${currentIndex}-${i}`}
-                className={`p-8 md:p-10 ${
-                  i < 2 ? 'border-r border-border' : ''
-                }`}
-              >
-                <h3 className="font-heading text-xl md:text-2xl mb-1">
-                  {review.name}
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-6">
-                  {countryLabels[review.country]}
-                </p>
-                <p className="font-body text-sm md:text-base text-foreground leading-relaxed">
-                  {review.text}
-                </p>
-              </div>
-            ))}
-          </div>
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              className="grid md:grid-cols-3 gap-0"
+            >
+              {visibleReviews.map((review, i) => (
+                <div
+                  key={`${review.name}-${i}`}
+                  className={`p-8 md:p-10 ${
+                    i < 2 ? 'border-r border-border' : ''
+                  }`}
+                >
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="font-heading text-sm text-primary">
+                        {getInitial(review.name)}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-xl md:text-2xl">
+                        {review.name}
+                      </h3>
+                      <p className="font-body text-sm text-muted-foreground">
+                        {countryLabels[review.country]}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4">
+                    {review.text}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Navigation arrows */}
