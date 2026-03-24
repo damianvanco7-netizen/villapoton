@@ -1,20 +1,36 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
+import type { LucideIcon } from 'lucide-react';
 
-const accommodationAmenities = [
-  'bathroom', 'aircon', 'wifi', 'nonsmoking', 'tv', 'parking',
-] as const;
+type AmenityConfig = { key: string; icon: LucideIcon };
 
-const restaurantAmenities = [
-  'alacarte', 'fresh', 'quiet', 'breakfast', 'special',
-] as const;
+const accommodationAmenities: AmenityConfig[] = [
+  { key: 'bathroom', icon: Bath },
+  { key: 'aircon', icon: Wind },
+  { key: 'wifi', icon: Wifi },
+  { key: 'nonsmoking', icon: CigaretteOff },
+  { key: 'tv', icon: Tv },
+  { key: 'parking', icon: Car },
+];
 
-const barAmenities = [
-  'drinks', 'cocktails', 'mixed', 'coffee',
-] as const;
+const restaurantAmenities: AmenityConfig[] = [
+  { key: 'alacarte', icon: UtensilsCrossed },
+  { key: 'fresh', icon: Leaf },
+  { key: 'quiet', icon: Volume2 },
+  { key: 'breakfast', icon: Coffee },
+  { key: 'special', icon: Sparkles },
+];
+
+const barAmenities: AmenityConfig[] = [
+  { key: 'drinks', icon: Wine },
+  { key: 'cocktails', icon: Martini },
+  { key: 'mixed', icon: GlassWater },
+  { key: 'coffee', icon: Bean },
+];
 
 const cards = ['accommodation', 'restaurant', 'bar'] as const;
 
@@ -24,7 +40,7 @@ const cardImages: Record<string, string> = {
   bar: barImg,
 };
 
-const cardAmenities: Record<string, readonly string[]> = {
+const cardAmenities: Record<string, AmenityConfig[]> = {
   accommodation: accommodationAmenities,
   restaurant: restaurantAmenities,
   bar: barAmenities,
