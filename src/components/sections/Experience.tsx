@@ -87,21 +87,24 @@ const Experience = () => {
                 </p>
                 <a
                   href="#reservation"
-                  className="inline-block font-body text-xs tracking-[0.15em] uppercase font-bold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary/90 transition-colors"
                 >
                   {t(`experience.${key}.cta`)}
                 </a>
 
                 {/* Amenities grid */}
                 <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 pt-6">
-                  {cardAmenities[key].map((amenity) => (
-                    <div key={amenity} className="flex items-center gap-2">
-                      <span className="text-accent text-xs">✦</span>
-                      <span className="font-body text-foreground text-sm">
-                        {t(`experience.amenities.${amenity}`)}
-                      </span>
-                    </div>
-                  ))}
+                  {cardAmenities[key].map((amenity) => {
+                    const Icon = amenity.icon;
+                    return (
+                      <div key={amenity.key} className="flex items-center gap-2">
+                        <Icon className="text-accent" size={14} strokeWidth={1.5} />
+                        <span className="font-body text-foreground text-sm">
+                          {t(`experience.amenities.${amenity.key}`)}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
