@@ -60,7 +60,7 @@ const Experience = () => {
                 </p>
                 <a
                   href="#reservation"
-                  className="inline-block font-body text-xs tracking-[0.2em] uppercase font-bold text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+                  className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary/90 transition-colors"
                 >
                   {t(`experience.${key}.cta`)}
                 </a>
