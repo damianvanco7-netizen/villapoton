@@ -14,14 +14,19 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <Welcome />
-      <Experience />
-      <Services />
-      <Quote />
-      <Activities />
-      <Reviews />
-      <BookingCta />
-      <Footer />
+      {/* Spacer for fixed hero */}
+      <div className="h-screen" />
+      {/* Content scrolls over hero */}
+      <div className="relative z-10 bg-background">
+        <Welcome />
+        <Experience />
+        <Services />
+        <Quote />
+        <Activities />
+        <Reviews />
+        <BookingCta />
+        <Footer />
+      </div>
     </div>
   );
 };
