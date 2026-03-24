@@ -80,6 +80,8 @@
   },
   "activities": {
     "title": "Where Every Day is Designed for You",
+    "title_line1": "Where Every Day is",
+    "title_line2": "Designed for You",
     "items": {
       "zitny_ostrov": {
         "title": "Žitný ostrov",

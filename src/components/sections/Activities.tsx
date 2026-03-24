@@ -25,7 +25,7 @@ const Activities = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="activities" className="py-24 md:py-32" ref={ref}>
+    <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32" ref={ref}>
       <div className="px-8 md:px-16 lg:px-24">
         {/* Section Title */}
         <div
@@ -34,7 +34,7 @@ const Activities = () => {
           }`}
         >
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center">
-            {t('activities.title')}
+            {t('activities.title_line1')}<br />{t('activities.title_line2')}
           </h2>
         </div>
 
