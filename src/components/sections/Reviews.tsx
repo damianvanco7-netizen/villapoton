@@ -140,11 +140,13 @@ const Reviews = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="w-10 h-10 rounded-full bg-[#003580] flex items-center justify-center overflow-hidden">
-            <img src={bookingLogo} alt="Booking.com" className="w-full h-full object-cover" />
-          </div>
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <Star className="w-5 h-5 text-accent fill-none stroke-accent stroke-2" />
+          <div className="flex items-center">
+            <div className="w-10 h-10 rounded-full bg-[#003580] flex items-center justify-center overflow-hidden z-0">
+              <img src={bookingLogo} alt="Booking.com" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center -ml-3 z-10">
+              <Star className="w-5 h-5 text-accent fill-none stroke-accent stroke-2" />
+            </div>
           </div>
           <span className="font-body text-lg font-medium text-foreground">
             8,7 - {t('reviews.rating_label')}
@@ -173,7 +175,7 @@ const Reviews = () => {
               {visibleReviews.map((review, i) => (
                 <div
                   key={`${review.name}-${i}`}
-                  className={`p-8 md:p-10 ${
+                  className={`p-8 md:p-10 min-h-[280px] flex flex-col ${
                     i < 2 ? 'border-r border-border' : ''
                   }`}
                 >

@@ -39,14 +39,14 @@ const Activities = () => {
         </div>
 
         {/* Two-column layout: image left, accordions right */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Image */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left: Image — sticky */}
           <div
-            className={`transition-all duration-700 flex items-center justify-center ${
+            className={`transition-all duration-700 flex items-center justify-center lg:sticky lg:top-32 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="w-[80%] aspect-[3/4] overflow-hidden relative max-h-[600px]">
+            <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
               {activities.map((activity, i) => (
                 <img
                   key={activity.key}
