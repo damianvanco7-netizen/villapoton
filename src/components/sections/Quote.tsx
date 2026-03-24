@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 import useEmblaCarousel from 'embla-carousel-react';
 import room1 from '@/assets/rooms/room1.png';
 import room2 from '@/assets/rooms/room2.png';
