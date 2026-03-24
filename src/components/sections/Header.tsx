@@ -62,7 +62,8 @@ const Header = () => {
           <img
             src={logoSvg}
             alt="Villa Potoň"
-            className={`h-14 w-auto transition-all duration-300 ${isDark ? 'brightness-0 invert' : ''}`}
+            className="h-14 w-auto transition-all duration-300"
+            style={isDark ? { filter: 'brightness(0) invert(1)' } : { filter: 'brightness(0)' }}
           />
         </a>
 

@@ -75,9 +75,9 @@ const Experience = () => {
 
   return (
     <section id="experience" ref={ref} className="relative overflow-hidden">
-      <DecorativeSymbol rotation={22} position="top-16 right-16" size="w-[500px] md:w-[700px]" />
+      <DecorativeSymbol rotation={22} position="top-16 right-16" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
       <DecorativeSymbol rotation={-15} position="bottom-1/3 left-8" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
-      <DecorativeSymbol rotation={35} position="bottom-16 right-1/4" size="w-[500px] md:w-[650px]" />
+      <DecorativeSymbol rotation={35} position="bottom-16 right-1/4" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
 
       {/* Section Header */}
       <div
