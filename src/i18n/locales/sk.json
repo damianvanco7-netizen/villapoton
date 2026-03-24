@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "about": "O nás",
+    "rooms": "Ubytovanie",
+    "restaurant": "Reštaurácia",
+    "wellness": "Wellness",
+    "events": "Podujatia",
+    "contact": "Kontakt",
+    "book": "Rezervovať"
+  },
+  "hero": {
+    "subtitle": "Penzión — Reštaurácia",
+    "description": "Objavte oázu pokoja a luxusu v srdci Žitného ostrova. Villa Potoň spája eleganciu s prírodou pre nezabudnuteľný zážitok.",
+    "cta": "Objavte viac"
+  },
+  "experience": {
+    "title": "Zažite pocit luxusu",
+    "subtitle": "Každý detail je navrhnutý tak, aby ste sa cítili výnimočne",
+    "apartments": {
+      "title": "Apartmány",
+      "description": "Elegantné a priestranné apartmány s výhľadom do záhrady, vybavené pre maximálny komfort."
+    },
+    "restaurant": {
+      "title": "Reštaurácia & Bar",
+      "description": "Gurmánske zážitky s lokálnymi surovinami a starostlivo vybraným vínnym lístkom."
+    },
+    "spa": {
+      "title": "Wellness & Spa",
+      "description": "Relaxujte v našom wellness centre s saunou, vírivkou a masážnymi procedúrami."
+    }
+  },
+  "services": {
+    "title": "Personalizované služby",
+    "subtitle": "Prispôsobíme sa vašim potrebám",
+    "concierge": {
+      "title": "Concierge služby",
+      "description": "Osobný prístup ku každému hosťovi s individuálnym plánovaním pobytu."
+    },
+    "dining": {
+      "title": "Súkromné stolovanie",
+      "description": "Exkluzívne gastronomické zážitky v súkromí vašich apartmánov."
+    },
+    "transfer": {
+      "title": "Transfer služby",
+      "description": "Komfortný transfer z letiska alebo vlakových staníc priamo k nám."
+    },
+    "experiences": {
+      "title": "Zážitkové balíčky",
+      "description": "Špeciálne pripravené programy pre páry, rodiny aj firemné tímy."
+    }
+  },
+  "quote": {
+    "text": "\"Miesto, kde sa čas spomalí a každý okamih sa stane spomienkou.\"",
+    "author": "— Villa Potoň"
+  },
+  "activities": {
+    "title": "Kde je každý deň navrhnutý pre vás",
+    "subtitle": "Objavte široký výber aktivít a zážitkov",
+    "accommodation": "Ubytovanie",
+    "golf": "Golf",
+    "wellness": "Wellness",
+    "horses": "Jazda na koni",
+    "themed": "Tématické podujatia",
+    "mice": "MICE & Konferencie"
+  },
+  "events": {
+    "title": "Spojte si hostinu, svadbu alebo oslavu",
+    "description": "Villa Potoň je ideálnym miestom pre vašu svadbu, firemnú akciu alebo rodinnú oslavu. Ponúkame kompletný servis od plánovania po realizáciu.",
+    "cta": "Naplánovať podujatie"
+  },
+  "reservation": {
+    "title": "Rezervujte si pobyt",
+    "description": "Doprajte si nezabudnuteľný pobyt v Villa Potoň. Kontaktujte nás pre individuálnu ponuku.",
+    "cta": "Rezervovať teraz",
+    "phone": "Zavolajte nám"
+  },
+  "footer": {
+    "address": "Villa Potoň, Potoň, Žitný ostrov, Slovensko",
+    "rights": "Všetky práva vyhradené.",
+    "privacy": "Ochrana súkromia",
+    "terms": "Obchodné podmienky"
+  }
+}

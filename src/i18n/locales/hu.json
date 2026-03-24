@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "about": "Rólunk",
+    "rooms": "Szállás",
+    "restaurant": "Étterem",
+    "wellness": "Wellness",
+    "events": "Rendezvények",
+    "contact": "Kapcsolat",
+    "book": "Foglalás"
+  },
+  "hero": {
+    "subtitle": "Panzió — Étterem",
+    "description": "Fedezze fel a nyugalom és luxus oázisát a Csallóköz szívében. A Villa Potoň az eleganciát a természettel ötvözi a felejthetetlen élményért.",
+    "cta": "Fedezze fel"
+  },
+  "experience": {
+    "title": "Élje át a luxus érzését",
+    "subtitle": "Minden részlet úgy van megtervezve, hogy különlegesnek érezze magát",
+    "apartments": {
+      "title": "Apartmanok",
+      "description": "Elegáns és tágas apartmanok kertkilátással, maximális kényelemre tervezve."
+    },
+    "restaurant": {
+      "title": "Étterem & Bár",
+      "description": "Gasztronómiai élmények helyi alapanyagokkal és gondosan válogatott borlappal."
+    },
+    "spa": {
+      "title": "Wellness & Spa",
+      "description": "Relaxáljon wellness központunkban szaunával, pezsgőfürdővel és masszázskezelésekkel."
+    }
+  },
+  "services": {
+    "title": "Személyre szabott szolgáltatások",
+    "subtitle": "Az Ön igényeihez igazodunk",
+    "concierge": {
+      "title": "Concierge szolgáltatások",
+      "description": "Személyes megközelítés minden vendéghez egyéni tartózkodás tervezéssel."
+    },
+    "dining": {
+      "title": "Privát étkezés",
+      "description": "Exkluzív gasztronómiai élmények az apartman magányában."
+    },
+    "transfer": {
+      "title": "Transzfer szolgáltatások",
+      "description": "Kényelmes transzfer a repülőtérről vagy vasútállomásokról közvetlenül hozzánk."
+    },
+    "experiences": {
+      "title": "Élménycsomagok",
+      "description": "Speciálisan összeállított programok pároknak, családoknak és céges csapatoknak."
+    }
+  },
+  "quote": {
+    "text": "\"Egy hely, ahol az idő lelassul és minden pillanat emlékké válik.\"",
+    "author": "— Villa Potoň"
+  },
+  "activities": {
+    "title": "Ahol minden nap Önnek van tervezve",
+    "subtitle": "Fedezze fel tevékenységeink és élményeink széles választékát",
+    "accommodation": "Szállás",
+    "golf": "Golf",
+    "wellness": "Wellness",
+    "horses": "Lovaglás",
+    "themed": "Tematikus rendezvények",
+    "mice": "MICE & Konferenciák"
+  },
+  "events": {
+    "title": "Rendezze nálunk lakomáját, esküvőjét vagy ünnepségét",
+    "description": "A Villa Potoň ideális helyszín esküvőjéhez, céges rendezvényéhez vagy családi ünnepségéhez. Teljes körű szolgáltatást kínálunk a tervezéstől a megvalósításig.",
+    "cta": "Rendezvény tervezése"
+  },
+  "reservation": {
+    "title": "Foglalja le tartózkodását",
+    "description": "Ajándékozzon meg magának egy felejthetetlen tartózkodást a Villa Potoňban. Lépjen velünk kapcsolatba egyéni ajánlatért.",
+    "cta": "Foglalás most",
+    "phone": "Hívjon minket"
+  },
+  "footer": {
+    "address": "Villa Potoň, Potoň, Csallóköz, Szlovákia",
+    "rights": "Minden jog fenntartva.",
+    "privacy": "Adatvédelem",
+    "terms": "Általános feltételek"
+  }
+}
