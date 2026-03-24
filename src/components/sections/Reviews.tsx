@@ -4,6 +4,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const reviews = [
   {
@@ -120,7 +121,8 @@ const Reviews = () => {
   };
 
   return (
-    <section id="reviews" className="py-24 md:py-32" ref={ref}>
+    <section id="reviews" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
+      <DecorativeSymbol rotation={-20} position="-bottom-32 left-1/4" size="w-[500px] md:w-[700px]" />
       <div className="px-8 md:px-16 lg:px-24">
         {/* Title */}
         <div

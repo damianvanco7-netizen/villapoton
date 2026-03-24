@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 import useEmblaCarousel from 'embla-carousel-react';
 import room1 from '@/assets/rooms/room1.png';
 import room2 from '@/assets/rooms/room2.png';
@@ -33,7 +34,8 @@ const Quote = () => {
   }, [emblaApi]);
 
   return (
-    <section ref={ref}>
+    <section ref={ref} className="relative overflow-hidden">
+      <DecorativeSymbol rotation={-30} position="-bottom-20 -left-40" size="w-[500px] md:w-[700px] lg:w-[900px]" />
       {/* Text block */}
       <div className="py-24 md:py-32 px-8 md:px-16 lg:px-24">
         <div

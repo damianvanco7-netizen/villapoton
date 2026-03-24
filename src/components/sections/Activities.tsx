@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronDown } from 'lucide-react';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 import zitnyOstrovImg from '@/assets/zitny_ostrov.jpg';
 import golfImg from '@/assets/golf.jpg';
@@ -25,7 +26,8 @@ const Activities = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32" ref={ref}>
+    <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32 relative overflow-hidden" ref={ref}>
+      <DecorativeSymbol rotation={12} position="top-40 -right-48" size="w-[600px] md:w-[800px]" />
       <div className="px-8 md:px-16 lg:px-24">
         {/* Section Title */}
         <div

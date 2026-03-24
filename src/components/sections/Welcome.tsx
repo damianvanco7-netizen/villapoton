@@ -1,6 +1,7 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useRef, useEffect, useState } from 'react';
 import welcomeImg from '@/assets/welcome.jpg';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const useParallax = (speed = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,7 +28,8 @@ const Welcome = () => {
   const { ref: parallaxRef, offset } = useParallax(0.15);
 
   return (
-    <section className="py-24 md:py-32" ref={ref}>
+    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
+      <DecorativeSymbol rotation={25} position="top-16 -right-32" size="w-[500px] md:w-[700px]" />
       {/* Staggered headline */}
       <div
         className={`container mx-auto px-6 mb-16 transition-all duration-700 ${
