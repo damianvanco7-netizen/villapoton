@@ -14,19 +14,30 @@
     "cta": "Fedezze fel"
   },
   "experience": {
-    "title": "Élje át a luxus érzését",
-    "subtitle": "Minden részlet úgy van megtervezve, hogy különlegesnek érezze magát",
-    "apartments": {
-      "title": "Apartmanok",
-      "description": "Elegáns és tágas apartmanok kertkilátással, maximális kényelemre tervezve."
+    "title": "Experience the Feeling",
+    "titleLine2": "of a Retreat",
+    "accommodation": {
+      "title": "Szállás",
+      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "cta": "SZOBA FOGLALÁSA"
     },
     "restaurant": {
       "title": "Étterem & Bár",
-      "description": "Gasztronómiai élmények helyi alapanyagokkal és gondosan válogatott borlappal."
+      "description": "Gasztronómiai élmények helyi alapanyagokkal és gondosan válogatott borlappal.",
+      "cta": "MENÜ MEGTEKINTÉSE"
     },
     "spa": {
       "title": "Wellness & Spa",
-      "description": "Relaxáljon wellness központunkban szaunával, pezsgőfürdővel és masszázskezelésekkel."
+      "description": "Relaxáljon wellness központunkban szaunával, pezsgőfürdővel és masszázskezelésekkel.",
+      "cta": "TOVÁBBI INFORMÁCIÓ"
+    },
+    "amenities": {
+      "bathroom": "Privát fürdőszoba",
+      "aircon": "Légkondicionáló",
+      "wifi": "Ingyenes Wi-Fi",
+      "nonsmoking": "Nemdohányzó szobák",
+      "tv": "TV",
+      "parking": "Ingyenes parkolás"
     }
   },
   "services": {
