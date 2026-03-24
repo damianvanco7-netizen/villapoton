@@ -5,6 +5,7 @@ import Experience from '@/components/sections/Experience';
 import Services from '@/components/sections/Services';
 import Quote from '@/components/sections/Quote';
 import Activities from '@/components/sections/Activities';
+import Reviews from '@/components/sections/Reviews';
 import Events from '@/components/sections/Events';
 import Reservation from '@/components/sections/Reservation';
 import Footer from '@/components/sections/Footer';
