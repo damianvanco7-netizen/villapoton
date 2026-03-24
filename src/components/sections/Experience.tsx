@@ -5,6 +5,7 @@ import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
+import decorativeSymbol from '@/assets/decorative-symbol.svg';
 import type { LucideIcon } from 'lucide-react';
 
 type AmenityConfig = { key: string; icon: LucideIcon };
@@ -72,7 +73,7 @@ const Experience = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="experience" ref={ref}>
+    <section id="experience" ref={ref} className="relative">
       {/* Section Header */}
       <div
         className={`text-center py-24 md:py-32 transition-all duration-700 ${
@@ -91,6 +92,17 @@ const Experience = () => {
       {cards.map((key, i) => (
         <ExperienceCard key={key} cardKey={key} index={i} isVisible={isVisible} isLast={i === cards.length - 1} />
       ))}
+
+      {/* Decorative symbol */}
+      <div className="relative flex justify-center py-16 md:py-24 overflow-hidden">
+        <img
+          src={decorativeSymbol}
+          alt=""
+          aria-hidden="true"
+          className="w-[600px] md:w-[800px] lg:w-[1000px] h-auto opacity-[0.06]"
+          style={{ transform: 'rotate(-15deg)' }}
+        />
+      </div>
     </section>
   );
 };
