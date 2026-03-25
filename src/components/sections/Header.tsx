@@ -82,7 +82,7 @@ const Header = () => {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase`}
+              className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
             >
               {link.label}
             </a>
