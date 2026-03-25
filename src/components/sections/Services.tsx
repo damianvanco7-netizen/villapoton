@@ -122,24 +122,24 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Center: main image */}
-              <div className="px-6 md:px-0 md:pr-6 mt-8 md:mt-0">
-                <div className="aspect-[4/3] overflow-hidden">
+              {/* Right: main image + peeking next image */}
+              <div className="px-6 md:px-0 mt-8 md:mt-0 flex gap-4">
+                {/* Main image */}
+                <div className="flex-1 aspect-[4/3] overflow-hidden">
                   <img
                     src={current.image}
                     alt={t(`services.items.${current.key}.title`)}
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
-
-              {/* Right: peeking next image — same height as main, clipped on right */}
-              <div className="hidden md:block overflow-hidden">
-                <img
-                  src={nextCard.image}
-                  alt={t(`services.items.${nextCard.key}.title`)}
-                  className="h-full w-auto max-w-none object-cover"
-                />
+                {/* Peeking next image — same aspect ratio, clipped by section overflow */}
+                <div className="hidden md:block w-[12%] shrink-0 aspect-[4/3] overflow-hidden">
+                  <img
+                    src={nextCard.image}
+                    alt={t(`services.items.${nextCard.key}.title`)}
+                    className="h-full w-auto max-w-none object-cover"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
