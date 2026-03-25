@@ -55,7 +55,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${!isDark ? 'bg-background' : ''}`}>
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between scroll-smooth">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="shrink-0">
           <img
