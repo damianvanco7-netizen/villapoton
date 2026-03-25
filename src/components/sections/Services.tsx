@@ -58,36 +58,18 @@ const Services = () => {
       ref={ref}
     >
       <div className="px-8 md:px-16 lg:px-24">
-        {/* Header row: title left, arrows right */}
+        {/* Header */}
         <div
-          className={`flex items-end justify-between mb-16 md:mb-24 transition-all duration-700 ${
+          className={`mb-16 md:mb-24 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl">
-              {t('services.titleLine1')}
-            </h2>
-            <p className="font-heading text-4xl md:text-5xl lg:text-6xl italic">
-              {t('services.titleLine2')}
-            </p>
-          </div>
-
-          {/* Arrow buttons — white, like Reviews */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={prev}
-              className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:border-primary-foreground transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5 text-primary-foreground" />
-            </button>
-            <button
-              onClick={next}
-              className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:border-primary-foreground transition-colors"
-            >
-              <ChevronRight className="w-5 h-5 text-primary-foreground" />
-            </button>
-          </div>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl">
+            {t('services.titleLine1')}
+          </h2>
+          <p className="font-heading text-4xl md:text-5xl lg:text-6xl italic">
+            {t('services.titleLine2')}
+          </p>
         </div>
       </div>
 
@@ -106,46 +88,55 @@ const Services = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="flex"
           >
-            {/* Main card */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6 md:gap-10 px-8 md:px-16 lg:px-24 w-full md:w-[85%] shrink-0">
-              {/* Left: text */}
-              <div className="flex flex-col justify-center">
-                <span className="font-body text-sm text-primary-foreground/50 mb-3">
-                  {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-                </span>
-                <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-2">
-                  {t(`services.items.${current.key}.title`)}
-                </h3>
-                <p className="font-body text-primary-foreground/70 text-sm md:text-base leading-relaxed max-w-md mb-6">
-                  {t('services.titleLine1')} {t('services.titleLine2')}
-                </p>
-                <p className="font-body text-primary-foreground/80 text-sm leading-relaxed max-w-md">
-                  {t(`services.items.${current.key}.description`)}
-                </p>
+            {/* Horizontal line above card */}
+            <div className="border-t border-primary-foreground/20 mx-8 md:mx-16 lg:mx-24" />
+
+            <div className="flex">
+              {/* Main card */}
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6 md:gap-10 px-8 md:px-16 lg:px-24 py-10 md:py-14 w-full md:w-[85%] shrink-0">
+                {/* Left: text */}
+                <div className="flex flex-col justify-center">
+                  <span className="font-body text-sm text-primary-foreground/50 mb-3">
+                    {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                  </span>
+                  <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-4">
+                    {t(`services.items.${current.key}.title`)}
+                  </h3>
+                  <p className="font-body text-primary-foreground/80 text-sm leading-relaxed max-w-md mb-8">
+                    {t(`services.items.${current.key}.description`)}
+                  </p>
+
+                  {/* Arrow buttons — left aligned */}
+                  <div className="flex items-center gap-4">
+                    <button
+                      onClick={prev}
+                      className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:border-primary-foreground transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-primary-foreground" />
+                    </button>
+                    <button
+                      onClick={next}
+                      className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:border-primary-foreground transition-colors"
+                    >
+                      <ChevronRight className="w-5 h-5 text-primary-foreground" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right: image */}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={current.image}
+                    alt={t(`services.items.${current.key}.title`)}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
-              {/* Right: image */}
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={current.image}
-                  alt={t(`services.items.${current.key}.title`)}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Peeking next card from right */}
-            <div className="hidden md:block w-[15%] shrink-0 pr-8">
-              <div className="h-full flex flex-col justify-center">
-                <span className="font-body text-sm text-primary-foreground/30 mb-3">
-                  {String(((currentIndex + 1) % total) + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-                </span>
-                <h3 className="font-heading text-2xl text-primary-foreground/40 mb-4">
-                  {t(`services.items.${nextCard.key}.title`)}
-                </h3>
-                <div className="aspect-[4/3] overflow-hidden opacity-40">
+              {/* Peeking next image only */}
+              <div className="hidden md:flex w-[15%] shrink-0 items-center">
+                <div className="aspect-[4/3] w-full overflow-hidden opacity-40">
                   <img
                     src={nextCard.image}
                     alt={t(`services.items.${nextCard.key}.title`)}
@@ -156,6 +147,9 @@ const Services = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* Bottom horizontal line */}
+        <div className="border-t border-primary-foreground/20 mx-8 md:mx-16 lg:mx-24" />
       </div>
     </section>
   );
