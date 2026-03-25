@@ -92,7 +92,7 @@ const Services = () => {
             {/* Top line */}
             <div className="border-t border-primary-foreground/20 mx-8 md:mx-16 lg:mx-24" />
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_0.3fr] gap-0 py-10 md:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-0 py-10 md:py-14">
               {/* Left: text */}
               <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24">
                 <span className="font-body text-sm text-primary-foreground/50 mb-3">
