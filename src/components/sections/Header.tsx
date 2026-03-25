@@ -129,7 +129,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-background border-t border-border animate-fade-in">
-          <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
+          <nav className="px-8 md:px-16 lg:px-24 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.label}
