@@ -25,12 +25,14 @@
     "restaurant": {
       "title": "Reštaurácia Étterem",
       "description": "Naša reštaurácia ponúka čerstvé jedlá pripravené s dôrazom na kvalitu a chuť. Špecialitou je úžasná neapolská pizza, ktorú si zamilujete už po prvom súste. Či už si vyberiete z à la carte ponuky alebo si doprajete pokojné raňajky, čaká vás zážitok, ktorý doplní váš pobyt.",
-      "cta": "REZERVOVAŤ IZBU"
+      "cta": "REZERVOVAŤ STÔL",
+      "hours_label": "Otváracie hodiny",
+      "hours_time": "11:00 – 22:00"
     },
     "bar": {
       "title": "Neapolská Pizza",
       "description": "Autentická neapolská pizza pripravovaná z kvalitných surovín podľa tradičných postupov, s jemným nadýchaným cestom a bohatou chuťou, ktorú si zamilujete už po prvom súste.",
-      "cta": "REZERVOVAŤ IZBU"
+      "cta": "REZERVOVAŤ STÔL"
     },
     "amenities": {
       "bathroom": "Súkromná kúpeľňa",
