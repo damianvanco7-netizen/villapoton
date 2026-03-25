@@ -6,12 +6,21 @@ const Footer = () => {
   const { t } = useTranslation();
 
   const navLinks = [
-    { label: t('footer.nav.accommodation'), href: '#experience' },
-    { label: t('footer.nav.restaurant'), href: '#services' },
-    { label: t('footer.nav.gallery'), href: '#activities' },
-    { label: t('footer.nav.activities'), href: '#activities' },
-    { label: t('footer.nav.contact'), href: '#footer' },
+    { label: 'O nás', href: '#welcome' },
+    { label: 'Ubytovanie', href: '#experience' },
+    { label: 'Reštaurácia', href: '#restaurant' },
+    { label: 'Lokalita', href: '#activities' },
+    { label: 'Kontakt', href: '#footer' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8">
