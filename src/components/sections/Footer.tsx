@@ -91,6 +91,7 @@ const Footer = () => {
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
                   {link.label}

@@ -81,6 +81,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase`}
             >
               {link.label}
@@ -133,7 +134,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}
                 className="text-sm font-body font-medium text-foreground/70 hover:text-foreground transition-colors tracking-wide uppercase py-2"
               >
                 {link.label}
