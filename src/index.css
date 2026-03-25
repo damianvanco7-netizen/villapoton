@@ -15,7 +15,7 @@
     --popover: 39 100% 97.6%;
     --popover-foreground: 163 100% 3.9%;
 
-    --primary: 155 96% 17.3%;
+    --primary: 157 100% 17.1%;
     --primary-foreground: 39 100% 97.6%;
 
     --secondary: 210 40% 96.1%;
@@ -32,7 +32,7 @@
 
     --border: 39 30% 88%;
     --input: 39 30% 88%;
-    --ring: 155 96% 17.3%;
+    --ring: 157 100% 17.1%;
 
     --radius: 0.5rem;
 
@@ -95,5 +95,23 @@
 
   .font-body {
     font-family: 'Manrope', sans-serif;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #F3D399 0%, #BF9355 10%, #FFE2AB 23%, #BA8E51 45%, #FFE2AB 67%, #C69B5E 79%, #FFE2AB 91%, #D8B175 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-gradient-bg {
+    background: linear-gradient(135deg, #F3D399 0%, #BF9355 10%, #FFE2AB 23%, #BA8E51 45%, #FFE2AB 67%, #C69B5E 79%, #FFE2AB 91%, #D8B175 100%);
+  }
+
+  .gold-gradient-icon {
+    background: linear-gradient(135deg, #F3D399 0%, #BF9355 10%, #FFE2AB 23%, #BA8E51 45%, #FFE2AB 67%, #C69B5E 79%, #FFE2AB 91%, #D8B175 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

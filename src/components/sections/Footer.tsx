@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
-import logo from '@/assets/logo.png';
-import logoSvg from '@/assets/logo_villa_poton.svg';
+import logoGold from '@/assets/logo_villa_poton_gold.svg';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -19,7 +18,7 @@ const Footer = () => {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
         <div className="mb-16">
-          <img src={logoSvg} alt="Villa Potoň" className="h-20 w-auto brightness-0 invert" />
+          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto" />
         </div>
 
         {/* Main grid */}
@@ -29,17 +28,17 @@ const Footer = () => {
             <h4 className="font-heading text-lg mb-6">{t('footer.contact_title')}</h4>
             <ul className="space-y-4 font-body text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-accent shrink-0 mt-0.5" />
+                <MapPin size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <span>Horná Potôň 123<br />930 36, Slovensko</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={16} className="text-accent shrink-0" />
+                <Phone size={16} className="shrink-0" style={{ color: '#C69B5E' }} />
                 <a href="tel:+421900000000" className="hover:text-primary-foreground transition-colors">
                   +421 900 000 000
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={16} className="text-accent shrink-0" />
+                <Mail size={16} className="shrink-0" style={{ color: '#C69B5E' }} />
                 <a href="mailto:info@villapoton.sk" className="hover:text-primary-foreground transition-colors">
                   info@villapoton.sk
                 </a>
@@ -52,21 +51,21 @@ const Footer = () => {
             <h4 className="font-heading text-lg mb-6">{t('footer.hours_title')}</h4>
             <ul className="space-y-4 font-body text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
-                <Clock size={16} className="text-accent shrink-0 mt-0.5" />
+                <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <div>
                   <span className="text-primary-foreground font-medium">Check-in</span>
                   <br />14:00 – 22:00
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={16} className="text-accent shrink-0 mt-0.5" />
+                <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <div>
                   <span className="text-primary-foreground font-medium">Check-out</span>
                   <br />07:00 – 10:00
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={16} className="text-accent shrink-0 mt-0.5" />
+                <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <div>
                   <span className="text-primary-foreground font-medium">{t('footer.restaurant_hours')}</span>
                   <br />11:00 – 22:00
@@ -100,7 +99,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors mb-8"
             >
-              <MapPin size={16} className="text-accent" />
+              <MapPin size={16} style={{ color: '#C69B5E' }} />
               Horná Potôň, Slovakia →
             </a>
 
