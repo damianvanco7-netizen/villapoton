@@ -34,7 +34,7 @@ const Services = () => {
   }, [total]);
 
   const current = services[currentIndex];
-  const nextCard = services[(currentIndex + 1) % total];
+  
 
   const variants = {
     enter: (dir: number) => ({
@@ -92,7 +92,7 @@ const Services = () => {
             {/* Top line */}
             <div className="border-t border-primary-foreground/20 mx-8 md:mx-16 lg:mx-24" />
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_0.3fr] gap-0 py-10 md:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-0 py-10 md:py-14">
               {/* Left: text */}
               <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24">
                 <span className="font-body text-sm text-primary-foreground/50 mb-3">
@@ -133,14 +133,6 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Right: peeking next image — same height as main, clipped on right */}
-              <div className="hidden md:block overflow-hidden">
-                <img
-                  src={nextCard.image}
-                  alt={t(`services.items.${nextCard.key}.title`)}
-                  className="h-full w-auto max-w-none object-cover"
-                />
-              </div>
             </div>
           </motion.div>
         </AnimatePresence>
