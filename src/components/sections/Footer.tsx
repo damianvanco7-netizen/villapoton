@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-lg mb-6">{t('footer.contact_title')}</h4>
+            <h4 className="font-heading text-xl md:text-2xl mb-6">{t('footer.contact_title')}</h4>
             <ul className="space-y-4 font-body text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Opening Hours */}
           <div>
-            <h4 className="font-heading text-lg mb-6">{t('footer.hours_title')}</h4>
+            <h4 className="font-heading text-xl md:text-2xl mb-6">{t('footer.hours_title')}</h4>
             <ul className="space-y-4 font-body text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
                 <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
@@ -85,7 +85,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-heading text-lg mb-6">{t('footer.nav_title')}</h4>
+            <h4 className="font-heading text-xl md:text-2xl mb-6">{t('footer.nav_title')}</h4>
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
@@ -100,20 +100,9 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Location + Social */}
+          {/* Social */}
           <div>
-            <h4 className="font-heading text-lg mb-6">{t('footer.location_title')}</h4>
-            <a
-              href="https://maps.google.com/?q=Horná+Potôň,+Slovakia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors mb-8"
-            >
-              <MapPin size={16} style={{ color: '#C69B5E' }} />
-              Horná Potôň, Slovakia →
-            </a>
-
-            <h4 className="font-heading text-lg mb-4">{t('footer.social_title')}</h4>
+            <h4 className="font-heading text-xl md:text-2xl mb-6">{t('footer.social_title')}</h4>
             <div className="flex items-center gap-4">
               <a
                 href="https://facebook.com"
