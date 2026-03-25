@@ -70,7 +70,7 @@ const Quote = () => {
               return (
                 <div
                   key={i}
-                  className="min-w-0 flex-[0_0_80%] md:flex-[0_0_33.333%] px-1 md:px-1.5 flex items-center justify-center"
+                  className="min-w-0 flex-[0_0_80%] md:flex-[0_0_33.333%] px-0.5 md:px-1 flex items-center justify-center"
                 >
                   <div
                     className={`w-full overflow-hidden transition-transform duration-500 ease-in-out ${
