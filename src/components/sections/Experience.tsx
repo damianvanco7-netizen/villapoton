@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { useRef, useEffect, useState } from 'react';
-import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
+import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
@@ -29,10 +29,9 @@ const restaurantAmenities: AmenityConfig[] = [
 ];
 
 const barAmenities: AmenityConfig[] = [
-  { key: 'drinks', icon: Wine },
-  { key: 'cocktails', icon: Martini },
-  { key: 'mixed', icon: GlassWater },
-  { key: 'coffee', icon: Bean },
+  { key: 'ingredients', icon: Leaf },
+  { key: 'authentic', icon: Star },
+  { key: 'traditional', icon: Flame },
 ];
 
 const cards = ['accommodation', 'restaurant', 'bar'] as const;
