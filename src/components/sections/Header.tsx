@@ -18,17 +18,24 @@ const Header = () => {
   const [isDark, setIsDark] = useState(true); // Start dark (hero)
 
   const navLinks = [
-    { key: 'about', href: '#experience' },
-    { key: 'rooms', href: '#activities' },
-    { key: 'restaurant', href: '#services' },
-    { key: 'wellness', href: '#activities' },
-    { key: 'events', href: '#events' },
-    { key: 'contact', href: '#footer' },
+    { label: 'O nás', href: '#welcome' },
+    { label: 'Ubytovanie', href: '#experience' },
+    { label: 'Reštaurácia', href: '#restaurant' },
+    { label: 'Lokalita', href: '#activities' },
+    { label: 'Kontakt', href: '#footer' },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsDark(window.scrollY < 10);
+      // Show off-white bg only when content section reaches the header
+      const contentSection = document.querySelector('.relative.z-10.bg-background');
+      if (contentSection) {
+        const rect = contentSection.getBoundingClientRect();
+        // When the content section top is at or above ~80px (header height), switch to light
+        setIsDark(rect.top > 80);
+      } else {
+        setIsDark(window.scrollY < 10);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -63,11 +70,11 @@ const Header = () => {
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link.key}
+              key={link.label}
               href={link.href}
               className={`text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase`}
             >
-              {t(`nav.${link.key}`)}
+              {link.label}
             </a>
           ))}
         </nav>
@@ -115,12 +122,12 @@ const Header = () => {
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
-                key={link.key}
+                key={link.label}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-sm font-body font-medium text-foreground/70 hover:text-foreground transition-colors tracking-wide uppercase py-2"
               >
-                {t(`nav.${link.key}`)}
+                {link.label}
               </a>
             ))}
             <div className="flex items-center gap-2 py-2">

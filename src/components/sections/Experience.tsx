@@ -110,6 +110,7 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
 
   return (
     <div
+      id={cardKey === 'restaurant' ? 'restaurant' : undefined}
       className={`grid md:grid-cols-[1fr_2fr] ${isLast ? 'mb-0' : 'mb-24 md:mb-32'} transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}

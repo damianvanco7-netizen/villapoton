@@ -17,10 +17,9 @@ const Quote = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    align: 'center',
-    containScroll: false,
-    skipSnaps: false,
-    duration: 30,
+    align: 'start',
+    slidesToScroll: 1,
+    duration: 20,
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -66,31 +65,20 @@ const Quote = () => {
       <div className="relative pb-24 md:pb-32">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
-            {images.map((img, i) => {
-              const isActive = selectedIndex === i;
-              return (
-                <div
-                  key={i}
-                  className="min-w-0 px-2 md:px-3 flex items-center transition-all duration-500"
-                  style={{
-                    flex: isActive ? '0 0 50%' : '0 0 25%',
-                  }}
-                >
-                  <div
-                    className="w-full overflow-hidden transition-all duration-500"
-                    style={{
-                      aspectRatio: isActive ? '4/3' : '3/4',
-                    }}
-                  >
-                    <img
-                      src={img}
-                      alt={`Villa Potoň room ${i + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+            {images.map((img, i) => (
+              <div
+                key={i}
+                className="min-w-0 px-2 md:px-3 flex-[0_0_80%] md:flex-[0_0_33.333%]"
+              >
+                <div className="w-full overflow-hidden aspect-[3/4]">
+                  <img
+                    src={img}
+                    alt={`Villa Potoň room ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
