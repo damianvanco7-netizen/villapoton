@@ -22,7 +22,9 @@ const Events = () => {
               {t('events.description')}
             </p>
             <a
-              href="#reservation"
+              href="https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block border-2 border-primary text-foreground px-8 py-4 text-sm font-body font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               {t('events.cta')}
