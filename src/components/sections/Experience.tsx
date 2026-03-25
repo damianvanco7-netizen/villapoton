@@ -86,10 +86,10 @@ const Experience = () => {
         }`}
       >
         <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-2">
-          {t('experience.title')}
+          Zažite atmosféru skutočného oddychu,
         </h2>
         <p className="font-heading text-4xl md:text-5xl lg:text-6xl italic mb-6">
-          {t('experience.titleLine2')}
+          kde každý moment patrí vám
         </p>
         <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-md mx-auto">
           {t('experience.subtitle')}

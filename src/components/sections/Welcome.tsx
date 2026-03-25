@@ -38,9 +38,9 @@ const Welcome = () => {
       >
         <div className="flex flex-col items-center text-center">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-            <span className="block">Welcome to Villa Potôň</span>
-            <span className="block pl-12 md:pl-24">Your Elegant Retreat</span>
-            <span className="block pl-24 md:pl-48 italic">in the Hearth of Nature</span>
+            <span className="block">Vitajte vo Villa Potôň</span>
+            <span className="block pl-12 md:pl-24">Miesto Elegantného Oddychu</span>
+            <span className="block pl-24 md:pl-48 italic">v Srdci Prírody</span>
           </h2>
         </div>
 

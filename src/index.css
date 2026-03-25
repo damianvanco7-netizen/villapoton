@@ -105,7 +105,7 @@
   }
 
   .gold-gradient-bg {
-    background: linear-gradient(135deg, #F3D399 0%, #BF9355 10%, #FFE2AB 23%, #BA8E51 45%, #FFE2AB 67%, #C69B5E 79%, #FFE2AB 91%, #D8B175 100%);
+    background: linear-gradient(135deg, #C69B5E 0%, #D4AF6A 30%, #E8C880 50%, #D4AF6A 70%, #C69B5E 100%);
   }
 
   .gold-gradient-icon {
