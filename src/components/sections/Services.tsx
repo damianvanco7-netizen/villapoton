@@ -92,9 +92,9 @@ const Services = () => {
             {/* Top line */}
             <div className="border-t border-primary-foreground/20 mx-8 md:mx-16 lg:mx-24" />
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-0 py-10 md:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_0.8fr] gap-0 py-10 md:py-14 px-8 md:px-16 lg:px-24">
               {/* Left: text */}
-              <div className="flex flex-col justify-center px-8 md:px-16 lg:px-24">
+              <div className="flex flex-col justify-center">
                 <span className="font-body text-sm text-primary-foreground/50 mb-3">
                   {String(currentIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                 </span>
@@ -122,9 +122,9 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Center: main image */}
-              <div className="px-6 md:px-0 md:pr-6 mt-8 md:mt-0">
-                <div className="aspect-[4/3] overflow-hidden">
+              {/* Right: main image — aligned to right edge */}
+              <div className="mt-8 md:mt-0 flex justify-end">
+                <div className="aspect-[4/3] overflow-hidden w-full">
                   <img
                     src={current.image}
                     alt={t(`services.items.${current.key}.title`)}
@@ -132,7 +132,6 @@ const Services = () => {
                   />
                 </div>
               </div>
-
             </div>
           </motion.div>
         </AnimatePresence>
