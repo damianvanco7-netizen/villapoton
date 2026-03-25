@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
-import logo from '@/assets/logo.png';
-import logoSvg from '@/assets/logo_villa_poton.svg';
+import logoGold from '@/assets/logo_villa_poton_gold.svg';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -19,7 +18,7 @@ const Footer = () => {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
         <div className="mb-16">
-          <img src={logoSvg} alt="Villa Potoň" className="h-20 w-auto brightness-0 invert" />
+          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto" />
         </div>
 
         {/* Main grid */}
