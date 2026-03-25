@@ -19,17 +19,17 @@
     "subtitle": "Szállás, gasztronómia és pihenés egy fedél alatt",
     "accommodation": {
       "title": "Szállás",
-      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "description": "Modern berendezésű szobáink mindent kínálnak, amire szüksége van egy kellemes és zavartalan tartózkodáshoz – a magánszférától a praktikus felszerelésig. Akár pihenni jön, akár egy rövid kirándulásra, nálunk megbízható kényelmet talál.",
       "cta": "SZOBA FOGLALÁSA"
     },
     "restaurant": {
       "title": "Reštaurácia Étterem",
-      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "description": "Éttermünk friss ételeket kínál, amelyek a minőségre és az ízre helyezik a hangsúlyt. Különlegességünk a csodálatos nápolyi pizza, amelybe az első falat után beleszeret. Akár az à la carte menüből választ, akár nyugodt reggelit élvez, olyan élmény vár Önre, amely kiegészíti tartózkodását.",
       "cta": "SZOBA FOGLALÁSA"
     },
     "bar": {
       "title": "Bár",
-      "description": "Modern panzió étteremmel, Horná Potôňban, 35 km-re Pozsonytól, 10 km-re Dunaszerdahelytől. Célunk, hogy minőségi szolgáltatásokat nyújtsunk.",
+      "description": "Bárunk tökéletes hely a kikapcsolódásra egy élményekkel teli nap után. Élvezze a minőségi italokat, a különleges kávét és a kellemes hangulatot, amely kedvez a nyugodt estéknek és találkozóknak.",
       "cta": "SZOBA FOGLALÁSA"
     },
     "amenities": {
@@ -40,7 +40,7 @@
       "tv": "TV",
       "parking": "Ingyenes parkolás",
       "alacarte": "A la carte menü",
-      "fresh": "Friss konyha",
+      "pizza": "Nápolyi pizza",
       "quiet": "Nyugodt étkezés",
       "breakfast": "Reggeli",
       "special": "Speciális ételek kérésre",

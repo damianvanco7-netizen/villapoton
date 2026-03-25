@@ -18,18 +18,18 @@
     "titleLine2": "of a Retreat",
     "subtitle": "Ubytovanie, gastronómia a relax pod jednou strechou",
     "accommodation": {
-      "title": "Accommodation",
-      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "title": "Ubytovanie",
+      "description": "Naše moderne zariadené izby ponúkajú všetko, čo potrebujete pre príjemný a ničím nerušený pobyt – od súkromia až po praktické vybavenie. Či už prichádzate za oddychom alebo na krátky výlet, u nás nájdete komfort, na ktorý sa môžete spoľahnúť.",
       "cta": "REZERVOVAŤ IZBU"
     },
     "restaurant": {
       "title": "Reštaurácia Étterem",
-      "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní.",
+      "description": "Naša reštaurácia ponúka čerstvé jedlá pripravené s dôrazom na kvalitu a chuť. Špecialitou je úžasná neapolská pizza, ktorú si zamilujete už po prvom súste. Či už si vyberiete z à la carte ponuky alebo si doprajete pokojné raňajky, čaká vás zážitok, ktorý doplní váš pobyt.",
       "cta": "REZERVOVAŤ IZBU"
     },
     "bar": {
       "title": "Bar",
-      "description": "Sme moderný penzión s reštauráciou v Hornej Potôni, 35km od Bratislavy, 10km od Dunajskej Stredy. Naším cieľom je poskytovať kvalitné služby, aby ste odchádzali spokojní a šťastní.",
+      "description": "Náš bar je ideálnym miestom na uvoľnenie po dni plnom zážitkov. Vychutnajte si kvalitné nápoje, výberovú kávu a príjemnú atmosféru, ktorá praje pokojným večerom aj stretnutiam.",
       "cta": "REZERVOVAŤ IZBU"
     },
     "amenities": {
@@ -40,7 +40,7 @@
       "tv": "TV",
       "parking": "Bezplatné parkovisko",
       "alacarte": "A la carte ponuka",
-      "fresh": "Čerstvá kuchyňa",
+      "pizza": "Neapolská pizza",
       "quiet": "Pokojné stolovanie",
       "breakfast": "Raňajky",
       "special": "Možnosť špeciálnych jedál na požiadanie",
