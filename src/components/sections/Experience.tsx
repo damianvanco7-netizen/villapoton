@@ -140,12 +140,7 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
                   <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                     style={{ background: 'linear-gradient(135deg, rgba(243,211,153,0.15), rgba(186,142,81,0.08))' }}
                   >
-                    <div className="gold-gradient-icon">
-                      <Icon className="shrink-0" size={20} strokeWidth={1.5} style={{
-                        stroke: 'url(#gold-gradient)',
-                        color: '#C69B5E'
-                      }} />
-                    </div>
+                    <Icon className="shrink-0" size={20} strokeWidth={1.5} style={{ color: '#C69B5E' }} />
                   </div>
                   <span className="font-body text-foreground text-sm">
                     {t(`experience.amenities.${amenity.key}`)}
