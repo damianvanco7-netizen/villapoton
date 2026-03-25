@@ -70,16 +70,13 @@ const Quote = () => {
               return (
                 <div
                   key={i}
-                  className="min-w-0 px-2 md:px-3 transition-[flex] duration-500 ease-in-out"
-                  style={{
-                    flex: isActive ? '0 0 50%' : '0 0 25%',
-                  }}
+                  className="min-w-0 flex-[0_0_80%] md:flex-[0_0_33.333%] px-2 md:px-3 flex items-center justify-center"
                 >
                   <div
-                    className="w-full overflow-hidden transition-[aspect-ratio] duration-500 ease-in-out"
-                    style={{
-                      aspectRatio: isActive ? '4/3' : '3/4',
-                    }}
+                    className={`w-full overflow-hidden transition-transform duration-500 ease-in-out ${
+                      isActive ? 'scale-100' : 'scale-[0.85] opacity-60'
+                    }`}
+                    style={{ aspectRatio: '3/4' }}
                   >
                     <img
                       src={img}
