@@ -37,26 +37,23 @@ const Welcome = () => {
         }`}
       >
         <div className="flex flex-col items-center text-center">
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-center">
             <span className="block">Vitajte vo Villa Potôň</span>
-            <span className="block pl-12 md:pl-24">Miesto Elegantného Oddychu</span>
-            <span className="block pl-24 md:pl-48 italic">v Srdci Prírody</span>
+            <span className="block">Miesto Elegantného Oddychu</span>
+            <span className="block italic">v Srdci Prírody</span>
           </h2>
         </div>
 
         {/* Description */}
         <p className="font-body text-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
-          We are a modern pension with restaurant, located in Horná Potôň,
-          35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide
-          quality services so you will leave satisfied and happy.
-          We will be happy, if you honor us with your visit!
+          Objavte kombináciu komfortného ubytovania, skvelej kuchyne a atmosféry, ku ktorej sa budete radi vracať.
         </p>
 
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
           <a
             href="#experience"
-            className="inline-block bg-primary text-primary-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary/90 transition-colors"
+            className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
             Zistiť viac
           </a>
