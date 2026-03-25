@@ -28,8 +28,8 @@
       "cta": "REZERVOVAŤ IZBU"
     },
     "bar": {
-      "title": "Bar",
-      "description": "Náš bar je ideálnym miestom na uvoľnenie po dni plnom zážitkov. Vychutnajte si kvalitné nápoje, výberovú kávu a príjemnú atmosféru, ktorá praje pokojným večerom aj stretnutiam.",
+      "title": "Neapolská Pizza",
+      "description": "Autentická neapolská pizza pripravovaná z kvalitných surovín podľa tradičných postupov, s jemným nadýchaným cestom a bohatou chuťou, ktorú si zamilujete už po prvom súste.",
       "cta": "REZERVOVAŤ IZBU"
     },
     "amenities": {
@@ -44,10 +44,9 @@
       "quiet": "Pokojné stolovanie",
       "breakfast": "Raňajky",
       "special": "Možnosť špeciálnych jedál na požiadanie",
-      "drinks": "Široký výber nápojov a vín",
-      "cocktails": "Klasické koktaily",
-      "mixed": "Miešané drinky",
-      "coffee": "Výberová káva"
+      "ingredients": "Starostlivo vybrané ingrediencie",
+      "authentic": "Autentický zážitok",
+      "traditional": "Tradičná príprava"
     }
   },
   "services": {

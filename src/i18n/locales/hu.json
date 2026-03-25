@@ -28,8 +28,8 @@
       "cta": "SZOBA FOGLALÁSA"
     },
     "bar": {
-      "title": "Bár",
-      "description": "Bárunk tökéletes hely a kikapcsolódásra egy élményekkel teli nap után. Élvezze a minőségi italokat, a különleges kávét és a kellemes hangulatot, amely kedvez a nyugodt estéknek és találkozóknak.",
+      "title": "Nápolyi Pizza",
+      "description": "Autentikus nápolyi pizza minőségi alapanyagokból, hagyományos eljárással készítve, puha, levegős tésztával és gazdag ízzel, amelybe az első falat után beleszeret.",
       "cta": "SZOBA FOGLALÁSA"
     },
     "amenities": {
@@ -44,10 +44,9 @@
       "quiet": "Nyugodt étkezés",
       "breakfast": "Reggeli",
       "special": "Speciális ételek kérésre",
-      "drinks": "Italok és borok széles választéka",
-      "cocktails": "Klasszikus koktélok",
-      "mixed": "Kevert italok",
-      "coffee": "Különleges kávé"
+      "ingredients": "Gondosan válogatott alapanyagok",
+      "authentic": "Autentikus élmény",
+      "traditional": "Hagyományos elkészítés"
     }
   },
   "services": {
