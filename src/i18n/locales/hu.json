@@ -25,12 +25,14 @@
     "restaurant": {
       "title": "Reštaurácia Étterem",
       "description": "Éttermünk friss ételeket kínál, amelyek a minőségre és az ízre helyezik a hangsúlyt. Különlegességünk a csodálatos nápolyi pizza, amelybe az első falat után beleszeret. Akár az à la carte menüből választ, akár nyugodt reggelit élvez, olyan élmény vár Önre, amely kiegészíti tartózkodását.",
-      "cta": "SZOBA FOGLALÁSA"
+      "cta": "ASZTAL FOGLALÁSA",
+      "hours_label": "Nyitvatartás",
+      "hours_time": "11:00 – 22:00"
     },
     "bar": {
       "title": "Nápolyi Pizza",
       "description": "Autentikus nápolyi pizza minőségi alapanyagokból, hagyományos eljárással készítve, puha, levegős tésztával és gazdag ízzel, amelybe az első falat után beleszeret.",
-      "cta": "SZOBA FOGLALÁSA"
+      "cta": "ASZTAL FOGLALÁSA"
     },
     "amenities": {
       "bathroom": "Privát fürdőszoba",

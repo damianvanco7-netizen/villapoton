@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { useRef, useEffect, useState } from 'react';
-import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame } from 'lucide-react';
+import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
@@ -125,11 +125,23 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
             {t(`experience.${cardKey}.description`)}
           </p>
           <a
-            href="#reservation"
+            href={cardKey === 'restaurant' || cardKey === 'bar' ? '#footer' : '#reservation'}
             className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
             {t(`experience.${cardKey}.cta`)}
           </a>
+
+          {/* Opening hours for restaurant */}
+          {cardKey === 'restaurant' && (
+            <div className="flex items-start gap-3 pt-2">
+              <Clock size={18} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
+              <div className="font-body text-sm">
+                <span className="font-medium text-foreground">{t('experience.restaurant.hours_label')}</span>
+                <br />
+                <span className="text-foreground/70">{t('experience.restaurant.hours_time')}</span>
+              </div>
+            </div>
+          )}
 
           {/* Amenities grid */}
           <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-4">
