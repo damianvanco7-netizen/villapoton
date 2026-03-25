@@ -19,17 +19,17 @@
     "subtitle": "Accommodation, dining and relaxation under one roof",
     "accommodation": {
       "title": "Accommodation",
-      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "description": "Our modern rooms offer everything you need for a pleasant and undisturbed stay – from privacy to practical amenities. Whether you come for relaxation or a short trip, you'll find comfort you can rely on.",
       "cta": "BOOK A ROOM"
     },
     "restaurant": {
       "title": "Restaurant Étterem",
-      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "description": "Our restaurant offers fresh dishes prepared with an emphasis on quality and taste. The specialty is amazing Neapolitan pizza that you'll fall in love with from the first bite. Whether you choose from the à la carte menu or enjoy a peaceful breakfast, an experience awaits that will complement your stay.",
       "cta": "BOOK A ROOM"
     },
     "bar": {
       "title": "Bar",
-      "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy.",
+      "description": "Our bar is the perfect place to unwind after a day full of experiences. Enjoy quality drinks, specialty coffee, and a pleasant atmosphere that lends itself to peaceful evenings and gatherings.",
       "cta": "BOOK A ROOM"
     },
     "amenities": {
@@ -40,7 +40,7 @@
       "tv": "TV",
       "parking": "Free parking",
       "alacarte": "A la carte menu",
-      "fresh": "Fresh cuisine",
+      "pizza": "Neapolitan pizza",
       "quiet": "Quiet dining",
       "breakfast": "Breakfast",
       "special": "Special dietary meals on request",

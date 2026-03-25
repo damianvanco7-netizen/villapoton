@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { useRef, useEffect, useState } from 'react';
-import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Leaf, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
+import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Wine, GlassWater, Martini, Bean } from 'lucide-react';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
@@ -22,7 +22,7 @@ const accommodationAmenities: AmenityConfig[] = [
 
 const restaurantAmenities: AmenityConfig[] = [
   { key: 'alacarte', icon: UtensilsCrossed },
-  { key: 'fresh', icon: Leaf },
+  { key: 'pizza', icon: Pizza },
   { key: 'quiet', icon: Volume2 },
   { key: 'breakfast', icon: Coffee },
   { key: 'special', icon: Sparkles },
@@ -106,7 +106,7 @@ const Experience = () => {
 
 const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string; index: number; isVisible: boolean; isLast: boolean }) => {
   const { t } = useTranslation();
-  const { ref: parallaxRef, offset } = useParallax(0.15);
+  const { ref: parallaxRef, offset } = useParallax(0.35);
 
   return (
     <div
