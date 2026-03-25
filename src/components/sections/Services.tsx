@@ -133,15 +133,13 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Right: peeking next image — same height, clipped */}
+              {/* Right: peeking next image — same height as main, clipped on right */}
               <div className="hidden md:block overflow-hidden">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={nextCard.image}
-                    alt={t(`services.items.${nextCard.key}.title`)}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  src={nextCard.image}
+                  alt={t(`services.items.${nextCard.key}.title`)}
+                  className="h-full w-auto max-w-none object-cover"
+                />
               </div>
             </div>
           </motion.div>
