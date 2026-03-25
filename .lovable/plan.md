@@ -1,17 +1,40 @@
 
+Cieľ: vrátiť carousel v sekcii „Vaše pohodlie a spokojnosť sú základom každého detailu vášho pobytu.“ na stabilné správanie ako v predošlej fungujúcej verzii, ale s jednou vizuálnou úpravou: stredná fotka bude väčšia a všetky fotky ostanú zarovnané na stred.
 
-# Experience Section -- Bellevoire-style spacing and layout
+Implementačný plán
 
-## Problem
-Cards are stacked directly against each other with no breathing room. The Bellevoire layout has clear vertical spacing between each full-screen card, and the content area uses more width.
+1. Upraviť `src/components/sections/Quote.tsx`
+- Zachovať Embla carousel a jeho jednoduché ovládanie `scrollPrev/scrollNext`.
+- Zrušiť aktuálny prístup, kde sa mení `flex-basis` slideov (`50% / 25%`) podľa aktívnej fotky.
+- Namiesto toho nastaviť všetkým slideom pevnú šírku/snap hodnotu, aby Embla fungovala bezchybne ako predtým.
 
-## Changes to `Experience.tsx`
+2. Urobiť väčšiu iba strednú kartu vizuálne, nie layoutovo
+- Každý slide bude mať rovnakú šírku v tracku.
+- Vo vnútri slideu sa aktívna/stredná karta zväčší pomocou:
+  - väčšieho vnútorného kontajnera,
+  - prípadne `scale` transformácie,
+  - vyššieho `aspect-ratio` alebo väčšej max výšky.
+- Bočné fotky budú menšie, ale budú stále vertikálne aj horizontálne centrované.
 
-1. **Add vertical spacing between cards**: Add `mb-24 md:mb-32` (or similar large margin) between each card so they don't touch
-2. **Widen the image column**: Change grid from `md:grid-cols-[1fr_1.6fr]` to `md:grid-cols-[1fr_2fr]` -- the image should take roughly 2/3 of the screen width like Bellevoire
-3. **Image starts with offset from top**: On Bellevoire the image doesn't start at the very top edge -- it has a slight top offset. Add `mt-8 md:mt-16` or padding to the image container, and let it extend past the bottom (like Bellevoire's asymmetric crop)
-4. **Text aligned to top-left**: Move text `justify-center` to `justify-start pt-16 md:pt-24` so text starts near the top of each card (matching Bellevoire where the heading is at the top-left)
-5. **Remove `min-h-screen`** from the card grid -- let the image height drive the card height naturally. Set image container to a fixed tall height like `h-[70vh] md:h-[85vh]`
+3. Zarovnanie všetkých fotiek na stred
+- Obaliť obsah každého slideu do flex kontajnera s centrovaním.
+- Obrázok/karta bude mať `mx-auto` a `justify-center/items-center`, aby nevznikal dojem „lietan ia“ do strán.
+- Zachovať `object-cover`, aby sa kompozícia fotiek nerozbila.
 
-These changes will create the open, spacious feel of Bellevoire where each card breathes independently.
+4. Zachovať aktuálny vizuálny štýl navigácie
+- Ponechať spodné šípky v rovnakom štýle ako teraz.
+- Ponechať textovú časť sekcie a CTA bez zmien.
 
+5. Doladiť responzívne správanie
+- Na mobile ponechať jednoduchší pomer veľkostí, aby stredná karta bola len jemne dominantná.
+- Na tablete/desktope zvýrazniť stred výraznejšie, ale bez zásahu do samotného snap layoutu.
+
+Technické poznámky
+- Aktuálny problém vzniká tým, že Embla počíta snap pozície podľa šírky slideov, ale tie sa po výbere menia. To spôsobuje nestabilné správanie.
+- Najbezpečnejšie riešenie je:
+```text
+rovnaká šírka slideov
++ aktívna karta väčšia iba vizuálne vo vnútri slideu
+= stabilný carousel + väčšia stredná fotka
+```
+- Tým sa zachová funkčnosť z predchádzajúcej iterácie a splní sa požiadavka na dominantnú strednú fotku.
