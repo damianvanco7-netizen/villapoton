@@ -28,7 +28,7 @@ const Welcome = () => {
   const { ref: parallaxRef, offset } = useParallax(0.15);
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
+    <section id="welcome" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
       <DecorativeSymbol rotation={25} position="top-8 right-8" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
       {/* Staggered headline */}
       <div

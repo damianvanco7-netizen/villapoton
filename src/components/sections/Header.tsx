@@ -25,6 +25,15 @@ const Header = () => {
     { label: 'Kontakt', href: '#footer' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       // Show off-white bg only when content section reaches the header
@@ -72,6 +81,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase`}
             >
               {link.label}
@@ -124,7 +134,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}
                 className="text-sm font-body font-medium text-foreground/70 hover:text-foreground transition-colors tracking-wide uppercase py-2"
               >
                 {link.label}
