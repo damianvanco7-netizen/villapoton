@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import heroImg from '@/assets/hero.jpg';
+import bookingImg from '@/assets/booking-cta.jpg';
 
 const BookingCta = () => {
   const { t } = useTranslation();
@@ -9,7 +9,7 @@ const BookingCta = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden" data-header-theme="dark" ref={ref}>
       <img
-        src={heroImg}
+        src={bookingImg}
         alt="Villa Potoň"
         className="absolute inset-0 w-full h-full object-cover"
       />
