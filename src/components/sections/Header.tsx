@@ -93,11 +93,7 @@ const Header = () => {
           </div>
           <a
             href="#reservation"
-            className={`px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase transition-all ${
-              isDark
-                ? 'gold-gradient-bg text-primary border-none hover:opacity-90 shadow-md'
-                : 'gold-gradient-bg text-primary border-none hover:opacity-90 shadow-md'
-            }`}
+            className="gold-gradient-bg text-white px-6 py-2.5 text-sm font-body font-semibold tracking-wider uppercase transition-opacity hover:opacity-90 shadow-md"
           >
             {t('nav.book')}
           </a>
