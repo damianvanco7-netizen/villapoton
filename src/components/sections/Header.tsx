@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Clock } from 'lucide-react';
 import logoSvg from '@/assets/logo_villa_poton.svg';
@@ -12,10 +12,28 @@ const languages = [
 // Section IDs that have dark/image backgrounds where header text should be light
 const darkSections = ['hero', 'quote-image'];
 
+const useIsOpen = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      const now = new Date();
+      const h = now.getHours();
+      const m = now.getMinutes();
+      const totalMin = h * 60 + m;
+      setIsOpen(totalMin >= 660 && totalMin < 1320); // 11:00-22:00
+    };
+    check();
+    const id = setInterval(check, 60000);
+    return () => clearInterval(id);
+  }, []);
+  return isOpen;
+};
+
 const Header = () => {
   const { t, i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true); // Start dark (hero)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+  const isRestaurantOpen = useIsOpen();
 
   const navLinks = [
     { key: 'about', href: '#welcome' },
