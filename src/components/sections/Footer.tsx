@@ -27,7 +27,8 @@ const Footer = () => {
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
         <div className="mb-16">
-          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-12" />
+          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-8" />
+          <div className="border-t border-primary-foreground/20" />
         </div>
 
         <div className="mb-16 flex flex-col md:flex-row gap-12">
