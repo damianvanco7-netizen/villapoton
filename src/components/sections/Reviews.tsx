@@ -12,7 +12,7 @@ const reviews = [
     name: 'Viktória',
     country: 'sk',
     flag: '🇸🇰',
-    text: '„Ubytovanie bolo pekné čisté, s elektrickými roletami ktoré bolo možné zatiahnuť na úplnú tmu čiže som sa skvele vyspala. Na izbe bola klimatizácia aj napriek tomu že bola izbička malá, milo ma to prekvapilo, nečakala som to. Personál bol veľmi..."',
+    text: 'Ubytovanie bolo pekné čisté, s elektrickými roletami ktoré bolo možné zatiahnuť na úplnú tmu čiže som sa skvele vyspala. Na izbe bola klimatizácia aj napriek tomu že bola izbička malá, milo ma to prekvapilo, nečakala som to. Personál bol veľmi...',
   },
   {
     name: 'Orru',
@@ -24,25 +24,25 @@ const reviews = [
     name: 'Radoslaw',
     country: 'pl',
     flag: '🇵🇱',
-    text: '"Páčilo sa mi všetko, obsluha, čistota, lokalita a najlepšie boli jedlá v reštaurácii, ak pôjdem do týchto oblastí, pôjdem len tam."',
+    text: 'Páčilo sa mi všetko, obsluha, čistota, lokalita a najlepšie boli jedlá v reštaurácii, ak pôjdem do týchto oblastí, pôjdem len tam.',
   },
   {
     name: 'Henrich',
     country: 'sk',
     flag: '🇸🇰',
-    text: '„Všetko bolo úžasné. Personál maximálne ústretový, chutná kuchyňa. Všetko nové, čisté, voňavé. Máme v pláne sa vrátiť."',
+    text: 'Všetko bolo úžasné. Personál maximálne ústretový, chutná kuchyňa. Všetko nové, čisté, voňavé. Máme v pláne sa vrátiť.',
   },
   {
     name: 'Krisztina',
     country: 'hu',
     flag: '🇭🇺',
-    text: '„Ubytovanie je veľmi pekné s jedinečným moderným dizajnom. Personál a majitelia sú veľmi milí a atmosféra je rodinná."',
+    text: 'Ubytovanie je veľmi pekné s jedinečným moderným dizajnom. Personál a majitelia sú veľmi milí a atmosféra je rodinná.',
   },
   {
     name: 'Dominika',
     country: 'pl',
     flag: '🇵🇱',
-    text: '„Veľmi chutné raňajky a káva tiež. Výhodou je poloha v blízkosti trate Slovakiaring. Veľmi pekné služby a priateľskí majitelia. Vynikajúcu kačicu s kroketami odporúčam na obed alebo večeru. Ďakujem pekne :-)"',
+    text: 'Veľmi chutné raňajky a káva tiež. Výhodou je poloha v blízkosti trate Slovakiaring. Veľmi pekné služby a priateľskí majitelia. Vynikajúcu kačicu s kroketami odporúčam na obed alebo večeru. Ďakujem pekne :-)',
   },
 ];
 
@@ -193,8 +193,8 @@ const Reviews = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="font-body text-sm text-foreground leading-relaxed mt-4">
-                    {reviews[currentIndex].text}
+                  <p className="font-body text-sm text-foreground leading-relaxed mt-4 italic">
+                    „{reviews[currentIndex].text}"
                   </p>
                 </div>
               ) : (
@@ -220,8 +220,8 @@ const Reviews = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4">
-                      {review.text}
+                    <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4 italic">
+                      „{review.text}"
                     </p>
                   </div>
                 ))
