@@ -162,7 +162,7 @@ const Header = () => {
 
         {/* Mobile: Open indicator + hamburger */}
         <div className="flex lg:hidden items-center gap-3">
-          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label="" />
+          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`${textColor}`}
