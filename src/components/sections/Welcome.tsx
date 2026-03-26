@@ -6,21 +6,25 @@ import DecorativeSymbol from '@/components/DecorativeSymbol';
 const useParallax = (speed = 0.15) => {
   const ref = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
+  const rafId = useRef<number>(0);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) return; // disable parallax on mobile for performance
-
     const handleScroll = () => {
-      if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const progress = (windowH - rect.top) / (windowH + rect.height);
-      setOffset((progress - 0.5) * rect.height * speed);
+      cancelAnimationFrame(rafId.current);
+      rafId.current = requestAnimationFrame(() => {
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        const progress = (windowH - rect.top) / (windowH + rect.height);
+        setOffset((progress - 0.5) * rect.height * speed);
+      });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId.current);
+    };
   }, [speed]);
 
   return { ref, offset };
