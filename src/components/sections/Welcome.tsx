@@ -1,38 +1,11 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useRef, useEffect, useState } from 'react';
+import { useParallax } from '@/hooks/useParallax';
 import welcomeImg from '@/assets/welcome.jpg';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 
-const useParallax = (speed = 0.15) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-  const rafId = useRef<number>(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      cancelAnimationFrame(rafId.current);
-      rafId.current = requestAnimationFrame(() => {
-        if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        const windowH = window.innerHeight;
-        const progress = (windowH - rect.top) / (windowH + rect.height);
-        setOffset((progress - 0.5) * rect.height * speed);
-      });
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      cancelAnimationFrame(rafId.current);
-    };
-  }, [speed]);
-
-  return { ref, offset };
-};
-
 const Welcome = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const { ref: parallaxRef, offset } = useParallax(0.15);
+  const { containerRef, imgRef } = useParallax(0.15);
 
   return (
     <section id="welcome" className="py-24 md:py-32 relative overflow-hidden" ref={ref}>
@@ -74,12 +47,12 @@ const Welcome = () => {
         }`}
       >
         <div className="w-full md:w-[85%]">
-          <div ref={parallaxRef} className="aspect-[3/4] md:aspect-video overflow-hidden">
+          <div ref={containerRef} className="aspect-[3/4] md:aspect-video overflow-hidden">
             <img
+              ref={imgRef}
               src={welcomeImg}
               alt="Villa Potoň Welcome"
               className="w-full h-[120%] object-cover will-change-transform"
-              style={{ transform: `translateY(${offset}px)` }}
             />
           </div>
         </div>

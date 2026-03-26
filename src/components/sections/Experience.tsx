@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useParallax } from '@/hooks/useParallax';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
-import { useRef, useEffect, useState } from 'react';
 import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
@@ -49,33 +49,6 @@ const cardAmenities: Record<string, AmenityConfig[]> = {
   bar: barAmenities,
 };
 
-const useParallax = (speed = 0.15) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-  const rafId = useRef<number>(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      cancelAnimationFrame(rafId.current);
-      rafId.current = requestAnimationFrame(() => {
-        if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        const windowH = window.innerHeight;
-        const progress = (windowH - rect.top) / (windowH + rect.height);
-        setOffset((progress - 0.5) * rect.height * speed);
-      });
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      cancelAnimationFrame(rafId.current);
-    };
-  }, [speed]);
-
-  return { ref, offset };
-};
-
 const Experience = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
@@ -113,14 +86,13 @@ const Experience = () => {
 
 const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string; index: number; isVisible: boolean; isLast: boolean }) => {
   const { t } = useTranslation();
-  const { ref: parallaxRef, offset } = useParallax(0.35);
+  const { containerRef, imgRef } = useParallax(0.35);
   const isMobile = useIsMobile();
 
   const bookingUrl = 'https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95';
 
   const getCtaHref = () => {
     if (cardKey === 'accommodation') return bookingUrl;
-    // restaurant & bar: tel on mobile, footer on desktop
     return isMobile ? 'tel:+421907808083' : '#footer';
   };
 
@@ -129,8 +101,8 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
   return (
     <div
       id={cardKey === 'restaurant' ? 'restaurant' : undefined}
-      className={`grid md:grid-cols-[1fr_2fr] ${isLast ? 'mb-0' : 'mb-24 md:mb-32'} transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`grid md:grid-cols-[1fr_2fr] ${isLast ? 'mb-0' : 'mb-24 md:mb-32'} transition-opacity duration-700 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{ transitionDelay: `${(index + 1) * 200}ms` }}
     >
@@ -187,12 +159,12 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
 
       {/* Right: Image — tall, with inner padding and parallax */}
       <div className="px-6 md:px-12 lg:px-16 mt-8 md:mt-16">
-        <div ref={parallaxRef} className="overflow-hidden h-[70vh] md:h-[85vh]">
+        <div ref={containerRef} className="overflow-hidden h-[70vh] md:h-[85vh]">
           <img
+            ref={imgRef}
             src={cardImages[cardKey]}
             alt={t(`experience.${cardKey}.title`)}
             className="w-full h-[120%] object-cover will-change-transform"
-            style={{ transform: `translateY(${offset}px)` }}
           />
         </div>
       </div>
