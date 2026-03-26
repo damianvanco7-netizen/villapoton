@@ -35,20 +35,24 @@ const Header = () => {
   };
 
   useEffect(() => {
-    let ticking = false;
     let rafId = 0;
+    let ticking = false;
+    let cachedEl: Element | null = null;
+
     const handleScroll = () => {
       if (ticking) return;
       ticking = true;
       rafId = requestAnimationFrame(() => {
         ticking = false;
-        const contentSection = document.querySelector('.relative.z-10.bg-background');
-        if (contentSection) {
-          const rect = contentSection.getBoundingClientRect();
-          setIsDark(rect.top > 80);
+        if (!cachedEl) cachedEl = document.querySelector('.relative.z-10.bg-background');
+        let next: boolean;
+        if (cachedEl) {
+          const rect = cachedEl.getBoundingClientRect();
+          next = rect.top > 80;
         } else {
-          setIsDark(window.scrollY < 10);
+          next = window.scrollY < 10;
         }
+        setIsDark((prev) => (prev === next ? prev : next));
       });
     };
 

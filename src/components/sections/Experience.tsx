@@ -65,10 +65,11 @@ const Experience = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl mb-2 px-6 md:px-0">
-          Zažite atmosféru skutočného{' '}<span className="md:inline">oddychu,</span>
+        <h2 className="font-heading text-[1.65rem] md:text-5xl lg:text-6xl mb-2 px-4 md:px-0 leading-[1.15]">
+          <span className="md:hidden">Zažite atmosféru skutočného oddychu,</span>
+          <span className="hidden md:inline">Zažite atmosféru skutočného{' '}oddychu,</span>
         </h2>
-        <p className="font-heading text-3xl md:text-5xl lg:text-6xl italic mb-6 px-6 md:px-0">
+        <p className="font-heading text-[1.65rem] md:text-5xl lg:text-6xl italic mb-6 px-4 md:px-0 leading-[1.15]">
           kde každý moment patrí&nbsp;vám
         </p>
         <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-xs md:max-w-md mx-auto px-6 md:px-0 whitespace-pre-line">
