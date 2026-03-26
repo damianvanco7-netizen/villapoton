@@ -11,9 +11,20 @@
   "hero": {
     "subtitle": "Guesthouse — Restaurant",
     "description": "Discover an oasis of peace and luxury in the heart of Žitný ostrov. Villa Potoň combines elegance with nature for an unforgettable experience.",
+    "cta": "Discover More",
+    "claim_line1": "The perfect place",
+    "claim_line2": "for rest and experiences"
+  },
+  "welcome": {
+    "title_line1": "Welcome to Villa Potôň",
+    "title_line2": "A Place of Elegant Relaxation",
+    "title_line3": "in the Heart of Nature",
+    "description": "Discover a combination of comfortable accommodation, excellent cuisine and an atmosphere you'll love coming back to.",
     "cta": "Discover More"
   },
   "experience": {
+    "headline_line1": "Experience the atmosphere of true relaxation,",
+    "headline_line2": "where every moment is\u00A0yours",
     "title": "Experience the Feeling",
     "titleLine2": "of a Retreat",
     "subtitle": "Accommodation, dining and relaxation under one roof",
@@ -27,6 +38,8 @@
       "description": "Our restaurant offers fresh dishes prepared with an emphasis on quality and taste. The specialty is amazing Neapolitan pizza that you'll fall in love with from the first bite. Whether you choose from the à la carte menu or enjoy a peaceful breakfast, an experience awaits that will complement your stay.",
       "cta": "BOOK A TABLE",
       "hours_label": "Opening Hours",
+      "hours_time": "11:00 – 22:00",
+      "phone_label": "Phone Number"
       "hours_time": "11:00 – 22:00"
     },
     "bar": {
@@ -118,7 +131,14 @@
   "reviews": {
     "title_line1": "Happy Guests,",
     "title_line2": "Our Best Business Card",
-    "rating_label": "Excellent"
+    "rating_label": "Excellent",
+    "country": {
+      "sk": "Slovakia",
+      "it": "Italy",
+      "pl": "Poland",
+      "hu": "Hungary"
+    }
+  },
   },
   "booking_cta": {
     "title": "Book your",
@@ -138,12 +158,26 @@
     "privacy": "Privacy Policy",
     "cookies": "Cookies",
     "terms": "Terms & Conditions",
+    "claim": "The perfect place for rest and\u00A0experiences",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "address_line1": "Horná Potôň 123",
+    "address_line2": "930 36, Slovakia",
     "nav": {
+      "about": "About",
       "accommodation": "Accommodation",
       "restaurant": "Restaurant",
+      "location": "Location",
+      "contact": "Contact",
       "gallery": "Gallery",
-      "activities": "Activities",
-      "contact": "Contact"
+      "activities": "Activities"
     }
+  },
+  "header_nav": {
+    "about": "About",
+    "accommodation": "Accommodation",
+    "restaurant": "Restaurant",
+    "location": "Location",
+    "contact": "Contact"
   }
 }
