@@ -172,7 +172,7 @@ const Reviews = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="grid md:grid-cols-3 gap-0"
+              className="grid grid-cols-1 md:grid-cols-3 gap-0"
             >
               {visibleReviews.map((review, i) => (
                 <div
