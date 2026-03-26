@@ -1,74 +1,64 @@
 
-Príčina sekania na mobile je veľmi pravdepodobne kombinácia viacerých vecí, ale hlavný problém je v aktuálnej implementácii parallaxu:
+Cieľ: zachovať parallax aj na mobile, ale prerobiť ho tak, aby bol reálne plynulý, a zároveň opraviť veľký nadpis v sekcii Experience tak, aby sa na iPhone 16 Pro Max zalamoval presne a čisto.
 
-1. V `Welcome.tsx` aj `Experience.tsx` máš vlastný `useParallax`, ktorý:
-   - počúva každý `scroll`
-   - pri každom frame volá `getBoundingClientRect()`
-   - pri každom frame robí `setOffset(...)`
-   - tým pádom spúšťa React re-render počas scrollu
+1. Čo je reálny problém teraz
+- `useParallax.ts` už síce nerobí React re-render pri scrollovaní, ale stále má každý parallax vlastný `scroll` listener.
+- Na stránke beží parallax viackrát naraz:
+  - `Welcome`
+  - 3 karty v `Experience`
+- Každý z nich pri scrollovaní volá `getBoundingClientRect()`, takže na mobile vzniká viac layout prepočtov v jednom frame.
+- Popri tom ešte beží scroll logika v `Header.tsx`, plus fixed hero a viaceré `transition-all`, takže sa náklady sčítajú.
 
-2. V `Experience` sa to nedeje len raz:
-   - parallax beží na welcome fotke
-   - a potom ešte na každej karte v sekcii experience
-   - na mobile je to citeľné viac, lebo browser má menší výkon a scroll/render pipeline je citlivejšia
-
-3. Obrázky sa zároveň hýbu cez `transform` a sú väčšie než kontajner (`h-[120%]`), čo je samo o sebe v poriadku, ale v kombinácii s React state updatmi počas scrollu je to drahé.
-
-4. Ďalšie veci, ktoré môžu jank zhoršovať:
-   - fixed hero sekcia (`Hero.tsx`)
-   - header, ktorý na scroll mení stav (`setIsDark`)
-   - veľa `transition-all` animácií naprieč sekciami
-   - viac veľkých obrázkov na jednej stránke
-
-Čo navrhujem upraviť:
-
-### 1. Presunúť mobile parallax mimo React state
-Namiesto `setOffset` na každom scroll frame:
-- používať `requestAnimationFrame`
-- aktualizovať `style.transform` priamo na DOM elemente cez `ref`
-- tým sa vyhneme re-renderom pri scrollovaní
-
-To je najdôležitejšia oprava.
-
-### 2. Vytvoriť jednu spoločnú optimalizovanú parallax utilitu/hook
-Namiesto dvoch skoro rovnakých `useParallax` hookov:
-- vytvoriť spoločný hook pre mobil aj desktop
-- throttle cez `requestAnimationFrame`
-- prípadne zapínať parallax len keď je element blízko viewportu
-
-To zníži počet zbytočných výpočtov.
-
-### 3. Obmedziť počet aktívnych parallax výpočtov na mobile
-Na mobile navrhnem:
-- jemnejší parallax speed
-- alebo parallax len pre hlavné fotky, nie pre všetky naraz
-- prípadne nižší rozsah posunu
-
-Efekt ostane, ale bude plynulejší.
-
-### 4. Skontrolovať a zjemniť scroll-reactive veci okolo
-Popri parallaxe preverím aj:
-- `Header.tsx` scroll listener
-- zbytočné `transition-all`
-- či sa niekde pri scrollovaní nemení layout namiesto čisto transform/opacity
-
-### 5. Opraviť bez zmeny vzhľadu
-Cieľ je:
-- zachovať parallax aj na mobile
-- nechať vizuál čo najbližší desktopu
-- ale prerobiť techniku tak, aby scroll nešiel cez React render loop
-
-Technické detaily:
+2. Ako to opravím
+- Nahradím súčasný per-komponent parallax za jeden spoločný, centralizovaný parallax manager v `src/hooks/useParallax.ts`.
+- Ten bude fungovať takto:
 ```text
-Aktuálny flow:
-scroll -> listener -> getBoundingClientRect -> setState -> React render -> style update
-
-Navrhovaný flow:
-scroll -> listener -> requestAnimationFrame -> direct transform update on img ref
+scroll/resize -> 1 shared requestAnimationFrame -> update len viditeľných parallax elementov
 ```
+- Hook bude iba registrovať elementy.
+- Samotný update bude spoločný, nie jeden listener na každý obrázok.
+- Pre transform použijem `translate3d(...)` namiesto obyčajného `translateY(...)`, aby sa lepšie využil compositor.
+- Na mobile znížim intenzitu efektu a zároveň zavedem clamp maxima posunu, aby sa hýbalo menej pixelov.
 
-Súbory, ktoré by som upravil:
+3. Ďalšia optimalizácia pre mobil
+- Do parallaxu pridám aktiváciu cez `IntersectionObserver`, aby sa nepočítali všetky obrázky stále.
+- Aktualizovať sa budú len obrázky, ktoré sú vo viewporte alebo tesne pri ňom.
+- V `Header.tsx` nechám RAF throttling, ale zjemním ho tak, aby:
+  - si element nehľadal opakovane zbytočne
+  - `setIsDark` nebežal, keď sa hodnota reálne nemení
+- V dotknutých sekciách zmením `transition-all` len na konkrétne vlastnosti tam, kde to dáva zmysel, aby browser nemusel sledovať všetko.
+
+4. Oprava nadpisu na iPhone 16 Pro Max
+Aktuálny problém je, že prvý riadok je na mobile príliš široký, takže sa rozbije a slovo `oddychu` ostane osamotené.
+
+Upravím to takto:
+- v `Experience.tsx` zmením markup veľkého nadpisu na presne kontrolované 2 riadky na mobile
+- mobil bude mať mierne menší font / upravené `leading` / menší horizontálny padding
+- výsledok bude:
+```text
+Zažite atmosféru skutočného oddychu,
+kde každý moment patrí vám
+```
+- na desktope ponechám súčasný vzhľad čo najbližší tomu, čo už máte
+
+5. Súbory, ktoré upravím
+- `src/hooks/useParallax.ts`
 - `src/components/sections/Welcome.tsx`
 - `src/components/sections/Experience.tsx`
-- prípadne nový spoločný hook, napr. `src/hooks/useParallax.ts`
-- podľa potreby jemne aj `src/components/sections/Header.tsx`
+- `src/components/sections/Header.tsx`
+- prípadne `src/index.css`, ak bude treba doplniť drobnú utility triedu pre GPU/compositing správanie
+
+6. Výsledok po úprave
+- parallax ostane aj na mobile
+- scroll bude výrazne plynulejší, lebo odstránim duplicitné scroll listenery a znížim počet layout meraní na frame
+- nadpis v Experience sa na iPhone 16 Pro Max prestane lámať tak, že `oddychu` ostane samostatne
+- vizuál ostane veľmi blízky tomu, čo máte teraz, len technicky bude výkonnejší
+
+Technické detaily
+```text
+Teraz:
+4x scroll listener + 4x getBoundingClientRect() + header scroll work
+
+Po úprave:
+1x shared listener + 1x RAF loop + update len aktívnych/viditeľných obrázkov
+```
