@@ -78,14 +78,23 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
-            >
-              {link.label}
-            </a>
+            <div key={link.label} className="relative group">
+              <a
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
+              >
+                {link.label}
+              </a>
+              {link.label === 'Reštaurácia' && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="bg-background border border-foreground/10 shadow-lg rounded px-4 py-2.5 flex items-center gap-2 whitespace-nowrap">
+                    <Clock size={13} style={{ color: '#C69B5E' }} />
+                    <span className="text-xs font-body text-foreground/60">11:00 – 22:00</span>
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -107,10 +116,6 @@ const Header = () => {
                 {i < languages.length - 1 && <span className={dividerColor}>|</span>}
               </span>
             ))}
-          </div>
-          <div className={`flex items-center gap-2 text-xs font-body ${textMuted}`}>
-            <Clock size={14} style={{ color: '#C69B5E' }} />
-            <span>11:00 – 22:00</span>
           </div>
           <a
             href="https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95"
