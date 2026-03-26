@@ -8,6 +8,9 @@ const useParallax = (speed = 0.15) => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return; // disable parallax on mobile for performance
+
     const handleScroll = () => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
