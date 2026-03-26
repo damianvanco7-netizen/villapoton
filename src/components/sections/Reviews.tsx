@@ -177,14 +177,14 @@ const Reviews = () => {
               className={isMobile ? '' : 'grid grid-cols-3 gap-0'}
             >
               {isMobile ? (
-                <div className="p-8 flex flex-col">
+                <div className="p-8 flex flex-col items-center text-center">
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="font-heading text-sm text-primary">
                         {getInitial(reviews[currentIndex].name)}
                       </span>
                     </div>
-                    <div>
+                    <div className="text-left">
                       <h3 className="font-heading text-xl">
                         {reviews[currentIndex].name}
                       </h3>

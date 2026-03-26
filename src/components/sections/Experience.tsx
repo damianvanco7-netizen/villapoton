@@ -54,6 +54,9 @@ const useParallax = (speed = 0.15) => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const handleScroll = () => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
@@ -85,10 +88,10 @@ const Experience = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl mb-2">
+        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl mb-2 px-4 md:px-0">
           Zažite atmosféru skutočného oddychu,
         </h2>
-        <p className="font-heading text-4xl md:text-5xl lg:text-6xl italic mb-6">
+        <p className="font-heading text-3xl md:text-5xl lg:text-6xl italic mb-6 px-4 md:px-0">
           kde každý moment patrí vám
         </p>
         <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-md mx-auto">
