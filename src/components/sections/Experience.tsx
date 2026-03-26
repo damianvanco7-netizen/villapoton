@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
-import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock } from 'lucide-react';
+import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock, Phone } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
@@ -124,6 +124,16 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
           >
             {t(`experience.${cardKey}.cta`)}
           </a>
+
+          {(cardKey === 'restaurant' || cardKey === 'bar') && (
+            <a
+              href="tel:+421907808083"
+              className="flex items-center gap-2 font-body text-sm text-foreground/70 hover:text-foreground transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              +421 907 808 083
+            </a>
+          )}
 
           {/* Opening hours for restaurant */}
           {cardKey === 'restaurant' && (
