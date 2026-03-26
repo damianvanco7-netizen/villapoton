@@ -1,64 +1,70 @@
 
-Cieľ: zachovať parallax aj na mobile, ale prerobiť ho tak, aby bol reálne plynulý, a zároveň opraviť veľký nadpis v sekcii Experience tak, aby sa na iPhone 16 Pro Max zalamoval presne a čisto.
 
-1. Čo je reálny problém teraz
-- `useParallax.ts` už síce nerobí React re-render pri scrollovaní, ale stále má každý parallax vlastný `scroll` listener.
-- Na stránke beží parallax viackrát naraz:
-  - `Welcome`
-  - 3 karty v `Experience`
-- Každý z nich pri scrollovaní volá `getBoundingClientRect()`, takže na mobile vzniká viac layout prepočtov v jednom frame.
-- Popri tom ešte beží scroll logika v `Header.tsx`, plus fixed hero a viaceré `transition-all`, takže sa náklady sčítajú.
+## Oprava jazykových mutacii - hardcoded texty
 
-2. Ako to opravím
-- Nahradím súčasný per-komponent parallax za jeden spoločný, centralizovaný parallax manager v `src/hooks/useParallax.ts`.
-- Ten bude fungovať takto:
-```text
-scroll/resize -> 1 shared requestAnimationFrame -> update len viditeľných parallax elementov
-```
-- Hook bude iba registrovať elementy.
-- Samotný update bude spoločný, nie jeden listener na každý obrázok.
-- Pre transform použijem `translate3d(...)` namiesto obyčajného `translateY(...)`, aby sa lepšie využil compositor.
-- Na mobile znížim intenzitu efektu a zároveň zavedem clamp maxima posunu, aby sa hýbalo menej pixelov.
+### Problem
+Viacero komponentov ma texty napevno po slovensky alebo po anglicky, namiesto pouzitia `t()` z i18n. Pri prepnuti jazyka sa tieto texty nemenia.
 
-3. Ďalšia optimalizácia pre mobil
-- Do parallaxu pridám aktiváciu cez `IntersectionObserver`, aby sa nepočítali všetky obrázky stále.
-- Aktualizovať sa budú len obrázky, ktoré sú vo viewporte alebo tesne pri ňom.
-- V `Header.tsx` nechám RAF throttling, ale zjemním ho tak, aby:
-  - si element nehľadal opakovane zbytočne
-  - `setIsDark` nebežal, keď sa hodnota reálne nemení
-- V dotknutých sekciách zmením `transition-all` len na konkrétne vlastnosti tam, kde to dáva zmysel, aby browser nemusel sledovať všetko.
+### Zoznam hardcoded textov
 
-4. Oprava nadpisu na iPhone 16 Pro Max
-Aktuálny problém je, že prvý riadok je na mobile príliš široký, takže sa rozbije a slovo `oddychu` ostane osamotené.
+**Hero.tsx:**
+- "Ideálne miesto na oddych a zážitky" (riadky 26-28)
 
-Upravím to takto:
-- v `Experience.tsx` zmením markup veľkého nadpisu na presne kontrolované 2 riadky na mobile
-- mobil bude mať mierne menší font / upravené `leading` / menší horizontálny padding
-- výsledok bude:
-```text
-Zažite atmosféru skutočného oddychu,
-kde každý moment patrí vám
-```
-- na desktope ponechám súčasný vzhľad čo najbližší tomu, čo už máte
+**Welcome.tsx:**
+- "Vitajte vo Villa Potôň / Miesto Elegantného Oddychu / v Srdci Prírody" (riadky 21-23)
+- "Objavte kombináciu komfortného ubytovania..." (riadok 29)
+- "Zistiť viac" (riadok 38)
 
-5. Súbory, ktoré upravím
-- `src/hooks/useParallax.ts`
+**Experience.tsx:**
+- "Zažite atmosféru skutočného oddychu, kde každý moment patrí vám" (riadky 69-73)
+
+**Header.tsx:**
+- navLinks labels hardcoded: "O nás", "Ubytovanie", "Reštaurácia", "Lokalita", "Kontakt" (riadky 21-26)
+- podmienka `link.label === 'Reštaurácia'` (riadok 101)
+- otvaracie hodiny "11:00 – 22:00" (riadok 104)
+
+**Footer.tsx:**
+- navLinks labels hardcoded rovnako (riadky 9-14)
+- "Ideálne miesto na oddych a zážitky" (riadok 36)
+- "Check-in" a "Check-out" po anglicky (riadky 78, 85)
+- "Horná Potôň 123, 930 36, Slovensko" (riadky 53-54)
+
+**Reviews.tsx:**
+- countryLabels hardcoded po slovensky: "Slovensko", "Taliansko", "Poľsko", "Maďarsko" (riadky 50-54)
+
+### Riesenie
+
+**1. Doplnit i18n kluce do vsetkych 3 locale suborov (sk.json, en.json, hu.json):**
+
+Nove kluce:
+- `hero.claim_line1`, `hero.claim_line2` (Ideálne miesto / na oddych a zážitky)
+- `welcome.title_line1`, `welcome.title_line2`, `welcome.title_line3` (Vitajte...)
+- `welcome.description`, `welcome.cta`
+- `experience.headline_line1`, `experience.headline_line2` (Zazite atmosferu...)
+- `nav.about_link`, `nav.rooms_link`, `nav.restaurant_link`, `nav.location_link`, `nav.contact_link` (alebo pouzit existujuce `nav.*` kluce)
+- `footer.claim` (Ideálne miesto...)
+- `footer.checkin`, `footer.checkout`
+- `footer.address_line1`, `footer.address_line2`
+- `experience.restaurant.phone_label` (doplnit do en.json a hu.json)
+- `reviews.country.sk`, `reviews.country.it`, `reviews.country.pl`, `reviews.country.hu`
+
+**2. Upravit komponenty aby pouzivali t():**
+
+- **Hero.tsx** - pridat `useTranslation`, nahradit hardcoded claim
+- **Welcome.tsx** - pridat `useTranslation`, nahradit vsetky 3 hardcoded texty
+- **Experience.tsx** - nahradit hardcoded nadpis za `t()` kluce
+- **Header.tsx** - navLinks labels cez `t()`, podmienku na restaurant cez `href` alebo key namiesto label, hodiny cez `t()`
+- **Footer.tsx** - navLinks cez `t()`, claim, check-in/out, adresa cez `t()`
+- **Reviews.tsx** - countryLabels cez `t()`
+
+**3. Subory na upravu:**
+- `src/i18n/locales/sk.json`
+- `src/i18n/locales/en.json`
+- `src/i18n/locales/hu.json`
+- `src/components/sections/Hero.tsx`
 - `src/components/sections/Welcome.tsx`
 - `src/components/sections/Experience.tsx`
 - `src/components/sections/Header.tsx`
-- prípadne `src/index.css`, ak bude treba doplniť drobnú utility triedu pre GPU/compositing správanie
+- `src/components/sections/Footer.tsx`
+- `src/components/sections/Reviews.tsx`
 
-6. Výsledok po úprave
-- parallax ostane aj na mobile
-- scroll bude výrazne plynulejší, lebo odstránim duplicitné scroll listenery a znížim počet layout meraní na frame
-- nadpis v Experience sa na iPhone 16 Pro Max prestane lámať tak, že `oddychu` ostane samostatne
-- vizuál ostane veľmi blízky tomu, čo máte teraz, len technicky bude výkonnejší
-
-Technické detaily
-```text
-Teraz:
-4x scroll listener + 4x getBoundingClientRect() + header scroll work
-
-Po úprave:
-1x shared listener + 1x RAF loop + update len aktívnych/viditeľných obrázkov
-```
