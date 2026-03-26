@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
-import { Bath, Wind, Wifi, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Leaf, Star, Flame, Phone } from 'lucide-react';
+import { Bath, Wind, Wifi, Car, UtensilsCrossed, Pizza, Coffee, Leaf, Flame, Phone, CookingPot } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
@@ -22,14 +22,15 @@ const accommodationAmenities: AmenityConfig[] = [
 const restaurantAmenities: AmenityConfig[] = [
   { key: 'alacarte', icon: UtensilsCrossed },
   { key: 'pizza', icon: Pizza },
-  { key: 'quiet', icon: Volume2 },
+  { key: 'homemade', icon: CookingPot },
   { key: 'breakfast', icon: Coffee },
 ];
 
 const barAmenities: AmenityConfig[] = [
   { key: 'ingredients', icon: Leaf },
-  { key: 'authentic', icon: Star },
-  { key: 'traditional', icon: Flame },
+  { key: 'italian_oven', icon: Flame },
+  { key: 'traditional', icon: CookingPot },
+  { key: 'airy_dough', icon: Wind },
 ];
 
 const cards = ['accommodation', 'restaurant', 'bar'] as const;

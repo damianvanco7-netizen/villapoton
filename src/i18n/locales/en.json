@@ -12,14 +12,14 @@
     "subtitle": "Guesthouse — Restaurant",
     "description": "Discover an oasis of peace and luxury in the heart of Žitný ostrov. Villa Potoň combines elegance with nature for an unforgettable experience.",
     "cta": "Discover More",
-    "claim_line1": "The perfect place",
-    "claim_line2": "for rest and experiences"
+    "claim_line1": "A place where you",
+    "claim_line2": "feel at home"
   },
   "welcome": {
     "title_line1": "Welcome to Villa Potôň",
-    "title_line2": "A Place of Elegant Relaxation",
-    "title_line3": "in the Heart of Nature",
-    "description": "Discover a combination of comfortable accommodation, excellent cuisine and an atmosphere you'll love coming back to.",
+    "title_line2": "Elegant Relaxation",
+    "title_line3": "in the Heart of Žitný Ostrov",
+    "description": "Discover a combination of comfortable accommodation, exceptional cuisine and an atmosphere you'll love coming back to.",
     "cta": "Discover More"
   },
   "experience": {
@@ -30,12 +30,12 @@
     "subtitle": "Accommodation, dining and relaxation under one roof",
     "accommodation": {
       "title": "Accommodation",
-      "description": "Our modern rooms offer everything you need for a pleasant and undisturbed stay – from privacy to practical amenities. Whether you come for relaxation or a short trip, you'll find comfort you can rely on.",
+      "description": "Our modern rooms offer everything you need for a pleasant and undisturbed stay. Whether you come for relaxation or a short trip, you'll find comfort you can rely on.",
       "cta": "BOOK A ROOM"
     },
     "restaurant": {
       "title": "Restaurant",
-      "description": "Our restaurant offers fresh dishes prepared with an emphasis on quality and taste. The specialty is amazing Neapolitan pizza that you'll fall in love with from the first bite. Whether you choose from the à la carte menu or enjoy a peaceful breakfast, an experience awaits that will complement your stay.",
+      "description": "Fresh ingredients, a love for food, and chefs who know what they're doing. Our menu features homemade specialties and authentic Neapolitan pizza from an oven brought straight from Italy. Whether you sit down for lunch, dinner or a quiet breakfast, you'll leave with a good feeling.",
       "cta": "BOOK A TABLE",
       "hours_label": "Opening Hours",
       "hours_time": "11:00 – 22:00",
@@ -43,24 +43,22 @@
     },
     "bar": {
       "title": "Neapolitan Pizza",
-      "description": "Authentic Neapolitan pizza made from quality ingredients following traditional methods, with soft airy dough and rich flavor you'll fall in love with from the very first bite.",
+      "description": "Our Italian oven made its way from Naples. And the pizza we bake in it is worth the journey. Soft airy dough, quality ingredients and traditional methods. You won't find pizza like this anywhere else on Žitný Ostrov.",
       "cta": "BOOK A TABLE"
     },
     "amenities": {
       "bathroom": "Private bathroom",
       "aircon": "Air conditioning",
       "wifi": "Free Wi-Fi",
-      "nonsmoking": "Non-smoking rooms",
-      "tv": "TV",
       "parking": "Free parking",
-      "alacarte": "A la carte menu",
+      "alacarte": "À la carte",
       "pizza": "Neapolitan pizza",
-      "quiet": "Quiet dining",
+      "homemade": "Homemade cuisine",
       "breakfast": "Breakfast",
-      "special": "Special dietary meals on request",
-      "ingredients": "Carefully selected ingredients",
-      "authentic": "Authentic experience",
-      "traditional": "Traditional preparation"
+      "ingredients": "Quality ingredients",
+      "italian_oven": "Italian oven",
+      "traditional": "Traditional methods",
+      "airy_dough": "Airy dough"
     }
   },
   "services": {
@@ -69,19 +67,19 @@
     "items": {
       "breakfast": {
         "title": "Breakfast",
-        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+        "description": "Start your morning in peace. We serve hot and cold breakfasts right in the restaurant. Fresh pastries, homemade delicacies and good coffee to start your day with energy."
       },
       "terrace": {
         "title": "Terrace",
-        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+        "description": "Enjoy peaceful moments on the terrace with a pleasant atmosphere, perfect for morning coffee or evening relaxation."
       },
       "parking": {
         "title": "Private Parking",
-        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+        "description": "Villa Potôň has a large private parking lot with capacity for over 30 vehicles, so you never have to worry about parking."
       },
       "accessibility": {
         "title": "Rooms for People with Disabilities",
-        "description": "We are a modern pension with restaurant, located in Horná Potôň, 35km from Bratislava, 10km from Dunajská Streda. Our goal is to provide quality services so you will leave satisfied and happy."
+        "description": "Our facilities are adapted for guests with reduced mobility, so everyone can enjoy a comfortable and carefree stay."
       }
     }
   },
@@ -89,41 +87,41 @@
     "heading": "Your comfort and satisfaction are the foundation of every",
     "headingItalic": "detail",
     "headingEnd": " of your stay.",
-    "subtitle": "Whether you want to relax in a pleasant environment or enjoy great food, you will find what you are looking for with us.",
+    "subtitle": "Whether you want to relax in a pleasant environment or enjoy excellent food, you'll find what you're looking for with us.",
     "cta": "Book a Room",
     "imageTitle_word1": "More",
     "imageTitle_word2": "than",
-    "imageTitle_word3": "stay",
+    "imageTitle_word3": "a stay",
     "imageSubtitle": "At Villa Potoň, every detail is designed to make you feel at home, with the peace of nature right outside your door."
   },
   "activities": {
-    "title": "Where Every Day is Designed for You",
+    "title": "Where Every Day is Created for You",
     "title_line1": "Where Every Day is",
-    "title_line2": "Designed for You",
+    "title_line2": "Created for You",
     "items": {
       "zitny_ostrov": {
-        "title": "Žitný ostrov",
-        "description": "Discover the beauty of Žitný ostrov by the Danube, just a short distance from the villa, and enjoy peaceful walks or trips through the surrounding nature."
+        "title": "Žitný Ostrov",
+        "description": "Discover the beauty of Žitný Ostrov by the Danube, just a short distance from the villa. Peaceful walks, cycling trails and nature that slows you down."
       },
       "golf": {
         "title": "Golf",
-        "description": "Enjoy a peaceful day at quality golf courses near Veľká Paka or Báč, ideal for beginners and experienced players alike, just about 10–15 minutes from the villa."
+        "description": "Golf courses near Veľká Paka and Báč, 10 to 15 minutes by car. Ideal for beginners and experienced players alike."
       },
       "malkia": {
         "title": "Malkia Park",
-        "description": "Experience a unique encounter with big cats at the rescue park in Orechová Potôň, located just 5 minutes by car from Villa Potôň."
+        "description": "A unique rescue park with big cats in Orechová Potôň. Just 5 minutes by car."
       },
       "slovakia_ring": {
         "title": "Slovakia Ring",
-        "description": "Just about 5 minutes from the villa, adrenaline awaits at the Slovakia Ring circuit in Orechová Potôň – racing, go-karts, and unforgettable experiences."
+        "description": "Adrenaline within reach. A racing circuit just 5 minutes from the villa. Racing, go-karts and unforgettable experiences."
       },
       "thermalpark": {
         "title": "Thermalpark",
-        "description": "Relax in thermal pools and treat yourself to wellness at the Thermalpark in Dunajská Streda, approximately 10–15 minutes away by car."
+        "description": "Thermal pools and wellness in Dunajská Streda, 10 to 15 minutes by car. An ideal program for the whole day."
       },
       "xbionic": {
         "title": "X-Bionic Sphere",
-        "description": "Discover the world of sports and relaxation at the modern X-Bionic Sphere complex in Šamorín, approximately 20–25 minutes by car from the villa. You'll find an equestrian area, professional sports facilities, fitness center, swimming pool, wellness, and options for active leisure for children and adults."
+        "description": "A modern sports complex in Šamorín, 20 to 25 minutes by car. An equestrian area, swimming pool, wellness, fitness and activities for children and adults."
       }
     }
   },
@@ -141,7 +139,7 @@
   "booking_cta": {
     "title": "Book your",
     "titleItalic": "stay",
-    "description": "A reservation at Villa Potôň is more than just picking a date – it's the beginning of your relaxation on your own terms. Whether you're looking for a simple stay or want to treat yourself to a complete experience with excellent cuisine, we'll tailor everything to your comfort.",
+    "description": "A reservation at Villa Potôň is the beginning of your relaxation. We'll tailor everything to your comfort.",
     "cta": "Book a Room"
   },
   "footer": {
@@ -156,7 +154,7 @@
     "privacy": "Privacy Policy",
     "cookies": "Cookies",
     "terms": "Terms & Conditions",
-    "claim": "The perfect place for rest and\u00A0experiences",
+    "claim": "A place where you feel at\u00A0home",
     "checkin": "Check-in",
     "checkout": "Check-out",
     "address_line1": "Horná Potôň 123",

@@ -12,30 +12,30 @@
     "subtitle": "Penzión — Reštaurácia",
     "description": "Objavte oázu pokoja a luxusu v srdci Žitného ostrova. Villa Potoň spája eleganciu s prírodou pre nezabudnuteľný zážitok.",
     "cta": "Objavte viac",
-    "claim_line1": "Ideálne miesto",
-    "claim_line2": "na oddych a zážitky"
+    "claim_line1": "Miesto, kde sa cítite",
+    "claim_line2": "ako doma"
   },
   "welcome": {
     "title_line1": "Vitajte vo Villa Potôň",
-    "title_line2": "Miesto Elegantného Oddychu",
-    "title_line3": "v Srdci Prírody",
-    "description": "Objavte kombináciu komfortného ubytovania, skvelej kuchyne a atmosféry, ku ktorej sa budete radi vracať.",
-    "cta": "Zistiť viac"
+    "title_line2": "Elegantný oddych",
+    "title_line3": "v srdci Žitného ostrova",
+    "description": "Objavte spojenie pohodlného ubytovania, výnimočnej kuchyne a atmosféry, do ktorej sa budete radi vracať.",
+    "cta": "Objavte viac"
   },
   "experience": {
     "headline_line1": "Zažite atmosféru skutočného oddychu,",
-    "headline_line2": "kde každý moment patrí\u00A0vám",
+    "headline_line2": "kde je každý moment\u00A0váš",
     "title": "Experience the Feeling",
     "titleLine2": "of a Retreat",
-    "subtitle": "Ubytovanie, gastronómia a relax\npod jednou strechou",
+    "subtitle": "Ubytovanie, gastro a relax\npod jednou strechou",
     "accommodation": {
       "title": "Ubytovanie",
-      "description": "Naše moderne zariadené izby ponúkajú všetko, čo potrebujete pre príjemný a ničím nerušený pobyt – od súkromia až po praktické vybavenie. Či už prichádzate za oddychom alebo na krátky výlet, u nás nájdete komfort, na ktorý sa môžete spoľahnúť.",
+      "description": "Naše moderné izby ponúkajú všetko, čo potrebujete pre príjemný a nerušený pobyt. Či už k nám prídete oddychovať alebo na krátky výlet, nájdete komfort, na ktorý sa môžete spoľahnúť.",
       "cta": "REZERVOVAŤ IZBU"
     },
     "restaurant": {
       "title": "Reštaurácia",
-      "description": "Naša reštaurácia ponúka čerstvé jedlá pripravené s dôrazom na kvalitu a chuť. Špecialitou je úžasná neapolská pizza, ktorú si zamilujete už po prvom súste. Či už si vyberiete z à la carte ponuky alebo si doprajete pokojné raňajky, čaká vás zážitok, ktorý doplní váš pobyt.",
+      "description": "Čerstvé suroviny, láska k jedlu a kuchári, ktorí vedia, čo robia. V ponuke nájdete domáce špeciality aj pravú neapolskú pizzu z pece privezenej priamo z Talianska. Či už si sadnete na obed, večeru alebo pokojné raňajky, odídete s dobrým pocitom.",
       "cta": "REZERVOVAŤ STÔL",
       "hours_label": "Otváracie hodiny",
       "hours_time": "11:00 – 22:00",
@@ -43,24 +43,22 @@
     },
     "bar": {
       "title": "Neapolská Pizza",
-      "description": "Autentická neapolská pizza pripravovaná z kvalitných surovín podľa tradičných postupov, s jemným nadýchaným cestom a bohatou chuťou, ktorú si zamilujete už po prvom súste.",
+      "description": "Naša talianska pec má za sebou cestu z Neapolu. A pizza, ktorú v nej pečieme, tú cestu stojí za to. Jemné vzdušné cesto, kvalitné suroviny a tradičný postup. Takúto pizzu na Žitnom ostrove nenájdete nikde inde.",
       "cta": "REZERVOVAŤ STÔL"
     },
     "amenities": {
-      "bathroom": "Súkromná kúpeľňa",
+      "bathroom": "Vlastná kúpeľňa",
       "aircon": "Klimatizácia",
       "wifi": "Bezplatné Wi-Fi",
-      "nonsmoking": "Nefajčiarske izby",
-      "tv": "TV",
-      "parking": "Bezplatné parkovisko",
-      "alacarte": "A la carte ponuka",
+      "parking": "Bezplatné parkovanie",
+      "alacarte": "À la carte",
       "pizza": "Neapolská pizza",
-      "quiet": "Pokojné stolovanie",
+      "homemade": "Domáca kuchyňa",
       "breakfast": "Raňajky",
-      "special": "Možnosť špeciálnych jedál na požiadanie",
-      "ingredients": "Starostlivo vybrané ingrediencie",
-      "authentic": "Autentický zážitok",
-      "traditional": "Tradičná príprava"
+      "ingredients": "Kvalitné suroviny",
+      "italian_oven": "Talianska pec",
+      "traditional": "Tradičný postup",
+      "airy_dough": "Vzdušné cesto"
     }
   },
   "services": {
@@ -69,7 +67,7 @@
     "items": {
       "breakfast": {
         "title": "Raňajky",
-        "description": "Začnite svoj deň chutnými raňajkami pripravenými z čerstvých surovín, ktoré vám dodajú energiu na celý deň."
+        "description": "Ráno začnite v pokoji. Teplé aj studené raňajky servírujeme priamo v reštaurácii. Čerstvé pečivo, domáce pochúťky a dobrá káva, aby ste do dňa vykročili s energiou."
       },
       "terrace": {
         "title": "Terasa",
@@ -86,10 +84,10 @@
     }
   },
   "quote": {
-    "heading": "Vaše pohodlie a spokojnosť sú základom každého",
+    "heading": "Váš komfort a spokojnosť sú základom každého",
     "headingItalic": "detailu",
     "headingEnd": " vášho pobytu.",
-    "subtitle": "Či už si chcete len oddýchnuť v príjemnom prostredí alebo vychutnať skvelé jedlo, u nás si prídete na svoje.",
+    "subtitle": "Či už chcete oddychovať v príjemnom prostredí alebo si vychutnať výborné jedlo, u nás nájdete to, čo hľadáte.",
     "cta": "Rezervovať izbu",
     "imageTitle_word1": "Viac",
     "imageTitle_word2": "ako",
@@ -97,40 +95,40 @@
     "imageSubtitle": "Vo Villa Potôň je každý detail navrhnutý tak, aby ste sa cítili ako doma, s pokojom prírody hneď za vašimi dverami."
   },
   "activities": {
-    "title": "Kde je každý deň navrhnutý pre vás",
+    "title": "Kde je každý deň vytvorený pre vás",
     "title_line1": "Kde je každý deň",
-    "title_line2": "navrhnutý pre Vás",
+    "title_line2": "vytvorený pre Vás",
     "items": {
       "zitny_ostrov": {
         "title": "Žitný ostrov",
-        "description": "Objavte krásy Žitného ostrova pri Dunaji len na skok od vily, užite si pokojné prechádzky po okolitej prírode alebo plavbu člnom po rieke."
+        "description": "Objavte krásu Žitného ostrova pri Dunaji, len kúsok od vily. Pokojné prechádzky, cyklotrasy a príroda, ktorá vás spomalí."
       },
       "golf": {
         "title": "Golf",
-        "description": "Vychutnajte si pokojný deň na kvalitných golfových ihriskách v okolí Veľkej Paky či Báču, ideálnych pre začiatočníkov aj skúsených hráčov, vzdialených len približne 10–15 minút od vily."
+        "description": "Golfové ihriská pri Veľkej Pake a Báči, 10 až 15 minút autom. Ideálne pre začiatočníkov aj skúsených hráčov."
       },
       "malkia": {
         "title": "Malkia Park",
-        "description": "Zažite jedinečné stretnutie s veľkými mačkami v záchrannom parku v Orechovej Potôni, ktorý sa nachádza len 5 minút jazdy od Villa Potôň."
+        "description": "Unikátny záchranný park s veľkými mačkovitými šelmami v Orechovej Potôni. Len 5 minút autom."
       },
       "slovakia_ring": {
         "title": "Slovakia Ring",
-        "description": "Len približne 5 minút od vily vás čaká adrenalín na okruhu Slovakia Ring v Orechovej Potôni – jazdy, motokáry aj nezabudnuteľné zážitky."
+        "description": "Adrenalín na dosah. Pretekársky okruh len 5 minút od vily. Preteky, motokáry a zážitky, na ktoré sa nezabúda."
       },
       "thermalpark": {
         "title": "Thermalpark",
-        "description": "Oddýchnite si v termálnych bazénoch a doprajte si wellness v Thermalparku v Dunajskej Strede, ktorý je vzdialený približne 10–15 minút jazdy."
+        "description": "Termálne bazény a wellness v Dunajskej Strede, 10 až 15 minút autom. Ideálny program na celý deň."
       },
       "xbionic": {
         "title": "X-Bionic Sphere",
-        "description": "Objavte svet športu a oddychu v modernom komplexe X-Bionic Sphere v Šamoríne, ktorý je dostupný približne za 20–25 minút jazdy od vily. Nájdete tu jazdecký areál, profesionálne športoviská, fitness centrum, plaváreň, wellness aj možnosti na aktívny oddych pre deti aj dospelých."
+        "description": "Moderný športový komplex v Šamoríne, 20 až 25 minút autom. Jazdecký areál, bazén, wellness, fitness a aktivity pre deti aj dospelých."
       }
     }
   },
   "reviews": {
     "title_line1": "Spokojní hostia,",
     "title_line2": "naša najlepšia vizitka",
-    "rating_label": "Vynikajúce",
+    "rating_label": "Výborné",
     "country": {
       "sk": "Slovensko",
       "it": "Taliansko",
@@ -139,9 +137,9 @@
     }
   },
   "booking_cta": {
-    "title": "Rezervuj si",
+    "title": "Rezervujte si",
     "titleItalic": "pobyt",
-    "description": "Rezervácia vo Villa Potôň je viac než len výber dátumu – je to začiatok vášho oddychu podľa vlastných predstáv. Či už hľadáte jednoduchý pobyt alebo si chcete dopriať kompletný zážitok s výbornou kuchyňou, všetko prispôsobíme vášmu pohodliu.",
+    "description": "Rezervácia vo Villa Potôň je začiatok vášho oddychu. Všetko prispôsobíme vášmu pohodliu.",
     "cta": "Rezervovať izbu"
   },
   "footer": {
@@ -156,7 +154,7 @@
     "privacy": "Ochrana súkromia",
     "cookies": "Cookies",
     "terms": "Obchodné podmienky",
-    "claim": "Ideálne miesto na oddych a\u00A0zážitky",
+    "claim": "Miesto, kde sa cítite ako\u00A0doma",
     "checkin": "Check-in",
     "checkout": "Check-out",
     "address_line1": "Horná Potôň 123",
