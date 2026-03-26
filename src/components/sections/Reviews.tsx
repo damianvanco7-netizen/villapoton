@@ -7,43 +7,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 
-const reviews = [
-  {
-    name: 'Viktória',
-    country: 'sk',
-    flag: '🇸🇰',
-    text: 'Ubytovanie bolo pekné čisté, s elektrickými roletami ktoré bolo možné zatiahnuť na úplnú tmu čiže som sa skvele vyspala. Na izbe bola klimatizácia aj napriek tomu že bola izbička malá, milo ma to prekvapilo, nečakala som to. Personál bol veľmi...',
-  },
-  {
-    name: 'Orru',
-    country: 'it',
-    flag: '🇮🇹',
-    text: 'Toto miesto sme si vybrali kvôli krátkej vzdialenosti od Šamorína na preteky a bola to skvelá voľba. Izby boli čisté, postele veľmi pohodlné. jedli sme v reštaurácii, pomer kvalita/cena by som povedal výborný, pivo bolo veľmi dobré. Raňajky sú podávané v salóniku reštaurácie, teplé aj studené, veľmi ochotný personál, pobyt odporúčam.',
-  },
-  {
-    name: 'Radoslaw',
-    country: 'pl',
-    flag: '🇵🇱',
-    text: 'Páčilo sa mi všetko, obsluha, čistota, lokalita a najlepšie boli jedlá v reštaurácii, ak pôjdem do týchto oblastí, pôjdem len tam.',
-  },
-  {
-    name: 'Henrich',
-    country: 'sk',
-    flag: '🇸🇰',
-    text: 'Všetko bolo úžasné. Personál maximálne ústretový, chutná kuchyňa. Všetko nové, čisté, voňavé. Máme v pláne sa vrátiť.',
-  },
-  {
-    name: 'Krisztina',
-    country: 'hu',
-    flag: '🇭🇺',
-    text: 'Ubytovanie je veľmi pekné s jedinečným moderným dizajnom. Personál a majitelia sú veľmi milí a atmosféra je rodinná.',
-  },
-  {
-    name: 'Dominika',
-    country: 'pl',
-    flag: '🇵🇱',
-    text: 'Veľmi chutné raňajky a káva tiež. Výhodou je poloha v blízkosti trate Slovakiaring. Veľmi pekné služby a priateľskí majitelia. Vynikajúcu kačicu s kroketami odporúčam na obed alebo večeru. Ďakujem pekne :-)',
-  },
+const reviewKeys = [
+  { name: 'Viktória', country: 'sk', flag: '🇸🇰', key: 'viktoria' },
+  { name: 'Orru', country: 'it', flag: '🇮🇹', key: 'orru' },
+  { name: 'Radoslaw', country: 'pl', flag: '🇵🇱', key: 'radoslaw' },
+  { name: 'Henrich', country: 'sk', flag: '🇸🇰', key: 'henrich' },
+  { name: 'Krisztina', country: 'hu', flag: '🇭🇺', key: 'krisztina' },
+  { name: 'Dominika', country: 'pl', flag: '🇵🇱', key: 'dominika' },
 ];
 
 const getCountryLabel = (country: string, t: (key: string) => string) => t(`reviews.country.${country}`);
@@ -60,7 +30,7 @@ const Reviews = () => {
   const [isManual, setIsManual] = useState(false);
   const manualTimeout = useRef<ReturnType<typeof setTimeout>>();
 
-  const totalReviews = reviews.length;
+  const totalReviews = reviewKeys.length;
 
   const next = useCallback(() => {
     setDirection(1);
@@ -95,7 +65,7 @@ const Reviews = () => {
   const getVisibleReviews = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
-      visible.push(reviews[(currentIndex + i) % totalReviews]);
+      visible.push(reviewKeys[(currentIndex + i) % totalReviews]);
     }
     return visible;
   };
@@ -176,20 +146,20 @@ const Reviews = () => {
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="font-heading text-sm text-primary">
-                        {getInitial(reviews[currentIndex].name)}
+                        {getInitial(reviewKeys[currentIndex].name)}
                       </span>
                     </div>
                     <div className="text-left">
                       <h3 className="font-heading text-xl">
-                        {reviews[currentIndex].name}
+                        {reviewKeys[currentIndex].name}
                       </h3>
                       <p className="font-body text-sm text-foreground/20">
-                        {getCountryLabel(reviews[currentIndex].country, t)}
+                        {getCountryLabel(reviewKeys[currentIndex].country, t)}
                       </p>
                     </div>
                   </div>
                   <p className="font-body text-sm text-foreground leading-relaxed mt-4 italic">
-                    „{reviews[currentIndex].text}"
+                    „{t(`reviews.items.${reviewKeys[currentIndex].key}`)}"
                   </p>
                 </div>
               ) : (
@@ -216,7 +186,7 @@ const Reviews = () => {
                       </div>
                     </div>
                     <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4 italic">
-                      „{review.text}"
+                      „{t(`reviews.items.${review.key}`)}"
                     </p>
                   </div>
                 ))
