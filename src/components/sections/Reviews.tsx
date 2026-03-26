@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
@@ -57,6 +58,7 @@ const getInitial = (name: string) => name.charAt(0).toUpperCase();
 const Reviews = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
+  const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
@@ -172,35 +174,58 @@ const Reviews = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-0"
+              className={isMobile ? '' : 'grid grid-cols-3 gap-0'}
             >
-              {visibleReviews.map((review, i) => (
-                <div
-                  key={`${review.name}-${i}`}
-                  className={`p-8 md:p-10 h-[280px] flex flex-col overflow-hidden ${
-                    i < 2 ? 'border-r border-border' : ''
-                  }`}
-                >
+              {isMobile ? (
+                <div className="p-8 flex flex-col">
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="font-heading text-sm text-primary">
-                        {getInitial(review.name)}
+                        {getInitial(reviews[currentIndex].name)}
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl md:text-2xl">
-                        {review.name}
+                      <h3 className="font-heading text-xl">
+                        {reviews[currentIndex].name}
                       </h3>
                       <p className="font-body text-sm text-muted-foreground">
-                        {countryLabels[review.country]}
+                        {countryLabels[reviews[currentIndex].country]}
                       </p>
                     </div>
                   </div>
-                  <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4">
-                    {review.text}
+                  <p className="font-body text-sm text-foreground leading-relaxed mt-4">
+                    {reviews[currentIndex].text}
                   </p>
                 </div>
-              ))}
+              ) : (
+                visibleReviews.map((review, i) => (
+                  <div
+                    key={`${review.name}-${i}`}
+                    className={`p-8 md:p-10 h-[280px] flex flex-col overflow-hidden ${
+                      i < 2 ? 'border-r border-border' : ''
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 mb-1">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="font-heading text-sm text-primary">
+                          {getInitial(review.name)}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="font-heading text-xl md:text-2xl">
+                          {review.name}
+                        </h3>
+                        <p className="font-body text-sm text-muted-foreground">
+                          {countryLabels[review.country]}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4">
+                      {review.text}
+                    </p>
+                  </div>
+                ))
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
