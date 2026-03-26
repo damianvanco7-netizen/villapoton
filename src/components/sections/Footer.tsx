@@ -26,9 +26,12 @@ const Footer = () => {
     <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8">
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
+        <div className="mb-16">
+          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-12" />
+        </div>
+
         <div className="mb-16 flex flex-col md:flex-row gap-12">
           <div className="md:w-1/5">
-            <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-6" />
             <p className="font-heading text-xl md:text-2xl text-primary-foreground/80">Ideálne miesto na oddych a&nbsp;zážitky</p>
           </div>
 
