@@ -98,7 +98,7 @@ const Experience = () => {
         <p className="font-heading text-3xl md:text-5xl lg:text-6xl italic mb-6 px-6 md:px-0">
           kde každý moment patrí&nbsp;vám
         </p>
-        <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-md mx-auto">
+        <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-xs md:max-w-md mx-auto px-6 md:px-0">
           {t('experience.subtitle')}
         </p>
       </div>

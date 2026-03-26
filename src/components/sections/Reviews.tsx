@@ -193,8 +193,8 @@ const Reviews = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="font-body text-sm text-foreground leading-relaxed mt-4">
-                    {reviews[currentIndex].text}
+                  <p className="font-body text-sm text-foreground leading-relaxed mt-4 italic">
+                    „{reviews[currentIndex].text.replace(/^[„"«»"]/,'').replace(/[„"«»"]$/,'')}"
                   </p>
                 </div>
               ) : (
@@ -220,8 +220,8 @@ const Reviews = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4">
-                      {review.text}
+                    <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4 italic">
+                      „{review.text.replace(/^[„"«»"]/,'').replace(/[„"«»"]$/,'')}"
                     </p>
                   </div>
                 ))
