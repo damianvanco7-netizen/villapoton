@@ -6,7 +6,7 @@ import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume
 import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
-import barImg from '@/assets/bar.jpg';
+import barImg from '@/assets/pizza.jpg';
 
 import type { LucideIcon } from 'lucide-react';
 
