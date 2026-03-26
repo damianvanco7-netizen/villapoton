@@ -35,21 +35,29 @@ const Header = () => {
   };
 
   useEffect(() => {
+    let ticking = false;
+    let rafId = 0;
     const handleScroll = () => {
-      // Show off-white bg only when content section reaches the header
-      const contentSection = document.querySelector('.relative.z-10.bg-background');
-      if (contentSection) {
-        const rect = contentSection.getBoundingClientRect();
-        // When the content section top is at or above ~80px (header height), switch to light
-        setIsDark(rect.top > 80);
-      } else {
-        setIsDark(window.scrollY < 10);
-      }
+      if (ticking) return;
+      ticking = true;
+      rafId = requestAnimationFrame(() => {
+        ticking = false;
+        const contentSection = document.querySelector('.relative.z-10.bg-background');
+        if (contentSection) {
+          const rect = contentSection.getBoundingClientRect();
+          setIsDark(rect.top > 80);
+        } else {
+          setIsDark(window.scrollY < 10);
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const handleLangChange = (code: string) => {
