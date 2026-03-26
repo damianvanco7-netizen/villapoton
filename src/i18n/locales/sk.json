@@ -11,9 +11,20 @@
   "hero": {
     "subtitle": "Penzión — Reštaurácia",
     "description": "Objavte oázu pokoja a luxusu v srdci Žitného ostrova. Villa Potoň spája eleganciu s prírodou pre nezabudnuteľný zážitok.",
-    "cta": "Objavte viac"
+    "cta": "Objavte viac",
+    "claim_line1": "Ideálne miesto",
+    "claim_line2": "na oddych a zážitky"
+  },
+  "welcome": {
+    "title_line1": "Vitajte vo Villa Potôň",
+    "title_line2": "Miesto Elegantného Oddychu",
+    "title_line3": "v Srdci Prírody",
+    "description": "Objavte kombináciu komfortného ubytovania, skvelej kuchyne a atmosféry, ku ktorej sa budete radi vracať.",
+    "cta": "Zistiť viac"
   },
   "experience": {
+    "headline_line1": "Zažite atmosféru skutočného oddychu,",
+    "headline_line2": "kde každý moment patrí\u00A0vám",
     "title": "Experience the Feeling",
     "titleLine2": "of a Retreat",
     "subtitle": "Ubytovanie, gastronómia a relax\npod jednou strechou",
@@ -119,7 +130,13 @@
   "reviews": {
     "title_line1": "Spokojní hostia,",
     "title_line2": "naša najlepšia vizitka",
-    "rating_label": "Vynikajúce"
+    "rating_label": "Vynikajúce",
+    "country": {
+      "sk": "Slovensko",
+      "it": "Taliansko",
+      "pl": "Poľsko",
+      "hu": "Maďarsko"
+    }
   },
   "booking_cta": {
     "title": "Rezervuj si",
@@ -139,12 +156,26 @@
     "privacy": "Ochrana súkromia",
     "cookies": "Cookies",
     "terms": "Obchodné podmienky",
+    "claim": "Ideálne miesto na oddych a\u00A0zážitky",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "address_line1": "Horná Potôň 123",
+    "address_line2": "930 36, Slovensko",
     "nav": {
+      "about": "O nás",
       "accommodation": "Ubytovanie",
       "restaurant": "Reštaurácia",
+      "location": "Lokalita",
+      "contact": "Kontakt",
       "gallery": "Galéria",
-      "activities": "Aktivity",
-      "contact": "Kontakt"
+      "activities": "Aktivity"
     }
+  },
+  "header_nav": {
+    "about": "O nás",
+    "accommodation": "Ubytovanie",
+    "restaurant": "Reštaurácia",
+    "location": "Lokalita",
+    "contact": "Kontakt"
   }
 }

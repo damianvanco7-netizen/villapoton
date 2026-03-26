@@ -18,11 +18,11 @@ const Header = () => {
   const [isDark, setIsDark] = useState(true); // Start dark (hero)
 
   const navLinks = [
-    { label: 'O nás', href: '#welcome' },
-    { label: 'Ubytovanie', href: '#experience' },
-    { label: 'Reštaurácia', href: '#restaurant' },
-    { label: 'Lokalita', href: '#activities' },
-    { label: 'Kontakt', href: '#footer' },
+    { key: 'about', href: '#welcome' },
+    { key: 'accommodation', href: '#experience' },
+    { key: 'restaurant', href: '#restaurant' },
+    { key: 'location', href: '#activities' },
+    { key: 'contact', href: '#footer' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -90,18 +90,18 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-baseline gap-8">
           {navLinks.map((link) => (
-            <div key={link.label} className="flex flex-col items-center">
+            <div key={link.key} className="flex flex-col items-center">
               <a
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
               >
-                {link.label}
+                {t(`header_nav.${link.key}`)}
               </a>
-              {link.label === 'Reštaurácia' && (
+              {link.key === 'restaurant' && (
                 <div className="flex items-center gap-1 mt-0.5">
                   <Clock size={10} style={{ color: '#C69B5E' }} />
-                  <span className={`text-[10px] font-body ${textMuted}`}>11:00 – 22:00</span>
+                  <span className={`text-[10px] font-body ${textMuted}`}>{t('experience.restaurant.hours_time')}</span>
                 </div>
               )}
             </div>
@@ -171,12 +171,12 @@ const Header = () => {
           <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}
                 className="text-2xl font-heading text-foreground hover:text-foreground/70 transition-colors tracking-wide uppercase"
               >
-                {link.label}
+                {t(`header_nav.${link.key}`)}
               </a>
             ))}
           </nav>

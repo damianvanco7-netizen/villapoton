@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import welcomeImg from '@/assets/welcome.jpg';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const Welcome = () => {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
   const { containerRef, imgRef } = useParallax(0.15);
 
@@ -18,15 +20,15 @@ const Welcome = () => {
       >
         <div className="flex flex-col items-center text-center">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-center">
-            <span className="block">Vitajte vo Villa Potôň</span>
-            <span className="block">Miesto Elegantného Oddychu</span>
-            <span className="block italic">v Srdci Prírody</span>
+            <span className="block">{t('welcome.title_line1')}</span>
+            <span className="block">{t('welcome.title_line2')}</span>
+            <span className="block italic">{t('welcome.title_line3')}</span>
           </h2>
         </div>
 
         {/* Description */}
         <p className="font-body text-foreground text-sm md:text-base leading-relaxed max-w-2xl mx-auto text-center mt-8">
-          Objavte kombináciu komfortného ubytovania, skvelej kuchyne a atmosféry, ku ktorej sa budete radi vracať.
+          {t('welcome.description')}
         </p>
 
         {/* CTA Button */}
@@ -35,7 +37,7 @@ const Welcome = () => {
             href="#experience"
             className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
-            Zistiť viac
+            {t('welcome.cta')}
           </a>
         </div>
       </div>

@@ -6,11 +6,11 @@ const Footer = () => {
   const { t } = useTranslation();
 
   const navLinks = [
-    { label: 'O nás', href: '#welcome' },
-    { label: 'Ubytovanie', href: '#experience' },
-    { label: 'Reštaurácia', href: '#restaurant' },
-    { label: 'Lokalita', href: '#activities' },
-    { label: 'Kontakt', href: '#footer' },
+    { key: 'about', href: '#welcome' },
+    { key: 'accommodation', href: '#experience' },
+    { key: 'restaurant', href: '#restaurant' },
+    { key: 'location', href: '#activities' },
+    { key: 'contact', href: '#footer' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -33,7 +33,7 @@ const Footer = () => {
 
         <div className="mb-16 flex flex-col md:flex-row gap-12">
           <div className="md:w-1/5">
-            <p className="font-heading text-xl md:text-2xl text-primary-foreground">Ideálne miesto na oddych a&nbsp;zážitky</p>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground">{t('footer.claim')}</p>
           </div>
 
           {/* Main grid */}
@@ -50,7 +50,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground hover:underline transition-colors"
                 >
-                  Horná Potôň 123<br />930 36, Slovensko
+                  {t('footer.address_line1')}<br />{t('footer.address_line2')}
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -75,14 +75,14 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <div>
-                  <span className="text-primary-foreground font-medium">Check-in</span>
+                  <span className="text-primary-foreground font-medium">{t('footer.checkin')}</span>
                   <br />14:00 – 22:00
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
                 <div>
-                  <span className="text-primary-foreground font-medium">Check-out</span>
+                  <span className="text-primary-foreground font-medium">{t('footer.checkout')}</span>
                   <br />07:00 – 10:00
                 </div>
               </li>
@@ -102,12 +102,12 @@ const Footer = () => {
             <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.key}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="inline-block w-fit relative font-body text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors uppercase tracking-wide after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 after:bg-primary-foreground after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
                 >
-                  {link.label}
+                  {t(`footer.nav.${link.key}`)}
                 </a>
               ))}
             </nav>

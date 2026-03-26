@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import heroImg from '@/assets/hero.jpg';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
@@ -23,9 +25,9 @@ const Hero = () => {
         }`}
       >
         <p className="font-body text-base md:text-lg lg:text-xl tracking-[0.25em] uppercase text-white/80 mb-6 leading-relaxed">
-          Ideálne miesto
+          {t('hero.claim_line1')}
           <br />
-          na oddych a zážitky
+          {t('hero.claim_line2')}
         </p>
         <h1 className="font-heading font-normal text-7xl md:text-[10rem] lg:text-[14rem] leading-[1.05] md:leading-[0.85] tracking-tight text-white md:whitespace-nowrap text-center">
           <span className="block md:inline">VILLA</span>{' '}
