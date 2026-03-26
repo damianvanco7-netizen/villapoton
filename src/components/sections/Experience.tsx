@@ -126,13 +126,16 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
           </a>
 
           {(cardKey === 'restaurant' || cardKey === 'bar') && (
-            <a
-              href="tel:+421907808083"
-              className="flex items-center gap-2 font-body text-sm text-foreground/70 hover:text-foreground transition-colors"
-            >
-              <Phone className="w-4 h-4" style={{ color: '#C69B5E' }} />
-              +421 907 808 083
-            </a>
+            <div className="flex items-start gap-3 pt-2">
+              <Phone size={18} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
+              <div className="font-body text-sm">
+                <span className="font-medium text-foreground">{t('experience.restaurant.phone_label')}</span>
+                <br />
+                <a href="tel:+421907808083" className="text-foreground/70 hover:text-foreground transition-colors">
+                  +421 907 808 083
+                </a>
+              </div>
+            </div>
           )}
 
           {/* Opening hours for restaurant */}
