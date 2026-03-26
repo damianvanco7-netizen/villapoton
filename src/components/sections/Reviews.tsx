@@ -7,43 +7,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import bookingLogo from '@/assets/booking_logo.png';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 
-const reviews = [
-  {
-    name: 'Viktória',
-    country: 'sk',
-    flag: '🇸🇰',
-    text: 'Ubytovanie bolo pekné čisté, s elektrickými roletami ktoré bolo možné zatiahnuť na úplnú tmu čiže som sa skvele vyspala. Na izbe bola klimatizácia aj napriek tomu že bola izbička malá, milo ma to prekvapilo, nečakala som to. Personál bol veľmi...',
-  },
-  {
-    name: 'Orru',
-    country: 'it',
-    flag: '🇮🇹',
-    text: 'Toto miesto sme si vybrali kvôli krátkej vzdialenosti od Šamorína na preteky a bola to skvelá voľba. Izby boli čisté, postele veľmi pohodlné. jedli sme v reštaurácii, pomer kvalita/cena by som povedal výborný, pivo bolo veľmi dobré. Raňajky sú podávané v salóniku reštaurácie, teplé aj studené, veľmi ochotný personál, pobyt odporúčam.',
-  },
-  {
-    name: 'Radoslaw',
-    country: 'pl',
-    flag: '🇵🇱',
-    text: 'Páčilo sa mi všetko, obsluha, čistota, lokalita a najlepšie boli jedlá v reštaurácii, ak pôjdem do týchto oblastí, pôjdem len tam.',
-  },
-  {
-    name: 'Henrich',
-    country: 'sk',
-    flag: '🇸🇰',
-    text: 'Všetko bolo úžasné. Personál maximálne ústretový, chutná kuchyňa. Všetko nové, čisté, voňavé. Máme v pláne sa vrátiť.',
-  },
-  {
-    name: 'Krisztina',
-    country: 'hu',
-    flag: '🇭🇺',
-    text: 'Ubytovanie je veľmi pekné s jedinečným moderným dizajnom. Personál a majitelia sú veľmi milí a atmosféra je rodinná.',
-  },
-  {
-    name: 'Dominika',
-    country: 'pl',
-    flag: '🇵🇱',
-    text: 'Veľmi chutné raňajky a káva tiež. Výhodou je poloha v blízkosti trate Slovakiaring. Veľmi pekné služby a priateľskí majitelia. Vynikajúcu kačicu s kroketami odporúčam na obed alebo večeru. Ďakujem pekne :-)',
-  },
+const reviewKeys = [
+  { name: 'Viktória', country: 'sk', flag: '🇸🇰', key: 'viktoria' },
+  { name: 'Orru', country: 'it', flag: '🇮🇹', key: 'orru' },
+  { name: 'Radoslaw', country: 'pl', flag: '🇵🇱', key: 'radoslaw' },
+  { name: 'Henrich', country: 'sk', flag: '🇸🇰', key: 'henrich' },
+  { name: 'Krisztina', country: 'hu', flag: '🇭🇺', key: 'krisztina' },
+  { name: 'Dominika', country: 'pl', flag: '🇵🇱', key: 'dominika' },
 ];
 
 const getCountryLabel = (country: string, t: (key: string) => string) => t(`reviews.country.${country}`);
