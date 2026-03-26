@@ -40,7 +40,6 @@
       "hours_label": "Nyitvatartás",
       "hours_time": "11:00 – 22:00",
       "phone_label": "Telefonszám"
-      "hours_time": "11:00 – 22:00"
     },
     "bar": {
       "title": "Nápolyi Pizza",
@@ -138,7 +137,6 @@
       "pl": "Lengyelország",
       "hu": "Magyarország"
     }
-  },
   },
   "booking_cta": {
     "title": "Foglalja le",
