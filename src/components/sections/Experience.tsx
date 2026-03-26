@@ -130,7 +130,7 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
               href="tel:+421907808083"
               className="flex items-center gap-2 font-body text-sm text-foreground/70 hover:text-foreground transition-colors"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4" style={{ color: '#C69B5E' }} />
               +421 907 808 083
             </a>
           )}
