@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Clock } from 'lucide-react';
 import logoSvg from '@/assets/logo_villa_poton.svg';
@@ -9,31 +9,40 @@ const languages = [
   { code: 'en', label: 'EN' },
 ];
 
-// Section IDs that have dark/image backgrounds where header text should be light
-const darkSections = ['hero', 'quote-image'];
-
-const useIsOpen = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const useIsRestaurantOpen = () => {
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const check = () => {
       const now = new Date();
-      const h = now.getHours();
-      const m = now.getMinutes();
-      const totalMin = h * 60 + m;
-      setIsOpen(totalMin >= 660 && totalMin < 1320); // 11:00-22:00
+      const totalMin = now.getHours() * 60 + now.getMinutes();
+      setOpen(totalMin >= 660 && totalMin < 1320); // 11:00-22:00
     };
     check();
     const id = setInterval(check, 60000);
     return () => clearInterval(id);
   }, []);
-  return isOpen;
+  return open;
 };
+
+const OpenClosedBadge = ({ isOpen, isDark, label }: { isOpen: boolean; isDark: boolean; label: string }) => (
+  <div className="flex items-center gap-1.5">
+    <span className="relative flex h-2.5 w-2.5">
+      {isOpen && (
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+      )}
+      <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+    </span>
+    <span className={`text-xs font-body font-medium ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>
+      {label}
+    </span>
+  </div>
+);
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
-  const isRestaurantOpen = useIsOpen();
+  const isRestaurantOpen = useIsRestaurantOpen();
 
   const navLinks = [
     { key: 'about', href: '#welcome' },
@@ -92,6 +101,8 @@ const Header = () => {
   const textActive = isDark ? 'text-white/80' : 'text-foreground/70';
   const dividerColor = isDark ? 'text-white/40' : 'text-foreground/30';
 
+  const statusLabel = isRestaurantOpen ? t('header.open') : t('header.closed');
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${!isDark ? 'bg-background' : ''}`}>
       <div className="px-8 md:px-16 lg:px-24 py-4 flex items-center justify-between">
@@ -108,26 +119,20 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-baseline gap-8">
           {navLinks.map((link) => (
-            <div key={link.key} className="flex flex-col items-center">
-              <a
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
-              >
-                {t(`header_nav.${link.key}`)}
-              </a>
-              {link.key === 'restaurant' && (
-                <div className="flex items-center gap-1 mt-0.5">
-                  <Clock size={10} style={{ color: '#C69B5E' }} />
-                  <span className={`text-[10px] font-body ${textMuted}`}>{t('experience.restaurant.hours_time')}</span>
-                </div>
-              )}
-            </div>
+            <a
+              key={link.key}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`relative text-sm font-body font-medium ${textActive} ${textHover} transition-colors tracking-wide uppercase after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 ${isDark ? 'after:bg-white' : 'after:bg-foreground'} after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
+            >
+              {t(`header_nav.${link.key}`)}
+            </a>
           ))}
         </nav>
 
-        {/* Language + CTA */}
+        {/* Open/Closed + Language + CTA */}
         <div className="hidden lg:flex items-center gap-6">
+          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           <div className="flex items-center gap-1 text-sm font-body">
             {languages.map((lang, i) => (
               <span key={lang.code} className="flex items-center">
@@ -155,18 +160,21 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`lg:hidden ${textColor}`}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
-        </button>
+        {/* Mobile: Open indicator + hamburger */}
+        <div className="flex lg:hidden items-center gap-3">
+          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label="" />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`${textColor}`}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu — fullscreen */}
-      {isOpen && (
+      {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 animate-fade-in flex flex-col">
           {/* Close button */}
           <div className="px-8 py-4 flex items-center justify-between">
@@ -179,7 +187,7 @@ const Header = () => {
               />
             </a>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsMenuOpen(false)}
               className="text-foreground"
               aria-label="Close menu"
             >
@@ -191,7 +199,7 @@ const Header = () => {
               <a
                 key={link.key}
                 href={link.href}
-                onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}
+                onClick={(e) => { handleNavClick(e, link.href); setIsMenuOpen(false); }}
                 className="text-2xl font-heading text-foreground hover:text-foreground/70 transition-colors tracking-wide uppercase"
               >
                 {t(`header_nav.${link.key}`)}
@@ -199,6 +207,18 @@ const Header = () => {
             ))}
           </nav>
           <div className="px-8 pb-12 space-y-6">
+            {/* Opening hours in mobile menu */}
+            <div className="flex items-center gap-3">
+              <OpenClosedBadge isOpen={isRestaurantOpen} isDark={false} label={statusLabel} />
+            </div>
+            <div className="flex items-start gap-3">
+              <Clock size={18} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
+              <div className="font-body text-sm">
+                <span className="font-medium text-foreground">{t('experience.restaurant.hours_label')}</span>
+                <br />
+                <span className="text-foreground/70">{t('experience.restaurant.hours_time')}</span>
+              </div>
+            </div>
             <div className="flex items-center gap-3">
               {languages.map((lang) => (
                 <button
@@ -218,7 +238,7 @@ const Header = () => {
               href="https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsMenuOpen(false)}
               className="block gold-gradient-bg text-white px-6 py-4 text-sm font-body font-semibold tracking-wider uppercase text-center hover:opacity-90 transition-opacity"
             >
               {t('nav.book')}

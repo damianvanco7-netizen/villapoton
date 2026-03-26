@@ -177,5 +177,9 @@
     "restaurant": "Reštaurácia",
     "location": "Lokalita",
     "contact": "Kontakt"
+  },
+  "header": {
+    "open": "Otvorené",
+    "closed": "Zatvorené"
   }
 }
