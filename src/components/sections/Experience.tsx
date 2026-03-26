@@ -3,6 +3,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { useRef, useEffect, useState } from 'react';
 import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/bar.jpg';
@@ -106,6 +107,17 @@ const Experience = () => {
 const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string; index: number; isVisible: boolean; isLast: boolean }) => {
   const { t } = useTranslation();
   const { ref: parallaxRef, offset } = useParallax(0.35);
+  const isMobile = useIsMobile();
+
+  const bookingUrl = 'https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95';
+
+  const getCtaHref = () => {
+    if (cardKey === 'accommodation') return bookingUrl;
+    // restaurant & bar: tel on mobile, footer on desktop
+    return isMobile ? 'tel:+421907808083' : '#footer';
+  };
+
+  const isExternal = cardKey === 'accommodation';
 
   return (
     <div
@@ -125,9 +137,9 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
             {t(`experience.${cardKey}.description`)}
           </p>
           <a
-            href={cardKey === 'restaurant' || cardKey === 'bar' ? '#footer' : 'https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95'}
-            target={cardKey === 'accommodation' ? '_blank' : undefined}
-            rel={cardKey === 'accommodation' ? 'noopener noreferrer' : undefined}
+            href={getCtaHref()}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
             className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
           >
             {t(`experience.${cardKey}.cta`)}
