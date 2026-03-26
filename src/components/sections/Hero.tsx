@@ -27,8 +27,9 @@ const Hero = () => {
           <br />
           na oddych a zážitky
         </p>
-        <h1 className="font-heading font-normal text-7xl md:text-[10rem] lg:text-[14rem] leading-[0.85] tracking-tight text-white whitespace-nowrap">
-          VILLA POTÔŇ
+        <h1 className="font-heading font-normal text-7xl md:text-[10rem] lg:text-[14rem] leading-[0.85] tracking-tight text-white md:whitespace-nowrap text-center">
+          <span className="block md:inline">VILLA</span>{' '}
+          <span className="block md:inline">POTÔŇ</span>
         </h1>
       </div>
     </section>

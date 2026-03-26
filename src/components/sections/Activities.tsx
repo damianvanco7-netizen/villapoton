@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronDown } from 'lucide-react';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 import zitnyOstrovImg from '@/assets/zitny_ostrov.jpg';
 import golfImg from '@/assets/golf.jpg';
@@ -24,6 +25,7 @@ const Activities = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const isMobile = useIsMobile();
 
   return (
     <section id="activities" className="pt-32 md:pt-40 pb-24 md:pb-32 relative overflow-hidden" ref={ref}>
@@ -42,33 +44,34 @@ const Activities = () => {
 
         {/* Two-column layout: image left, accordions right */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left: Image — sticky */}
-          <div
-            className={`transition-all duration-700 flex items-center justify-center lg:sticky lg:top-32 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
-              {activities.map((activity, i) => (
+          {/* Left: Image — sticky, hidden on mobile */}
+          {!isMobile && (
+            <div
+              className={`transition-all duration-700 flex items-center justify-center lg:sticky lg:top-32 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <div className="w-[80%] aspect-[3/4] overflow-hidden relative">
+                {activities.map((activity, i) => (
+                  <img
+                    key={activity.key}
+                    src={activity.image}
+                    alt={t(`activities.items.${activity.key}.title`)}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                      activeIndex === i ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
                 <img
-                  key={activity.key}
-                  src={activity.image}
-                  alt={t(`activities.items.${activity.key}.title`)}
+                  src={activities[0].image}
+                  alt=""
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                    activeIndex === i ? 'opacity-100' : 'opacity-0'
+                    activeIndex === null ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
-              ))}
-              {/* Default placeholder when nothing is active */}
-              <img
-                src={activities[0].image}
-                alt=""
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-                  activeIndex === null ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Right: Accordions */}
           <div
@@ -98,12 +101,22 @@ const Activities = () => {
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-500 ${
-                      isOpen ? 'max-h-40 opacity-100 pb-6' : 'max-h-0 opacity-0'
+                      isOpen ? 'max-h-[600px] opacity-100 pb-6' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <p className="font-body text-muted-foreground text-sm md:text-base leading-relaxed pr-8">
                       {t(`activities.items.${activity.key}.description`)}
                     </p>
+                    {/* Photo inside accordion on mobile */}
+                    {isMobile && (
+                      <div className="mt-4 aspect-[4/3] overflow-hidden">
+                        <img
+                          src={activity.image}
+                          alt={t(`activities.items.${activity.key}.title`)}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               );

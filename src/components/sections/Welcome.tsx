@@ -66,8 +66,8 @@ const Welcome = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        <div className="w-[90%] md:w-[85%]">
-          <div ref={parallaxRef} className="aspect-video overflow-hidden">
+        <div className="w-full md:w-[85%]">
+          <div ref={parallaxRef} className="aspect-[3/4] md:aspect-video overflow-hidden">
             <img
               src={welcomeImg}
               alt="Villa Potoň Welcome"

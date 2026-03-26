@@ -192,7 +192,7 @@ const Reviews = () => {
                         {review.name}
                       </h3>
                       <p className="font-body text-sm text-muted-foreground">
-                        {review.flag} {countryLabels[review.country]}
+                        {countryLabels[review.country]}
                       </p>
                     </div>
                   </div>
