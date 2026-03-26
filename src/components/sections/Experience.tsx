@@ -125,6 +125,16 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
             {t(`experience.${cardKey}.cta`)}
           </a>
 
+          {(cardKey === 'restaurant' || cardKey === 'bar') && (
+            <a
+              href="tel:+421907808083"
+              className="flex items-center gap-2 font-body text-sm text-foreground/70 hover:text-foreground transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              +421 907 808 083
+            </a>
+          )}
+
           {/* Opening hours for restaurant */}
           {cardKey === 'restaurant' && (
             <div className="flex items-start gap-3 pt-2">
