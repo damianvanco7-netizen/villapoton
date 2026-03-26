@@ -58,6 +58,7 @@ const getInitial = (name: string) => name.charAt(0).toUpperCase();
 const Reviews = () => {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
+  const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
