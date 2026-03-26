@@ -188,7 +188,7 @@ const Reviews = () => {
                       <h3 className="font-heading text-xl">
                         {reviews[currentIndex].name}
                       </h3>
-                      <p className="font-body text-sm text-muted-foreground">
+                      <p className="font-body text-sm text-foreground/20">
                         {countryLabels[reviews[currentIndex].country]}
                       </p>
                     </div>
@@ -215,7 +215,7 @@ const Reviews = () => {
                         <h3 className="font-heading text-xl md:text-2xl">
                           {review.name}
                         </h3>
-                        <p className="font-body text-sm text-muted-foreground">
+                        <p className="font-body text-sm text-foreground/20">
                           {countryLabels[review.country]}
                         </p>
                       </div>
