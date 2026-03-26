@@ -26,19 +26,28 @@ const Footer = () => {
     <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8">
       <div className="px-8 md:px-16 lg:px-24">
         {/* Top: Logo + CTA */}
-        <div className="mb-16">
-          <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto" />
-        </div>
+        <div className="mb-16 flex flex-col md:flex-row gap-12">
+          <div className="md:w-1/5">
+            <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-6" />
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground/80">Ideálne miesto na oddych a&nbsp;zážitky</p>
+          </div>
 
-        {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Main grid */}
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Contact */}
           <div>
             <h4 className="font-heading text-xl md:text-2xl mb-6">{t('footer.contact_title')}</h4>
             <ul className="space-y-4 font-body text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
-                <span>Horná Potôň 123<br />930 36, Slovensko</span>
+                <a
+                  href="https://maps.app.goo.gl/KrWii2fwuF2aaRVN6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-foreground hover:underline transition-colors"
+                >
+                  Horná Potôň 123<br />930 36, Slovensko
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="shrink-0" style={{ color: '#C69B5E' }} />
