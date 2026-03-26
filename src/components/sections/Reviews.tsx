@@ -30,7 +30,7 @@ const Reviews = () => {
   const [isManual, setIsManual] = useState(false);
   const manualTimeout = useRef<ReturnType<typeof setTimeout>>();
 
-  const totalReviews = reviews.length;
+  const totalReviews = reviewKeys.length;
 
   const next = useCallback(() => {
     setDirection(1);
@@ -65,7 +65,7 @@ const Reviews = () => {
   const getVisibleReviews = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
-      visible.push(reviews[(currentIndex + i) % totalReviews]);
+      visible.push(reviewKeys[(currentIndex + i) % totalReviews]);
     }
     return visible;
   };
@@ -146,20 +146,20 @@ const Reviews = () => {
                   <div className="flex items-center gap-3 mb-1">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                       <span className="font-heading text-sm text-primary">
-                        {getInitial(reviews[currentIndex].name)}
+                        {getInitial(reviewKeys[currentIndex].name)}
                       </span>
                     </div>
                     <div className="text-left">
                       <h3 className="font-heading text-xl">
-                        {reviews[currentIndex].name}
+                        {reviewKeys[currentIndex].name}
                       </h3>
                       <p className="font-body text-sm text-foreground/20">
-                        {getCountryLabel(reviews[currentIndex].country, t)}
+                        {getCountryLabel(reviewKeys[currentIndex].country, t)}
                       </p>
                     </div>
                   </div>
                   <p className="font-body text-sm text-foreground leading-relaxed mt-4 italic">
-                    „{reviews[currentIndex].text}"
+                    „{t(`reviews.items.${reviewKeys[currentIndex].key}`)}"
                   </p>
                 </div>
               ) : (
@@ -186,7 +186,7 @@ const Reviews = () => {
                       </div>
                     </div>
                     <p className="font-body text-sm md:text-base text-foreground leading-relaxed mt-4 italic">
-                      „{review.text}"
+                      „{t(`reviews.items.${review.key}`)}"
                     </p>
                   </div>
                 ))
