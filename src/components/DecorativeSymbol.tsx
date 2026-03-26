@@ -9,7 +9,7 @@ interface DecorativeSymbolProps {
 const DecorativeSymbol = ({
   rotation = -15,
   position = 'bottom-0 left-1/2 -translate-x-1/2',
-  size = 'w-[600px] md:w-[800px] lg:w-[1000px]',
+  size = 'w-[800px] md:w-[800px] lg:w-[1000px]',
 }: DecorativeSymbolProps) => (
   <div className={`absolute ${position} pointer-events-none z-0`}>
     <img
