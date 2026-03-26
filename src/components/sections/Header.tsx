@@ -76,7 +76,7 @@ const Header = () => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-baseline gap-8">
           {navLinks.map((link) => (
             <div key={link.label} className="flex flex-col items-center">
               <a
@@ -87,7 +87,7 @@ const Header = () => {
                 {link.label}
               </a>
               {link.label === 'Reštaurácia' && (
-                <div className={`flex items-center gap-1 mt-0.5`}>
+                <div className="flex items-center gap-1 mt-0.5">
                   <Clock size={10} style={{ color: '#C69B5E' }} />
                   <span className={`text-[10px] font-body ${textMuted}`}>11:00 – 22:00</span>
                 </div>
