@@ -117,10 +117,6 @@ const Header = () => {
               </span>
             ))}
           </div>
-          <div className={`flex items-center gap-2 text-xs font-body ${textMuted}`}>
-            <Clock size={14} style={{ color: '#C69B5E' }} />
-            <span>11:00 – 22:00</span>
-          </div>
           <a
             href="https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95"
             target="_blank"
