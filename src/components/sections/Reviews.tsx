@@ -46,12 +46,7 @@ const reviews = [
   },
 ];
 
-const countryLabels: Record<string, string> = {
-  sk: 'Slovensko',
-  it: 'Taliansko',
-  pl: 'Poľsko',
-  hu: 'Maďarsko',
-};
+const getCountryLabel = (country: string, t: (key: string) => string) => t(`reviews.country.${country}`);
 
 const getInitial = (name: string) => name.charAt(0).toUpperCase();
 
@@ -189,7 +184,7 @@ const Reviews = () => {
                         {reviews[currentIndex].name}
                       </h3>
                       <p className="font-body text-sm text-foreground/20">
-                        {countryLabels[reviews[currentIndex].country]}
+                        {getCountryLabel(reviews[currentIndex].country, t)}
                       </p>
                     </div>
                   </div>
@@ -216,7 +211,7 @@ const Reviews = () => {
                           {review.name}
                         </h3>
                         <p className="font-body text-sm text-foreground/20">
-                          {countryLabels[review.country]}
+                          {getCountryLabel(review.country, t)}
                         </p>
                       </div>
                     </div>
