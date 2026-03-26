@@ -161,14 +161,14 @@ const Header = () => {
         </div>
 
         {/* Mobile: Open indicator + hamburger */}
-        <div className="flex lg:hidden items-center gap-3">
+        <div className="flex lg:hidden items-center gap-4">
           <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`${textColor}`}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1} />}
+            {isMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1} />}
           </button>
         </div>
       </div>
