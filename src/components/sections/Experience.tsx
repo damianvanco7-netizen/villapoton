@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
-import { Bath, Wind, Wifi, CigaretteOff, Tv, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Sparkles, Leaf, Star, Flame, Clock, Phone } from 'lucide-react';
+import { Bath, Wind, Wifi, Car, UtensilsCrossed, Pizza, Volume2, Coffee, Leaf, Star, Flame, Phone } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import apartmanImg from '@/assets/apartman.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
@@ -16,8 +16,6 @@ const accommodationAmenities: AmenityConfig[] = [
   { key: 'bathroom', icon: Bath },
   { key: 'aircon', icon: Wind },
   { key: 'wifi', icon: Wifi },
-  { key: 'nonsmoking', icon: CigaretteOff },
-  { key: 'tv', icon: Tv },
   { key: 'parking', icon: Car },
 ];
 
@@ -26,7 +24,6 @@ const restaurantAmenities: AmenityConfig[] = [
   { key: 'pizza', icon: Pizza },
   { key: 'quiet', icon: Volume2 },
   { key: 'breakfast', icon: Coffee },
-  { key: 'special', icon: Sparkles },
 ];
 
 const barAmenities: AmenityConfig[] = [
@@ -59,22 +56,8 @@ const Experience = () => {
       <DecorativeSymbol rotation={-15} position="bottom-1/3 left-8" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
       <DecorativeSymbol rotation={35} position="bottom-16 right-1/4" size="w-[600px] md:w-[800px] lg:w-[1000px]" />
 
-      {/* Section Header */}
-      <div
-        className={`relative z-10 text-center py-24 md:py-32 transition-all duration-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-      >
-        <h2 className="font-heading text-[1.65rem] md:text-5xl lg:text-6xl mb-2 px-4 md:px-0 leading-[1.15]">
-          {t('experience.headline_line1')}
-        </h2>
-        <p className="font-heading text-[1.65rem] md:text-5xl lg:text-6xl italic mb-6 px-4 md:px-0 leading-[1.15]">
-          {t('experience.headline_line2')}
-        </p>
-        <p className="font-body text-sm md:text-base text-foreground/60 tracking-wide max-w-xs md:max-w-md mx-auto px-6 md:px-0 whitespace-pre-line">
-          {t('experience.subtitle')}
-        </p>
-      </div>
+      {/* Spacer for top padding */}
+      <div className="pt-12 md:pt-16" />
 
       {/* Cards — full-width, Bellevoire-style */}
       {cards.map((key, i) => (
@@ -115,38 +98,25 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
           <p className="font-body text-foreground text-sm leading-relaxed">
             {t(`experience.${cardKey}.description`)}
           </p>
-          <a
-            href={getCtaHref()}
-            target={isExternal ? '_blank' : undefined}
-            rel={isExternal ? 'noopener noreferrer' : undefined}
-            className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
-          >
-            {t(`experience.${cardKey}.cta`)}
-          </a>
-
-          {(cardKey === 'restaurant' || cardKey === 'bar') && (
-            <div className="flex items-start gap-3 pt-2">
-              <Phone size={18} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
-              <div className="font-body text-sm">
-                <span className="font-medium text-foreground">{t('experience.restaurant.phone_label')}</span>
-                <br />
-                <a href="tel:+421907808083" className="text-foreground/70 hover:text-foreground transition-colors">
-                  +421 907 808 083
-                </a>
-              </div>
-            </div>
-          )}
-
-          {/* Opening hours for restaurant */}
-          {cardKey === 'restaurant' && (
-            <div className="flex items-start gap-3 pt-2">
-              <Clock size={18} className="shrink-0 mt-0.5" style={{ color: '#C69B5E' }} />
-              <div className="font-body text-sm">
-                <span className="font-medium text-foreground">{t('experience.restaurant.hours_label')}</span>
-                <br />
-                <span className="text-foreground/70">{t('experience.restaurant.hours_time')}</span>
-              </div>
-            </div>
+          {cardKey === 'accommodation' ? (
+            <a
+              href={getCtaHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+            >
+              {t(`experience.${cardKey}.cta`)}
+            </a>
+          ) : (
+            <a
+              href={getCtaHref()}
+              target={undefined}
+              rel={undefined}
+              className="inline-flex items-center gap-2 border border-foreground text-foreground px-8 py-3 text-sm font-heading tracking-wider uppercase hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+            >
+              <Phone size={16} />
+              {t(`experience.${cardKey}.cta`)}
+            </a>
           )}
 
           {/* Amenities grid */}

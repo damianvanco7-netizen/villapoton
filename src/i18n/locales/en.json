@@ -177,5 +177,9 @@
     "restaurant": "Restaurant",
     "location": "Location",
     "contact": "Contact"
+  },
+  "header": {
+    "open": "Open",
+    "closed": "Closed"
   }
 }

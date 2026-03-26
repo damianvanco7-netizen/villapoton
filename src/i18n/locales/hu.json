@@ -177,5 +177,9 @@
     "restaurant": "Étterem",
     "location": "Helyszín",
     "contact": "Kapcsolat"
+  },
+  "header": {
+    "open": "Nyitva",
+    "closed": "Zárva"
   }
 }
