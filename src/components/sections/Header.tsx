@@ -135,21 +135,41 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — fullscreen */}
       {isOpen && (
-        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
-          <nav className="px-8 md:px-16 lg:px-24 py-6 flex flex-col gap-4">
+        <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 animate-fade-in flex flex-col">
+          {/* Close button */}
+          <div className="px-8 py-4 flex items-center justify-between">
+            <a href="#" className="shrink-0">
+              <img
+                src={logoSvg}
+                alt="Villa Potoň"
+                className="h-14 w-auto"
+                style={{ filter: 'brightness(0)' }}
+              />
+            </a>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-foreground"
+              aria-label="Close menu"
+            >
+              <X size={24} strokeWidth={1} />
+            </button>
+          </div>
+          <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => { handleNavClick(e, link.href); setIsOpen(false); }}
-                className="text-sm font-body font-medium text-foreground/70 hover:text-foreground transition-colors tracking-wide uppercase py-2"
+                className="text-2xl font-heading text-foreground hover:text-foreground/70 transition-colors tracking-wide uppercase"
               >
                 {link.label}
               </a>
             ))}
-            <div className="flex items-center gap-2 py-2">
+          </nav>
+          <div className="px-8 pb-12 space-y-6">
+            <div className="flex items-center gap-3">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -169,11 +189,11 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="bg-primary text-primary-foreground px-6 py-3 text-sm font-body font-semibold tracking-wider uppercase text-center hover:bg-primary/90 transition-colors mt-2"
+              className="block gold-gradient-bg text-white px-6 py-4 text-sm font-body font-semibold tracking-wider uppercase text-center hover:opacity-90 transition-opacity"
             >
               {t('nav.book')}
             </a>
-          </nav>
+          </div>
         </div>
       )}
       {/* Horizontal divider */}

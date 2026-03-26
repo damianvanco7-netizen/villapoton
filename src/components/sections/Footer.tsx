@@ -33,7 +33,7 @@ const Footer = () => {
 
         <div className="mb-16 flex flex-col md:flex-row gap-12">
           <div className="md:w-1/5">
-            <p className="font-heading text-xl md:text-2xl text-primary-foreground/80">Ideálne miesto na oddych a&nbsp;zážitky</p>
+            <p className="font-heading text-xl md:text-2xl text-primary-foreground">Ideálne miesto na oddych a&nbsp;zážitky</p>
           </div>
 
           {/* Main grid */}
@@ -139,11 +139,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col items-start md:flex-row md:items-center justify-between gap-4">
           <p className="font-body text-sm text-primary-foreground/50">
             © {new Date().getFullYear()} Villa Potoň. {t('footer.rights')}
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-6">
             <a href="#" className="font-body text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">
               {t('footer.privacy')}
             </a>
