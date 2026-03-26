@@ -40,7 +40,6 @@
       "hours_label": "Opening Hours",
       "hours_time": "11:00 – 22:00",
       "phone_label": "Phone Number"
-      "hours_time": "11:00 – 22:00"
     },
     "bar": {
       "title": "Neapolitan Pizza",
@@ -138,7 +137,6 @@
       "pl": "Poland",
       "hu": "Hungary"
     }
-  },
   },
   "booking_cta": {
     "title": "Book your",
