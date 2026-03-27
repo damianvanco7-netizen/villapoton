@@ -28,9 +28,9 @@ const OpenClosedBadge = ({ isOpen, isDark, label }: { isOpen: boolean; isDark: b
   <div className="flex items-center gap-1.5">
     <span className="relative flex h-2.5 w-2.5">
       {isOpen && (
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
       )}
-      <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+      <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isOpen ? 'bg-primary' : 'bg-red-500'}`} />
     </span>
     <span className={`text-xs font-body font-medium ${isDark ? 'text-white/70' : 'text-foreground/60'}`}>
       {label}
