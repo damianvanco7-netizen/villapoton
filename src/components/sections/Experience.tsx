@@ -4,7 +4,7 @@ import { useParallax } from '@/hooks/useParallax';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import { Bath, Wind, Wifi, Car, UtensilsCrossed, Pizza, Coffee, Leaf, Flame, Phone, CookingPot } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import apartmanImg from '@/assets/apartman.jpg';
+import apartmanImg from '@/assets/accommodation.jpg';
 import restauraciaImg from '@/assets/restauracia.jpg';
 import barImg from '@/assets/pizza.jpg';
 
