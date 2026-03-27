@@ -149,7 +149,7 @@ const Header = () => {
               </span>
             ))}
           </div>
-          <div className={`flex items-center px-6 py-2.5 ${isDark ? 'bg-white/[0.03]' : 'bg-primary/[0.03]'}`}>
+          <div className={`flex items-center px-6 py-2.5 ${isDark ? 'bg-white/[0.06]' : 'bg-primary/[0.06]'}`}>
             <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           </div>
           <a
