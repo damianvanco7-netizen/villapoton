@@ -164,7 +164,9 @@ const Header = () => {
 
         {/* Mobile: Open indicator + hamburger */}
         <div className="flex lg:hidden items-center gap-4">
-          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
+          <div className={`flex items-center px-3 py-1.5 ${isDark ? 'bg-white/[0.06]' : 'bg-primary/[0.06]'}`}>
+            <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
+          </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`${textColor}`}
