@@ -132,7 +132,6 @@ const Header = () => {
 
         {/* Open/Closed + Language + CTA */}
         <div className="hidden lg:flex items-center gap-6">
-          <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           <div className="flex items-center gap-1 text-sm font-body">
             {languages.map((lang, i) => (
               <span key={lang.code} className="flex items-center">
@@ -149,6 +148,9 @@ const Header = () => {
                 {i < languages.length - 1 && <span className={dividerColor}>|</span>}
               </span>
             ))}
+          </div>
+          <div className={`flex items-center px-3 py-1.5 ${isDark ? 'bg-white/[0.03]' : 'bg-primary/[0.03]'}`}>
+            <OpenClosedBadge isOpen={isRestaurantOpen} isDark={isDark} label={statusLabel} />
           </div>
           <a
             href="https://www.booking.com/hotel/sk/villa-poton.sk.html?aid=356980&label=gog235jc-10CAsozQFCC3ZpbGxhLXBvdG9uSCJYA2jNAYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC2JKQzgbAAgHSAiRiMjRlMjJlNC02YTM3LTRmY2ItYTg2NS1iMTQyNGI3ZmUwZTLYAgHgAgE&sid=ab4d741c63e1cb6e1c342b9dcaa6ee95"
