@@ -146,7 +146,7 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
         <div ref={containerRef} className="overflow-hidden h-[70vh] md:h-[85vh]">
           {cardKey === 'bar' ? (
             <video
-              ref={imgRef as React.Ref<HTMLVideoElement>}
+              ref={imgRef as unknown as React.Ref<HTMLVideoElement>}
               src="/videos/pizza_video.mp4"
               autoPlay
               loop
