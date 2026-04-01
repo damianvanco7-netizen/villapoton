@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import heroImg from '@/assets/hero.jpg';
+const heroImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/VP%20hero%20sekcie%20photo.jpg";
 
 const Hero = () => {
   const { t } = useTranslation();
