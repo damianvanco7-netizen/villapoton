@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 import logoGold from '@/assets/logo_villa_poton_gold.svg';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const Footer = () => {
   const { t } = useTranslation();
