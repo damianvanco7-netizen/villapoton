@@ -1,25 +1,20 @@
 
 
-## Použitie hero fotky z GitHubu (bez kompresie)
+## Výmena fotiek za GitHub raw URL (plná kvalita)
 
-### Problém
-Fotky nahrané cez Lovable chat sú komprimované. Fotka bola nahraná priamo do GitHub repozitára, čo zachová plnú kvalitu.
+Rovnaký postup ako pri hero fotke — použijeme raw GitHub URL namiesto lokálnych importov.
 
-### Riešenie
-Keďže máte zapnutý bidirectional sync medzi Lovable a GitHub, súbor `VP hero sekcie photo.jpg` sa už synchronizoval do repozitára. Stačí ho presunúť na správne miesto alebo naň odkázať.
+### Zmeny v 3 súboroch
 
-Najjednoduchší prístup: zmeniť `Hero.tsx` aby použil **raw GitHub URL** na obrázok (plná kvalita, žiadna kompresie Vite bundlera):
+**1. `src/components/sections/Welcome.tsx`** — sekcia "Vitajte vo Villa Potoň"
+- Odstrániť `import welcomeImg from '@/assets/welcome.jpg'`
+- Pridať: `const welcomeImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_exterier.png"`
 
-**Súbor:** `src/components/sections/Hero.tsx`
-- Odstrániť import `heroImg from '@/assets/hero.jpg'`
-- Použiť priamu raw URL: `https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/VP%20hero%20sekcie%20photo.jpg`
+**2. `src/components/sections/Experience.tsx`** — sekcia "Ubytovanie"
+- Odstrániť `import apartmanImg from '@/assets/accommodation.jpg'`
+- Pridať: `const apartmanImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_izba.png"`
 
-Alternatíva: Presunúť súbor v GitHub do `src/assets/hero.jpg` cez git, čo by sa synchonizovalo späť. Ale raw URL je rýchlejšie riešenie a garantuje nulu kompresiu.
-
-### Zmena (1 súbor)
-
-```tsx
-// Hero.tsx - nahradiť import za priamu URL
-const heroImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/VP%20hero%20sekcie%20photo.jpg";
-```
+**3. `src/components/sections/Quote.tsx`** — galéria (pridať novú fotku)
+- Pridať novú URL premennú: `const quoteGithub = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_izba_2.png"`
+- Pridať ju do poľa `images` (napr. na začiatok alebo koniec)
 
