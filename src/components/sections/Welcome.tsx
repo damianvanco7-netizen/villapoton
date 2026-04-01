@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
-import welcomeImg from '@/assets/welcome.jpg';
+const welcomeImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_exterier.png";
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const Welcome = () => {
