@@ -43,7 +43,7 @@
     },
     "bar": {
       "title": "Neapolská Pizza",
-      "description": "Naša talianska pec má za sebou cestu z Neapolu. A pizza, ktorú v nej pečieme, tú cestu stojí za to. Jemné vzdušné cesto, kvalitné suroviny a tradičný postup. Takúto pizzu na Žitnom ostrove nenájdete nikde inde.",
+      "description": "Naša talianska pec prišla priamo z Neapolu a pizza, ktorú v nej pečieme, to potvrdzuje. Jemné vzdušné cesto, kvalitné suroviny a tradičný postup. Takúto pizzu na Žitnom ostrove nenájdete nikde inde.",
       "cta": "REZERVOVAŤ STÔL"
     },
     "amenities": {
@@ -67,7 +67,7 @@
     "items": {
       "breakfast": {
         "title": "Raňajky",
-        "description": "Ráno začnite v pokoji. Teplé aj studené raňajky servírujeme priamo v reštaurácii. Čerstvé pečivo, domáce pochúťky a dobrá káva, aby ste do dňa vykročili s energiou."
+        "description": "Začnite ráno v pokoji. Teplé aj studené raňajky servírujeme priamo v reštaurácii. Čerstvé pečivo, domáce pochúťky a dobrá káva, aby ste do dňa vykročili s energiou."
       },
       "terrace": {
         "title": "Terasa",
