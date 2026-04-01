@@ -17,25 +17,25 @@
   },
   "welcome": {
     "title_line1": "Welcome to Villa Potôň",
-    "title_line2": "Elegant Relaxation",
-    "title_line3": "in the Heart of Žitný Ostrov",
-    "description": "Discover a combination of comfortable accommodation, exceptional cuisine and an atmosphere you'll love coming back to.",
-    "cta": "Discover More"
+    "title_line2": "Elegant relaxation",
+    "title_line3": "in the heart of Žitný ostrov",
+    "description": "Discover the perfect combination of comfortable accommodation, exceptional cuisine, and an atmosphere you'll want to return to again and again.",
+    "cta": "Discover more"
   },
   "experience": {
     "headline_line1": "Experience the atmosphere of true relaxation,",
     "headline_line2": "where every moment is\u00A0yours",
     "title": "Experience the Feeling",
     "titleLine2": "of a Retreat",
-    "subtitle": "Accommodation, dining and relaxation under one roof",
+    "subtitle": "Accommodation, dining, and relaxation under one roof",
     "accommodation": {
       "title": "Accommodation",
-      "description": "Our modern rooms offer everything you need for a pleasant and undisturbed stay. Whether you come for relaxation or a short trip, you'll find comfort you can rely on.",
+      "description": "Our modern rooms offer everything you need for a pleasant and undisturbed stay. Whether you come to relax or for a short getaway, you'll find the comfort you can count on.",
       "cta": "BOOK A ROOM"
     },
     "restaurant": {
       "title": "Restaurant",
-      "description": "Fresh ingredients, a love for food, and chefs who know what they're doing. Our menu features homemade specialties and authentic Neapolitan pizza from an oven brought straight from Italy. Whether you sit down for lunch, dinner or a quiet breakfast, you'll leave with a good feeling.",
+      "description": "Fresh ingredients, a passion for food, and chefs who know what they're doing. Our menu features homemade specialities and authentic Neapolitan pizza baked in an oven brought directly from Italy. Whether you sit down for lunch, dinner, or a leisurely breakfast, you'll leave with a smile.",
       "cta": "BOOK A TABLE",
       "hours_label": "Opening Hours",
       "hours_time": "11:00 – 22:00",
@@ -43,7 +43,7 @@
     },
     "bar": {
       "title": "Neapolitan Pizza",
-      "description": "Our Italian oven made its way from Naples. And the pizza we bake in it is worth the journey. Soft airy dough, quality ingredients and traditional methods. You won't find pizza like this anywhere else on Žitný Ostrov.",
+      "description": "Our Italian oven has made the journey all the way from Naples. And the pizza we bake in it is worth every mile. Light and airy dough, quality ingredients, and a traditional technique. You won't find pizza like this anywhere else in the region.",
       "cta": "BOOK A TABLE"
     },
     "amenities": {
@@ -53,21 +53,21 @@
       "parking": "Free parking",
       "alacarte": "À la carte",
       "pizza": "Neapolitan pizza",
-      "homemade": "Homemade cuisine",
+      "homemade": "Home cooking",
       "breakfast": "Breakfast",
       "ingredients": "Quality ingredients",
       "italian_oven": "Italian oven",
-      "traditional": "Traditional methods",
+      "traditional": "Traditional technique",
       "airy_dough": "Airy dough"
     }
   },
   "services": {
-    "titleLine1": "Personalized",
+    "titleLine1": "Personalised",
     "titleLine2": "Services",
     "items": {
       "breakfast": {
         "title": "Breakfast",
-        "description": "Start your morning in peace. We serve hot and cold breakfasts right in the restaurant. Fresh pastries, homemade delicacies and good coffee to start your day with energy."
+        "description": "Start your morning in peace. We serve both hot and cold breakfast directly in the restaurant. Fresh pastries, homemade treats, and good coffee to give you the energy to start your day."
       },
       "terrace": {
         "title": "Terrace",
@@ -84,24 +84,24 @@
     }
   },
   "quote": {
-    "heading": "Your comfort and satisfaction are the foundation of every",
+    "heading": "Your comfort and satisfaction are at the heart of every",
     "headingItalic": "detail",
     "headingEnd": " of your stay.",
-    "subtitle": "Whether you want to relax in a pleasant environment or enjoy excellent food, you'll find what you're looking for with us.",
-    "cta": "Book a Room",
+    "subtitle": "Whether you want to relax in a pleasant environment or enjoy excellent food, you'll find exactly what you're looking for with us.",
+    "cta": "Book a room",
     "imageTitle_word1": "More",
     "imageTitle_word2": "than",
     "imageTitle_word3": "a stay",
     "imageSubtitle": "At Villa Potoň, every detail is designed to make you feel at home, with the peace of nature right outside your door."
   },
   "activities": {
-    "title": "Where Every Day is Created for You",
-    "title_line1": "Where Every Day is",
-    "title_line2": "Created for You",
+    "title": "Where every day is made for you",
+    "title_line1": "Where every day is",
+    "title_line2": "made for you",
     "items": {
       "zitny_ostrov": {
-        "title": "Žitný Ostrov",
-        "description": "Discover the beauty of Žitný Ostrov by the Danube, just a short distance from the villa. Peaceful walks, cycling trails and nature that slows you down."
+        "title": "Žitný ostrov",
+        "description": "Discover the beauty of Žitný ostrov along the Danube, just a short distance from the villa. Peaceful walks, cycling trails, and nature that will slow you down."
       },
       "golf": {
         "title": "Golf",
@@ -109,25 +109,25 @@
       },
       "malkia": {
         "title": "Malkia Park",
-        "description": "A unique rescue park with big cats in Orechová Potôň. Just 5 minutes by car."
+        "description": "A unique big cat rescue park in Orechová Potôň. Just 5 minutes by car."
       },
       "slovakia_ring": {
         "title": "Slovakia Ring",
-        "description": "Adrenaline within reach. A racing circuit just 5 minutes from the villa. Racing, go-karts and unforgettable experiences."
+        "description": "Adrenaline within reach. A racing circuit just 5 minutes from the villa. Races, go-karts, and unforgettable experiences."
       },
       "thermalpark": {
         "title": "Thermalpark",
-        "description": "Thermal pools and wellness in Dunajská Streda, 10 to 15 minutes by car. An ideal program for the whole day."
+        "description": "Thermal pools and wellness in Dunajská Streda, 10 to 15 minutes by car. The perfect full-day programme."
       },
       "xbionic": {
         "title": "X-Bionic Sphere",
-        "description": "A modern sports complex in Šamorín, 20 to 25 minutes by car. An equestrian area, swimming pool, wellness, fitness and activities for children and adults."
+        "description": "A modern sports complex in Šamorín, 20 to 25 minutes by car. Equestrian arena, pool, wellness, fitness, and activities for both children and adults."
       }
     }
   },
   "reviews": {
-    "title_line1": "Happy Guests,",
-    "title_line2": "Our Best Business Card",
+    "title_line1": "Happy guests,",
+    "title_line2": "our best recommendation",
     "rating_label": "Excellent",
     "country": {
       "sk": "Slovakia",
@@ -147,8 +147,8 @@
   "booking_cta": {
     "title": "Book your",
     "titleItalic": "stay",
-    "description": "A reservation at Villa Potôň is the beginning of your relaxation. We'll tailor everything to your comfort.",
-    "cta": "Book a Room"
+    "description": "Booking at Villa Potôň is the first step towards your perfect break. We'll tailor everything to your comfort.",
+    "cta": "Book a room"
   },
   "footer": {
     "contact_title": "Contact",
@@ -168,7 +168,7 @@
     "address_line1": "Horná Potôň 123",
     "address_line2": "930 36, Slovakia",
     "nav": {
-      "about": "About",
+      "about": "About us",
       "accommodation": "Accommodation",
       "restaurant": "Restaurant",
       "location": "Location",
@@ -178,7 +178,7 @@
     }
   },
   "header_nav": {
-    "about": "About",
+    "about": "About us",
     "accommodation": "Accommodation",
     "restaurant": "Restaurant",
     "location": "Location",
