@@ -141,27 +141,15 @@ const ExperienceCard = ({ cardKey, index, isVisible, isLast }: { cardKey: string
         </div>
       </div>
 
-      {/* Right: Media — tall, with inner padding and parallax */}
+      {/* Right: Image — tall, with inner padding and parallax */}
       <div className="px-6 md:px-12 lg:px-16 mt-8 md:mt-16">
         <div ref={containerRef} className="overflow-hidden h-[70vh] md:h-[85vh]">
-          {cardKey === 'bar' ? (
-            <video
-              ref={imgRef as unknown as React.Ref<HTMLVideoElement>}
-              src="/videos/pizza_video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-[120%] object-cover will-change-transform"
-            />
-          ) : (
-            <img
-              ref={imgRef}
-              src={cardImages[cardKey]}
-              alt={t(`experience.${cardKey}.title`)}
-              className="w-full h-[120%] object-cover will-change-transform"
-            />
-          )}
+          <img
+            ref={imgRef}
+            src={cardImages[cardKey]}
+            alt={t(`experience.${cardKey}.title`)}
+            className="w-full h-[120%] object-cover will-change-transform"
+          />
         </div>
       </div>
     </div>
