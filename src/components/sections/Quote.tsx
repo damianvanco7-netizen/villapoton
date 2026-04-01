@@ -11,7 +11,7 @@ import quote4 from '@/assets/quote/quote4.jpg';
 import quote5 from '@/assets/quote/quote5.jpg';
 import quote6 from '@/assets/quote/quote6.jpg';
 
-const images = [quote1, quote2, quote3, quote4, quote5, quote6];
+const images = [quote5, quote1, quote2, quote3, quote4, quote6];
 
 const Quote = () => {
   const { t } = useTranslation();
