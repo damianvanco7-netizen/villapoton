@@ -4,13 +4,14 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import DecorativeSymbol from '@/components/DecorativeSymbol';
 import useEmblaCarousel from 'embla-carousel-react';
-import room1 from '@/assets/rooms/room1.png';
-import room2 from '@/assets/rooms/room2.png';
-import room3 from '@/assets/rooms/room3.png';
-import room4 from '@/assets/rooms/room4.png';
-import room5 from '@/assets/rooms/room5.png';
+import quote1 from '@/assets/quote/quote1.jpg';
+import quote2 from '@/assets/quote/quote2.jpg';
+import quote3 from '@/assets/quote/quote3.jpg';
+import quote4 from '@/assets/quote/quote4.jpg';
+import quote5 from '@/assets/quote/quote5.jpg';
+import quote6 from '@/assets/quote/quote6.jpg';
 
-const images = [room1, room2, room3, room4, room5];
+const images = [quote1, quote2, quote3, quote4, quote5, quote6];
 
 const Quote = () => {
   const { t } = useTranslation();
