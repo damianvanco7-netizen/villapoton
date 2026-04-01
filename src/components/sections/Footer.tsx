@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 import logoGold from '@/assets/logo_villa_poton_gold.svg';
+import DecorativeSymbol from '@/components/DecorativeSymbol';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -23,8 +24,10 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8">
-      <div className="px-8 md:px-16 lg:px-24">
+    <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8 relative overflow-hidden">
+      <DecorativeSymbol rotation={25} position="top-10 right-[-200px]" size="w-[600px] md:w-[800px]" />
+      <DecorativeSymbol rotation={-10} position="bottom-20 left-[-250px]" size="w-[500px] md:w-[700px]" />
+      <div className="px-8 md:px-16 lg:px-24 relative z-10">
         {/* Top: Logo + CTA */}
         <div className="mb-16">
           <img src={logoGold} alt="Villa Potoň" className="h-20 w-auto mb-8" />
