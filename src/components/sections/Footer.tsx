@@ -26,7 +26,6 @@ const Footer = () => {
   return (
     <footer id="footer" className="bg-primary text-primary-foreground pt-20 pb-8 relative overflow-hidden">
       <DecorativeSymbol rotation={25} position="top-10 right-[-200px]" size="w-[600px] md:w-[800px]" opacity="opacity-[0.10]" />
-      <DecorativeSymbol rotation={-10} position="bottom-20 left-[-250px]" size="w-[500px] md:w-[700px]" opacity="opacity-[0.10]" />
       <div className="px-8 md:px-16 lg:px-24 relative z-10">
         {/* Top: Logo + CTA */}
         <div className="mb-16">
