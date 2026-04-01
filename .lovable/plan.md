@@ -1,15 +1,25 @@
 
 
-## Výmena hero fotky za novú (1MB, dobrá kvalita)
+## Použitie hero fotky z GitHubu (bez kompresie)
 
 ### Problém
-Lovable chat komprimuje nahrané obrázky, čo spôsobuje stratu kvality. Ale samotné **skopírovanie súboru** do `src/assets/` by nemalo pridávať extra kompresiu — Vite obrázky väčšie ako 4KB len skopíruje do buildu bez ďalšej kompresie.
+Fotky nahrané cez Lovable chat sú komprimované. Fotka bola nahraná priamo do GitHub repozitára, čo zachová plnú kvalitu.
 
-Ak je fotka stále rozmazaná, problém je v kompresii pri uploade cez chat. Riešenie: skúsime to teraz s touto novou fotkou (1MB) a ak kvalita stále nebude dobrá, najlepšie riešenie bude nahrať obrázok priamo cez GitHub do repozitára alebo použiť externú URL.
+### Riešenie
+Keďže máte zapnutý bidirectional sync medzi Lovable a GitHub, súbor `VP hero sekcie photo.jpg` sa už synchronizoval do repozitára. Stačí ho presunúť na správne miesto alebo naň odkázať.
 
-### Plán
-1. Skopírovať `user-uploads://VP_hero_sekcie_photo-2.jpg` do `src/assets/hero.jpg` (prepíše starý)
-2. Žiadne zmeny v kóde — Hero.tsx už importuje `@/assets/hero.jpg`
+Najjednoduchší prístup: zmeniť `Hero.tsx` aby použil **raw GitHub URL** na obrázok (plná kvalita, žiadna kompresie Vite bundlera):
 
-Jeden súbor, jedna operácia.
+**Súbor:** `src/components/sections/Hero.tsx`
+- Odstrániť import `heroImg from '@/assets/hero.jpg'`
+- Použiť priamu raw URL: `https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/VP%20hero%20sekcie%20photo.jpg`
+
+Alternatíva: Presunúť súbor v GitHub do `src/assets/hero.jpg` cez git, čo by sa synchonizovalo späť. Ale raw URL je rýchlejšie riešenie a garantuje nulu kompresiu.
+
+### Zmena (1 súbor)
+
+```tsx
+// Hero.tsx - nahradiť import za priamu URL
+const heroImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/VP%20hero%20sekcie%20photo.jpg";
+```
 
