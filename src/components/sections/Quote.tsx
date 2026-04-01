@@ -10,8 +10,9 @@ import quote3 from '@/assets/quote/quote3.jpg';
 import quote4 from '@/assets/quote/quote4.jpg';
 import quote5 from '@/assets/quote/quote5.jpg';
 import quote6 from '@/assets/quote/quote6.jpg';
+const quoteGithub = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_izba_2.png";
 
-const images = [quote5, quote1, quote2, quote3, quote4, quote6];
+const images = [quote5, quote1, quote2, quoteGithub, quote3, quote4, quote6];
 
 const Quote = () => {
   const { t } = useTranslation();
