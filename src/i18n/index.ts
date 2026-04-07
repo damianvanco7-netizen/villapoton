@@ -14,13 +14,21 @@ i18n
       hu: { translation: hu },
       en: { translation: en },
     },
+    supportedLngs: ['sk', 'hu', 'en'],
     fallbackLng: 'sk',
+    nonExplicitSupportedLngs: false,
     interpolation: {
       escapeValue: false,
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
+      convertDetectedLanguage: (lng: string) => {
+        const base = lng.split('-')[0].toLowerCase();
+        if (base === 'sk' || base === 'cs') return 'sk';
+        if (base === 'hu') return 'hu';
+        return 'en';
+      },
     },
   });
 
