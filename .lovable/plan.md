@@ -1,54 +1,20 @@
 
 
-## Oprava detekcie jazyka — slovenčina ako predvolená
+## Výmena fotiek za GitHub raw URL (plná kvalita)
 
-### Problém
-`i18next-browser-languagedetector` detekuje jazyk prehliadača. Ak má prehliadač nastavený `en-US` (aj na Slovensku), stránka sa zobrazí po anglicky. Navyše `localStorage` cache si pamätá poslednú voľbu.
+Rovnaký postup ako pri hero fotke — použijeme raw GitHub URL namiesto lokálnych importov.
 
-### Riešenie
-Zmeniť logiku detekcie v `src/i18n/index.ts`:
+### Zmeny v 3 súboroch
 
-1. **Priorita detekcie**: `localStorage` → `navigator` (zostáva rovnaká)
-2. **Pridať `supportedLngs`**: explicitne `['sk', 'hu', 'en']` — aby sa `en-US`, `en-GB` správne mapovali na `en`
-3. **Zmeniť `fallbackLng` na `'sk'`** (už je nastavené správne)
-4. **Pridať custom language mapping** — ak prehliadač vráti `sk`, `cs` (čeština je blízka), alebo `hu`, použije sa príslušný jazyk. Pre všetko ostatné sa použije `en`.
+**1. `src/components/sections/Welcome.tsx`** — sekcia "Vitajte vo Villa Potoň"
+- Odstrániť `import welcomeImg from '@/assets/welcome.jpg'`
+- Pridať: `const welcomeImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_exterier.png"`
 
-Konkrétne zmeny v `src/i18n/index.ts`:
+**2. `src/components/sections/Experience.tsx`** — sekcia "Ubytovanie"
+- Odstrániť `import apartmanImg from '@/assets/accommodation.jpg'`
+- Pridať: `const apartmanImg = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_izba.png"`
 
-```ts
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      sk: { translation: sk },
-      hu: { translation: hu },
-      en: { translation: en },
-    },
-    supportedLngs: ['sk', 'hu', 'en'],
-    fallbackLng: 'sk',          // slovenčina ako default
-    nonExplicitSupportedLngs: false,
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
-      convertDetectedLanguage: (lng: string) => {
-        const base = lng.split('-')[0].toLowerCase();
-        if (base === 'sk' || base === 'cs') return 'sk';  // SK + CZ → slovenčina
-        if (base === 'hu') return 'hu';
-        return 'en';  // všetko ostatné → angličtina
-      },
-    },
-  });
-```
-
-### Čo to spraví
-- **Slovenský/český prehliadač** → stránka po slovensky
-- **Maďarský prehliadač** → stránka po maďarsky
-- **Akýkoľvek iný jazyk** (en, de, fr...) → stránka po anglicky
-- Ak si používateľ manuálne zvolí jazyk, uloží sa do `localStorage` a bude mať prednosť
-
-### Jeden súbor: `src/i18n/index.ts`
+**3. `src/components/sections/Quote.tsx`** — galéria (pridať novú fotku)
+- Pridať novú URL premennú: `const quoteGithub = "https://raw.githubusercontent.com/damianvanco7-netizen/villapoton/main/Vill_Poton_izba_2.png"`
+- Pridať ju do poľa `images` (napr. na začiatok alebo koniec)
 
