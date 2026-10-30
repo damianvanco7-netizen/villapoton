@@ -23,7 +23,7 @@ const Reservation = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:info@villapoton.sk"
+              href="mailto:villapatony2023@gmail.com"
               className="bg-accent text-accent-foreground px-8 py-4 text-sm font-body font-semibold tracking-wider uppercase hover:bg-accent/90 transition-colors"
             >
               {t('reservation.cta')}

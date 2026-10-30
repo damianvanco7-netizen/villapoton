@@ -63,8 +63,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="shrink-0" style={{ color: '#C69B5E' }} />
-                <a href="mailto:info@villapoton.sk" className="hover:text-primary-foreground transition-colors">
-                  info@villapoton.sk
+                <a href="mailto:villapatony2023@gmail.com" className="hover:text-primary-foreground transition-colors">
+                  villapatony2023@gmail.com
                 </a>
               </li>
             </ul>
